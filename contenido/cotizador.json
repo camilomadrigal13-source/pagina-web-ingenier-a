@@ -1,0 +1,26 @@
+{
+  "seo": { "titulo": "Solicitar cotización", "descripcion": "Cuéntanos tu proyecto y los servicios que necesitas. Te respondemos con una propuesta personalizada." },
+  "titulo": "Cuéntanos tu proyecto y te enviamos una propuesta.",
+  "intro": "Marca los servicios y obtén una referencia de costo al instante. Luego envía tu solicitud: revisamos tu información y respondemos con una cotización detallada, con alcance, entregables, plazo y valor. Mientras más datos nos des, más precisa será.",
+  "tipos_proyecto": [
+    "Vivienda unifamiliar", "Vivienda multifamiliar o edificio", "Local u oficina", "Edificación comercial o institucional",
+    "Bodega o industria", "Obra civil o contención", "Edificación existente (evaluación o reforzamiento)", "Archivo o documentación de una empresa", "Otro"
+  ],
+  "ubicaciones": [
+    "Sabaneta", "Medellín", "Envigado", "Itagüí", "La Estrella", "Bello", "Caldas", "Otro municipio del Valle de Aburrá",
+    "Otro municipio de Antioquia", "Otro departamento de Colombia", "Servicio remoto"
+  ],
+  "niveles": [
+    { "valor": "idea", "texto": "Tengo una idea o necesidad, sin planos" },
+    { "valor": "anteproyecto", "texto": "Tengo un anteproyecto o planos preliminares" },
+    { "valor": "proyecto", "texto": "Tengo diseños y necesito detalle, trámite u obra" },
+    { "valor": "existente", "texto": "La edificación o el archivo ya existe y necesito evaluarlo u organizarlo" }
+  ],
+  "contacto_preferido": ["Correo electrónico", "WhatsApp", "Llamada"],
+  "info_por_servicio": {
+    "A": ["Ubicación o dirección del predio", "Planos existentes, si los hay", "Estudio de suelos, si ya existe", "Uso y número de pisos previstos"],
+    "B": ["Modelos o planos de partida (formato y versión)", "Qué documento esperas recibir", "Fecha de entrega deseada"],
+    "C": ["Planos y especificaciones disponibles", "Plazo y presupuesto de referencia", "Si ya hay contratista o interventor"],
+    "D": ["Tipo y volumen aproximado de documentos", "Dónde están hoy (físicos, digitales, ambos)", "Cómo se consultan actualmente"]
+  }
+}

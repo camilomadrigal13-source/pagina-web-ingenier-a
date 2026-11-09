@@ -1,0 +1,40 @@
+{
+  "_ayuda": "Tarifas del estimado del cotizador. HOY SON VALORES DE EJEMPLO. Cuando la firma defina las suyas: cambiar los valores y poner \"verificadas\": true. Con \"verificadas\": false el estimado solo se muestra mientras el sitio esté en modo prototipo, y siempre con el aviso de que son valores de ejemplo.",
+  "verificadas": false,
+  "moneda": "COP",
+  "redondeo": 10000,
+  "rango": { "bajo": 0.85, "alto": 1.25 },
+  "aviso_ejemplo": "Valores de ejemplo para mostrar cómo funciona. No son tarifas de la firma.",
+  "nota": "Estimación referencial. No incluye IVA, derechos de curaduría, estudios de suelos ni costos de obra. El valor final depende del alcance, la complejidad y el plazo.",
+  "mensaje_final": "Esta cifra es solo una referencia. Envía tu solicitud y te respondemos con una cotización detallada, con alcance, entregables y plazo. Cuéntanos tu caso y te asesoramos sobre la mejor forma de contratar.",
+  "factor_tipo": {
+    "Vivienda unifamiliar": 1,
+    "Vivienda multifamiliar o edificio": 1.1,
+    "Local u oficina": 1,
+    "Edificación comercial o institucional": 1.15,
+    "Bodega o industria": 1.1,
+    "Obra civil o contención": 1.2,
+    "Edificación existente (evaluación o reforzamiento)": 1.3,
+    "Archivo o documentación de una empresa": 1,
+    "Otro": 1
+  },
+  "servicios": {
+    "A: Diseño estructural y cimentaciones": { "modo": "m2", "valor": 28000 },
+    "A: Evaluación, patología y reforzamiento": { "modo": "cotizar" },
+    "A: Diseño arquitectónico": { "modo": "m2", "valor": 45000 },
+    "A: Coordinación y acompañamiento técnico": { "modo": "cotizar" },
+    "B: Modelado BIM y tridimensional": { "modo": "m2", "valor": 12000 },
+    "B: Dibujo técnico y planos": { "modo": "m2", "valor": 9000 },
+    "B: Detallamiento estructural y despieces": { "modo": "m2", "valor": 18000 },
+    "B: Automatización y organización de documentación técnica": { "modo": "cotizar" },
+    "C: Construcción, adecuaciones y remodelaciones": { "modo": "cotizar" },
+    "C: Dirección de obra, interventoría y supervisión técnica": { "modo": "m2", "valor": 25000 },
+    "C: Presupuestos, APU y cantidades de obra": { "modo": "m2", "valor": 8000 },
+    "C: Programación, control de costos y seguimiento": { "modo": "m2", "valor": 6000 },
+    "C: Consultoría y evaluación técnica de proyectos": { "modo": "cotizar" },
+    "D: Diagnóstico y estrategia documental": { "modo": "cotizar" },
+    "D: Organización, clasificación e inventarios": { "modo": "cotizar" },
+    "D: Digitalización e indexación": { "modo": "cotizar" },
+    "D: Repositorios y administración documental": { "modo": "cotizar" }
+  }
+}

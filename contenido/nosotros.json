@@ -1,0 +1,27 @@
+{
+  "seo": { "titulo": "Nosotros", "descripcion": "Firma multidisciplinaria de ingeniería, arquitectura y servicios profesionales con sede en Sabaneta, Antioquia. Trabajamos en el Valle de Aburrá, Antioquia y todo Colombia." },
+  "titulo": "Una firma que junta disciplinas que casi siempre se contratan por separado.",
+  "intro": "Somos un estudio de servicios profesionales con sede en Sabaneta, Antioquia. Reunimos ingeniería civil y estructural, arquitectura, modelado y documentación técnica, construcción y gestión de proyectos, y gestión documental. Cada servicio puede contratarse de forma independiente. Cuando se combinan, trabajan con la misma información y el mismo criterio.",
+  "principios": [
+    { "titulo": "Filosofía de trabajo", "texto": "Un proyecto bien resuelto es el que se entiende, se puede construir y se puede mantener. Preferimos preguntar y definir alcance antes que corregir después." },
+    { "titulo": "Enfoque multidisciplinario", "texto": "Las decisiones de arquitectura, estructura, costos y obra se afectan entre sí. Las miramos juntas desde el comienzo, o las coordinamos con tu equipo si ya tienes uno." },
+    { "titulo": "Compromiso técnico", "texto": "Trabajamos con referencias técnicas reconocidas y explicamos nuestros supuestos. Las decisiones de ingeniería las valida y firma el profesional competente." },
+    { "titulo": "Innovación aplicada", "texto": "Incorporamos BIM, modelado y automatización cuando reducen errores, tiempo o costo. No como adorno: solo donde mejoran el resultado para el cliente." },
+    { "titulo": "Optimización de recursos", "texto": "Revisamos alternativas y su costo antes de definir. Una buena decisión temprana vale más que un ahorro tardío." },
+    { "titulo": "Entregables claros", "texto": "Documentos ordenados, con nomenclatura y versiones, que otra persona pueda leer y usar sin tener que llamarnos." }
+  ],
+  "alcance": {
+    "titulo": "Dónde trabajamos",
+    "texto": "Con sede en Sabaneta, atendemos de forma presencial Medellín y el Valle de Aburrá. En el resto de Antioquia y de Colombia trabajamos con visitas programadas cuando el servicio lo requiere. Los servicios de modelado, documentación, presupuestos, consultoría y gestión documental pueden prestarse de manera remota."
+  },
+  "clientes": {
+    "titulo": "Con quién trabajamos",
+    "texto": "Empresas, constructoras, profesionales independientes, particulares y entidades públicas. Podemos asumir un proyecto completo o apoyar a tu equipo con un servicio específico."
+  },
+  "perfiles_titulo": "Equipo profesional",
+  "perfiles_nota": "Aquí se presentarán los profesionales responsables, con su formación y matrícula profesional.",
+  "perfiles": [
+    { "nombre": "", "cargo": "", "formacion": "", "matricula": "", "bio": "", "foto": "" },
+    { "nombre": "", "cargo": "", "formacion": "", "matricula": "", "bio": "", "foto": "" }
+  ]
+}

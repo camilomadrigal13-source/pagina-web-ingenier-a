@@ -1,0 +1,38 @@
+{
+  "_ayuda": "Todo lo que cambia con la firma está aquí. Lo vacío (\"\") no se publica ni se inventa. Después de editar: npm run build (Vercel lo hace solo al subir a GitHub).",
+
+  "nombre": "Cota Estudio",
+  "nombre_definitivo": false,
+  "lema": "Del primer trazo al último detalle.",
+  "descriptor": "Ingeniería, arquitectura, BIM, construcción y gestión documental",
+  "logo": "",
+
+  "dominio": "",
+
+  "ubicacion": {
+    "municipio": "Sabaneta",
+    "departamento": "Antioquia",
+    "pais": "Colombia",
+    "cobertura": "Medellín y Valle de Aburrá, Antioquia y proyectos en todo Colombia. Servicios técnicos remotos."
+  },
+
+  "contacto": {
+    "correo": "",
+    "whatsapp": "",
+    "telefono": "",
+    "horario": ""
+  },
+
+  "redes": { "instagram": "", "linkedin": "", "facebook": "", "youtube": "" },
+
+  "imagenes": {
+    "hero": "",
+    "og": "/img/og.png"
+  },
+
+  "formulario": { "endpoint": "/api/contacto" },
+
+  "tarifas": null,
+
+  "modo_prototipo": true
+}

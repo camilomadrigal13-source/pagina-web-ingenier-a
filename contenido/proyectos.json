@@ -1,0 +1,93 @@
+{
+  "seo": { "titulo": "Proyectos y portafolio", "descripcion": "Portafolio de la firma por área: ingeniería, arquitectura, BIM y documentación, construcción, gestión de proyectos y gestión documental." },
+  "titulo": "Portafolio",
+  "intro": "Aquí se publicarán los proyectos con autorización del cliente. Mientras se completa, mostramos casos ilustrativos que describen el tipo de trabajo que realizamos. No corresponden a obras ni clientes reales.",
+  "categorias": [
+    { "id": "ingenieria", "nombre": "Ingeniería" },
+    { "id": "arquitectura", "nombre": "Arquitectura" },
+    { "id": "bim", "nombre": "BIM y documentación" },
+    { "id": "construccion", "nombre": "Construcción" },
+    { "id": "gestion", "nombre": "Gestión de proyectos" },
+    { "id": "documental", "nombre": "Gestión documental" }
+  ],
+  "proyectos": [
+    {
+      "id": "caso-1",
+      "ilustrativo": true,
+      "nombre": "Edificio de vivienda de mediana altura",
+      "ubicacion": "",
+      "categorias": ["ingenieria", "bim"],
+      "descripcion": "Caso ilustrativo del tipo de proyecto en el que se integran diseño estructural y detallamiento de refuerzo.",
+      "alcance": ["Diseño estructural", "Detallamiento y despieces", "Cuantificación de acero"],
+      "servicios": ["A", "B"],
+      "imagenes": [],
+      "planos": [],
+      "resultados": ""
+    },
+    {
+      "id": "caso-2",
+      "ilustrativo": true,
+      "nombre": "Vivienda campestre",
+      "ubicacion": "",
+      "categorias": ["arquitectura", "ingenieria"],
+      "descripcion": "Caso ilustrativo de un proyecto arquitectónico coordinado con su estructura y su cimentación.",
+      "alcance": ["Anteproyecto y proyecto arquitectónico", "Diseño estructural", "Planos constructivos"],
+      "servicios": ["A"],
+      "imagenes": [],
+      "planos": [],
+      "resultados": ""
+    },
+    {
+      "id": "caso-3",
+      "ilustrativo": true,
+      "nombre": "Reforzamiento de una edificación existente",
+      "ubicacion": "",
+      "categorias": ["ingenieria"],
+      "descripcion": "Caso ilustrativo: diagnóstico de una edificación, definición de intervención y planos de reforzamiento.",
+      "alcance": ["Evaluación y diagnóstico", "Diseño de reforzamiento", "Acompañamiento técnico"],
+      "servicios": ["A"],
+      "imagenes": [],
+      "planos": [],
+      "resultados": ""
+    },
+    {
+      "id": "caso-4",
+      "ilustrativo": true,
+      "nombre": "Adecuación de oficinas",
+      "ubicacion": "",
+      "categorias": ["construccion", "gestion"],
+      "descripcion": "Caso ilustrativo: adecuación con presupuesto, cronograma y control de avance.",
+      "alcance": ["Presupuesto y APU", "Programación de obra", "Dirección de obra"],
+      "servicios": ["C"],
+      "imagenes": [],
+      "planos": [],
+      "resultados": ""
+    },
+    {
+      "id": "caso-5",
+      "ilustrativo": true,
+      "nombre": "Control de costos y plazos de un proyecto",
+      "ubicacion": "",
+      "categorias": ["gestion"],
+      "descripcion": "Caso ilustrativo de seguimiento de un proyecto frente a su presupuesto y su cronograma.",
+      "alcance": ["Control de costos", "Flujo de caja", "Informes de avance"],
+      "servicios": ["C"],
+      "imagenes": [],
+      "planos": [],
+      "resultados": ""
+    },
+    {
+      "id": "caso-6",
+      "ilustrativo": true,
+      "nombre": "Archivo técnico de una constructora",
+      "ubicacion": "",
+      "categorias": ["documental", "bim"],
+      "descripcion": "Caso ilustrativo de diagnóstico, clasificación y digitalización de los archivos de proyectos de una empresa.",
+      "alcance": ["Diagnóstico documental", "Clasificación e inventario", "Digitalización e indexación", "Repositorio digital"],
+      "servicios": ["D"],
+      "imagenes": [],
+      "planos": [],
+      "resultados": ""
+    }
+  ]
+}

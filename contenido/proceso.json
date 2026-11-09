@@ -1,0 +1,34 @@
+{
+  "seo": { "titulo": "Proceso de trabajo", "descripcion": "Cómo trabajamos: diagnóstico, alcance y propuesta, desarrollo técnico y entrega con seguimiento. Entregables según el tipo de servicio." },
+  "titulo": "Cuatro etapas, con entregables definidos en cada una.",
+  "intro": "El proceso es el mismo para un plano de taller que para un proyecto completo. Cambia la profundidad de cada etapa y lo que recibes al final.",
+  "etapas": [
+    {
+      "nombre": "Diagnóstico y entendimiento de necesidades",
+      "texto": "Escuchamos qué necesitas, revisamos la información disponible y hacemos las preguntas que definen el alcance. Si hace falta, visitamos el sitio.",
+      "recibes": "Resumen de necesidades y lista de información faltante."
+    },
+    {
+      "nombre": "Definición de alcance y propuesta",
+      "texto": "Establecemos qué se hará, qué no, con qué entregables, en qué tiempo y a qué costo. Lo que dependa de terceros o de habilitaciones específicas queda explícito.",
+      "recibes": "Propuesta con alcance, entregables, plazos y condiciones."
+    },
+    {
+      "nombre": "Desarrollo técnico y ejecución",
+      "texto": "Desarrollamos el trabajo con revisiones internas y puntos de validación contigo. Los avances se comparten ordenados y con versión.",
+      "recibes": "Avances revisables según el servicio."
+    },
+    {
+      "nombre": "Entrega, seguimiento y acompañamiento",
+      "texto": "Entregamos la documentación completa y resolvemos observaciones. Si el servicio lo incluye, acompañamos la etapa siguiente: trámite, obra o implementación.",
+      "recibes": "Entregables finales y respuesta a observaciones."
+    }
+  ],
+  "por_servicio_titulo": "Qué entregamos según el servicio",
+  "por_servicio": [
+    { "unidad": "A", "texto": "Memorias, planos, informes de diagnóstico y diseños de intervención." },
+    { "unidad": "B", "texto": "Modelos, planos, despieces, cartillas y cantidades, organizados por versión." },
+    { "unidad": "C", "texto": "Presupuestos, APU, cronogramas, informes de avance, de interventoría y conceptos técnicos." },
+    { "unidad": "D", "texto": "Diagnóstico, inventarios, archivos clasificados e indexados, y repositorios con sus reglas de uso." }
+  ]
+}

@@ -1,0 +1,205 @@
+{
+  "intro": {
+    "titulo": "Cuatro unidades. Un solo equipo.",
+    "texto": "Podemos acompañar un proyecto completo, desde la idea hasta la entrega y su documentación, o encargarnos de un servicio específico. Cada servicio se contrata por separado, y cuando se combinan trabajan sobre la misma información."
+  },
+  "unidades": [
+    {
+      "id": "A",
+      "slug": "ingenieria-arquitectura",
+      "nombre": "Ingeniería civil, estructural y arquitectura",
+      "corto": "Ingeniería y arquitectura",
+      "resumen": "Diseño de estructuras y edificaciones nuevas, y evaluación y reforzamiento de las existentes.",
+      "seo": {
+        "titulo": "Ingeniería civil, diseño estructural y arquitectura en Medellín y Antioquia",
+        "descripcion": "Diseño estructural, diseño arquitectónico, cimentaciones, reforzamiento y evaluación de estructuras existentes. Desde Sabaneta, para Medellín, Antioquia y Colombia."
+      },
+      "intro": "Diseñamos y evaluamos estructuras y edificaciones con un criterio común: que lo que se dibuja se pueda construir, revisar y mantener. Usamos como referencia técnica la NSR-10 y, cuando el proyecto lo requiere, otras normas internacionales.",
+      "nota": "Estudios de suelos, topografía y otros estudios especializados los gestionamos con profesionales o empresas aliadas cuando el proyecto los necesita. No los presentamos como capacidad propia.",
+      "bloques": [
+        {
+          "nombre": "Diseño estructural y cimentaciones",
+          "incluye": ["Diseño estructural", "Ingeniería civil", "Cimentaciones", "Muros de contención"],
+          "ofrecemos": "Diseño de la estructura de edificaciones y obras civiles: sistema estructural, análisis, dimensionamiento, cimentación y contención de tierras.",
+          "problema": "Una estructura bien concebida desde el anteproyecto evita sobrecostos, rediseños y problemas de obra.",
+          "entregables": ["Memoria de cálculo", "Planos estructurales", "Detalles de refuerzo", "Cantidades de materiales principales"],
+          "para": ["Propietarios y desarrolladores", "Constructoras", "Arquitectos y diseñadores"]
+        },
+        {
+          "nombre": "Evaluación, patología y reforzamiento",
+          "incluye": ["Evaluación y diagnóstico de estructuras existentes", "Patología estructural", "Vulnerabilidad sísmica", "Reforzamiento estructural"],
+          "ofrecemos": "Revisión de edificaciones existentes: qué tienen, cómo se comportan, qué les pasó y qué hacer. Si hace falta intervenir, diseñamos el reforzamiento.",
+          "problema": "Fisuras, cambios de uso, ampliaciones o dudas sobre la seguridad de una edificación que necesitan un criterio técnico claro.",
+          "entregables": ["Informe de diagnóstico", "Recomendaciones priorizadas", "Diseño de reforzamiento", "Planos y detalles de la intervención"],
+          "para": ["Propietarios de edificaciones", "Administraciones de propiedad horizontal", "Empresas y entidades"]
+        },
+        {
+          "nombre": "Diseño arquitectónico",
+          "incluye": ["Diseño arquitectónico", "Anteproyectos y proyectos arquitectónicos", "Planos arquitectónicos", "Detalles constructivos"],
+          "ofrecemos": "Desarrollo del proyecto arquitectónico, desde el estudio de la necesidad y el lote hasta los planos y detalles para construir.",
+          "problema": "Convertir una necesidad, un presupuesto y un lote en un proyecto claro, coordinado con su estructura desde el inicio.",
+          "entregables": ["Anteproyecto", "Planos arquitectónicos", "Detalles constructivos", "Documentos para trámite cuando aplique"],
+          "para": ["Particulares", "Desarrolladores", "Empresas con sedes o adecuaciones"]
+        },
+        {
+          "nombre": "Coordinación y acompañamiento técnico",
+          "incluye": ["Coordinación interdisciplinaria", "Acompañamiento técnico"],
+          "ofrecemos": "Alguien que mantiene alineadas arquitectura, estructura, instalaciones y obra, y que responde dudas técnicas durante el proyecto.",
+          "problema": "Los problemas más caros aparecen cuando las disciplinas trabajan sin hablarse.",
+          "entregables": ["Revisión de compatibilidad entre planos", "Actas y listas de observaciones", "Respuestas técnicas documentadas"],
+          "para": ["Equipos de diseño", "Constructoras", "Propietarios que contratan por separado"]
+        }
+      ]
+    },
+    {
+      "id": "B",
+      "slug": "bim-documentacion-tecnica",
+      "nombre": "BIM, modelado y documentación técnica",
+      "corto": "BIM y documentación técnica",
+      "resumen": "Modelos, planos, despieces y cuantificaciones, con herramientas digitales y criterio constructivo.",
+      "seo": {
+        "titulo": "Modelado BIM, detallamiento estructural y planos técnicos en Medellín",
+        "descripcion": "Modelado BIM y 3D, planos constructivos y de taller, despiece de acero, detallamiento estructural y cuantificación de materiales. Servicio remoto en Colombia."
+      },
+      "intro": "Esta unidad se puede contratar sin que la firma haya diseñado el proyecto. Recibimos tu información, la ordenamos, la modelamos o la detallamos y devolvemos documentos listos para revisar y construir. Se puede trabajar de forma remota.",
+      "nota": "Los modelos y planos son documentación técnica. La responsabilidad de diseño y de firma recae en el profesional competente del proyecto.",
+      "bloques": [
+        {
+          "nombre": "Modelado BIM y tridimensional",
+          "incluye": ["Modelado BIM", "Modelado tridimensional"],
+          "ofrecemos": "Modelos de edificaciones y estructuras que sirven para coordinar, cuantificar y comunicar el proyecto.",
+          "problema": "Planos en 2D que no coinciden entre sí y decisiones que se descubren recién en obra.",
+          "entregables": ["Modelo BIM o 3D", "Vistas y cortes", "Revisión de interferencias entre disciplinas", "Cantidades extraídas del modelo"],
+          "para": ["Constructoras", "Arquitectos e ingenieros", "Desarrolladores"]
+        },
+        {
+          "nombre": "Dibujo técnico y planos",
+          "incluye": ["Dibujo técnico", "Elaboración y actualización de planos", "Planos constructivos", "Planos de taller"],
+          "ofrecemos": "Elaboración o actualización de planos a partir de bocetos, levantamientos, modelos o planos antiguos.",
+          "problema": "Planos incompletos, desactualizados o difíciles de leer que frenan la obra o el trámite.",
+          "entregables": ["Planos en formato editable", "Planos constructivos y de taller", "Listados de planos"],
+          "para": ["Particulares", "Constructoras", "Talleres y contratistas", "Profesionales independientes"]
+        },
+        {
+          "nombre": "Detallamiento estructural y despieces",
+          "incluye": ["Detallamiento estructural", "Despieces de refuerzo", "Cuantificación de materiales", "Generación de cartillas"],
+          "ofrecemos": "Convertimos el diseño estructural en detalle constructivo: figurado de refuerzo, despieces, cartillas y cantidades de acero y concreto.",
+          "problema": "Un diseño correcto necesita un detalle claro para que el maestro lo arme sin dudas y el acero se compre sin desperdicio.",
+          "entregables": ["Planos de despiece", "Cartillas de despiece", "Cuantificación de acero y concreto", "Listas de revisión para el ingeniero"],
+          "para": ["Ingenieros estructurales", "Constructoras", "Ferrallas y talleres de figurado"],
+          "enlace_tecnologia": true
+        },
+        {
+          "nombre": "Automatización y organización de documentación técnica",
+          "incluye": ["Documentación técnica", "Automatización de documentación", "Conversión y organización de archivos técnicos"],
+          "ofrecemos": "Procesos digitales para generar, convertir y ordenar documentos técnicos repetitivos, y estructuras de carpetas y nomenclatura para proyectos.",
+          "problema": "Horas perdidas rehaciendo documentos a mano, versiones mezcladas y archivos imposibles de encontrar.",
+          "entregables": ["Procesos automatizados a la medida cuando aplique", "Archivos convertidos y organizados", "Guía de nomenclatura del proyecto"],
+          "para": ["Oficinas de ingeniería y arquitectura", "Constructoras", "Empresas con archivos técnicos"]
+        }
+      ]
+    },
+    {
+      "id": "C",
+      "slug": "construccion-consultoria-gestion",
+      "nombre": "Construcción, consultoría y gestión de proyectos",
+      "corto": "Construcción y gestión de proyectos",
+      "resumen": "Obra, control técnico y económico, presupuestos y consultoría para decidir y ejecutar mejor.",
+      "seo": {
+        "titulo": "Presupuestos de obra, APU, interventoría y consultoría de ingeniería en Antioquia",
+        "descripcion": "Presupuestos de obra, análisis de precios unitarios, cronogramas, interventoría, supervisión técnica, dirección de obra y consultoría de ingeniería."
+      },
+      "intro": "Acompañamos la ejecución y el control del proyecto: cuánto cuesta, cuánto se demora, cómo se construye y cómo va. Los servicios que requieren habilitaciones o profesionales específicos se prestan sujetos a su disponibilidad y a los requisitos legales aplicables.",
+      "nota": "Antes de proponer, confirmamos qué habilitaciones o profesionales requiere cada servicio y se lo informamos al cliente.",
+      "bloques": [
+        {
+          "nombre": "Construcción, adecuaciones y remodelaciones",
+          "incluye": ["Construcción y adecuaciones", "Remodelaciones"],
+          "ofrecemos": "Ejecución de adecuaciones y remodelaciones con definición previa de alcance, planos y presupuesto.",
+          "problema": "Intervenir un espacio sin saber qué hay, cuánto cuesta ni cuánto tarda.",
+          "entregables": ["Alcance y presupuesto acordados", "Cronograma de ejecución", "Registro de avance", "Planos de lo construido cuando aplique"],
+          "para": ["Particulares", "Empresas", "Propiedades horizontales"]
+        },
+        {
+          "nombre": "Dirección de obra, interventoría y supervisión técnica",
+          "incluye": ["Dirección de obra", "Interventoría", "Supervisión técnica"],
+          "ofrecemos": "Control técnico de que lo que se construye corresponde a lo diseñado, a los materiales y a los tiempos y costos acordados.",
+          "problema": "Una obra sin control técnico independiente acumula desviaciones que se descubren tarde.",
+          "entregables": ["Informes periódicos", "Registro de visitas y observaciones", "Control de calidad documentado", "Concepto técnico de recibo cuando aplique"],
+          "para": ["Propietarios e inversionistas", "Entidades públicas y privadas", "Constructoras que requieren control externo"]
+        },
+        {
+          "nombre": "Presupuestos, APU y cantidades de obra",
+          "incluye": ["Presupuestos de obra", "Análisis de precios unitarios (APU)", "Cantidades de obra"],
+          "ofrecemos": "Presupuestos soportados en cantidades y análisis de precios unitarios con insumos y rendimientos explícitos.",
+          "problema": "Decidir, licitar o contratar con valores sin soporte.",
+          "entregables": ["Presupuesto por capítulos", "APU por actividad", "Memoria de cantidades", "Listado de insumos"],
+          "para": ["Particulares", "Constructoras", "Entidades que contratan obra"]
+        },
+        {
+          "nombre": "Programación, control de costos y seguimiento",
+          "incluye": ["Programación de obra", "Cronogramas", "Control de costos", "Flujos de caja", "Seguimiento de proyectos"],
+          "ofrecemos": "Planeación del tiempo y del dinero del proyecto y seguimiento periódico frente a lo planeado.",
+          "problema": "Proyectos que se retrasan o se pasan del presupuesto sin que nadie lo vea a tiempo.",
+          "entregables": ["Cronograma de obra", "Flujo de caja proyectado", "Informes de avance y costo", "Alertas de desviación"],
+          "para": ["Desarrolladores", "Constructoras", "Propietarios"]
+        },
+        {
+          "nombre": "Consultoría y evaluación técnica de proyectos",
+          "incluye": ["Consultoría de ingeniería", "Asesoría técnica", "Evaluación técnica de proyectos"],
+          "ofrecemos": "Una segunda mirada técnica antes de decidir: revisamos alternativas, riesgos, costos y viabilidad.",
+          "problema": "Tomar una decisión de inversión o de diseño sin conocer todas sus implicaciones técnicas.",
+          "entregables": ["Concepto técnico escrito", "Comparación de alternativas", "Matriz de riesgos y recomendaciones"],
+          "para": ["Inversionistas", "Empresas", "Profesionales que requieren apoyo especializado"]
+        }
+      ]
+    },
+    {
+      "id": "D",
+      "slug": "gestion-documental",
+      "nombre": "Gestión documental integral",
+      "corto": "Gestión documental",
+      "resumen": "Organización, digitalización y administración de la información de una empresa o un proyecto.",
+      "seo": {
+        "titulo": "Gestión documental integral para empresas y proyectos en Medellín y Antioquia",
+        "descripcion": "Diagnóstico documental, organización y clasificación de archivos, inventarios, digitalización, indexación y repositorios digitales para empresas y proyectos de ingeniería."
+      },
+      "intro": "La gestión documental no es escanear papeles. Es lograr que una organización encuentre, confíe y use su información. Partimos de un diagnóstico y diseñamos un esquema que la empresa pueda mantener, tanto para su archivo corporativo como para los archivos técnicos de sus proyectos.",
+      "nota": "Cuando una entidad está sujeta a normas archivísticas específicas, lo identificamos en el diagnóstico y definimos el alcance con ella.",
+      "bloques": [
+        {
+          "nombre": "Diagnóstico y estrategia documental",
+          "incluye": ["Diagnóstico documental", "Apoyo en implementación de procesos documentales"],
+          "ofrecemos": "Revisamos cómo se produce, guarda y consulta la información hoy, y proponemos cómo debería hacerse.",
+          "problema": "No se sabe qué documentos existen, dónde están ni quién responde por ellos.",
+          "entregables": ["Informe de diagnóstico", "Propuesta de estructura y procesos", "Plan de implementación por fases"],
+          "para": ["Empresas", "Entidades", "Oficinas de ingeniería y constructoras"]
+        },
+        {
+          "nombre": "Organización, clasificación e inventarios",
+          "incluye": ["Organización de archivos físicos y digitales", "Clasificación documental", "Inventarios documentales", "Organización de expedientes"],
+          "ofrecemos": "Ordenamos archivos físicos y digitales con criterios de clasificación definidos, y dejamos un inventario que permite ubicar cada documento.",
+          "problema": "Archivos acumulados, mezclados o sin control que hacen perder tiempo y exponen a la empresa a pérdidas.",
+          "entregables": ["Cuadro de clasificación", "Inventario documental", "Expedientes organizados", "Guía para mantener el orden"],
+          "para": ["Empresas", "Propiedades horizontales", "Constructoras", "Entidades"]
+        },
+        {
+          "nombre": "Digitalización e indexación",
+          "incluye": ["Digitalización", "Indexación"],
+          "ofrecemos": "Conversión de documentos físicos a digitales con una indexación que permite buscarlos por los datos que importan.",
+          "problema": "Papel que ocupa espacio, se deteriora y no se puede consultar a distancia.",
+          "entregables": ["Archivos digitales con nomenclatura definida", "Índices de búsqueda", "Control de calidad de la digitalización"],
+          "para": ["Empresas", "Entidades", "Archivos de proyectos"]
+        },
+        {
+          "nombre": "Repositorios y administración documental",
+          "incluye": ["Estructuración de repositorios digitales", "Administración documental", "Gestión de documentos empresariales", "Organización de archivos técnicos de proyectos"],
+          "ofrecemos": "Diseño de repositorios digitales y administración continua de la documentación de una empresa o de sus proyectos, incluidos los archivos técnicos.",
+          "problema": "Versiones duplicadas, información dispersa en correos y carpetas personales, y archivos de proyectos que no se entregan completos.",
+          "entregables": ["Estructura del repositorio", "Reglas de nomenclatura y versiones", "Administración periódica", "Entrega documental de proyectos"],
+          "para": ["Empresas", "Constructoras y desarrolladores", "Interventorías"]
+        }
+      ]
+    }
+  ]
+}

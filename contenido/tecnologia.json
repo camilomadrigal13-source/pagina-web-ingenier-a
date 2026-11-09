@@ -1,0 +1,51 @@
+{
+  "seo": {
+    "titulo": "Tecnología aplicada a la ingeniería: detallamiento estructural automatizado",
+    "descripcion": "Desarrollo propio para automatizar el detallamiento de refuerzo y generar planos DXF, cartillas y cuantificaciones, siempre bajo revisión del ingeniero."
+  },
+  "eyebrow": "Tecnología aplicada a la ingeniería",
+  "titulo": "De la ingeniería estructural al detalle constructivo.",
+  "subtitulo": "Automatizamos procesos de detallamiento estructural para transformar información de ingeniería en documentación técnica organizada y lista para revisión.",
+  "contexto": "Es una de las herramientas de innovación de la firma. La usamos en nuestros servicios de detallamiento y documentación técnica. No reemplaza al ingeniero: acelera el trabajo repetitivo y deja visible lo que requiere su criterio.",
+  "flujo_titulo": "Cómo funciona",
+  "flujo": [
+    { "n": "Entrada", "titulo": "Información del modelo", "texto": "Parte de un modelo de análisis estructural (ETABS, mediante su API o archivos exportados) y de la configuración del proyecto: materiales, recubrimientos, diámetros, criterios.", "captura": "Captura real: modelo de entrada" },
+    { "n": "Proceso", "titulo": "Procesamiento y automatización", "texto": "Organiza los resultados por elemento, calcula el acero requerido frente al colocado y agrupa elementos iguales para no repetir planos.", "captura": "Captura real: pantalla del programa" },
+    { "n": "Detalle", "titulo": "Detallamiento de elementos", "texto": "Define barras corridas y bastones, estribos por zona, traslapos y ganchos, aplicando reglas de detallamiento de la norma de referencia.", "captura": "Captura real: detalle de una viga" },
+    { "n": "Revisión", "titulo": "Revisión de resultados", "texto": "Señala lo que no cumple o requiere decisión, con opciones y números. El ingeniero revisa, ajusta y aprueba.", "captura": "Captura real: alertas y verificaciones" },
+    { "n": "Salida", "titulo": "Planos y cartillas", "texto": "Genera planos DXF, planillas y cartillas de despiece y cuantificación de acero para llevar al taller y a la obra.", "captura": "Captura real: plano o cartilla generada" }
+  ],
+  "capacidades_titulo": "Qué hace hoy",
+  "capacidades_nota": "Estado del desarrollo. Esta sección se actualiza según avanza el programa.",
+  "capacidades": [
+    { "estado": "Automatizado", "titulo": "Vigas de concreto reforzado", "texto": "Despiece de refuerzo longitudinal y transversal, bastones y corridas, estribos por zona, traslapos y ganchos, agrupación de vigas iguales, cuantificación de acero y planos DXF." },
+    { "estado": "Automatizado", "titulo": "Columnas y muros", "texto": "Detallamiento de columnas (estribos, grapas, traslapos) y de muros (alma y bordes), con cuadros y alzados en DXF." },
+    { "estado": "Automatizado", "titulo": "Losas, escaleras y cimentación", "texto": "Diseño y planos de nervios, escaleras y alternativas de cimentación con etapas de aprobación. La cimentación se entrega como preliminar para revisión del ingeniero." },
+    { "estado": "Automatizado", "titulo": "Documentación", "texto": "Planillas de acero y cantidades en Excel, cartillas de despiece, memoria de cálculo en Word y modelo IFC con el refuerzo cuando se solicita." },
+    { "estado": "En desarrollo", "titulo": "Acero estructural", "texto": "Perfiles, conexiones y planos de taller. Tiene menos madurez que el concreto y se usa con más revisión." }
+  ],
+  "interferencias_titulo": "Ganchos, estribos y traslapos",
+  "interferencias": [
+    "El programa revisa que el gancho de una barra quepa en el apoyo y propone alternativas numéricas cuando no cabe, como un diámetro menor o una barra con cabeza.",
+    "Reparte los estribos a lo largo de los traslapos con la separación máxima que exige el criterio de detallamiento.",
+    "En columnas ubica las barras para el estribo mayor y revisa el espacio libre entre ellas.",
+    "Una revisión de coordinación entre elementos en 3D (modelo IFC) ajusta barras que se cruzan. Está en desarrollo: no garantiza un despiece sin interferencias, y cada nudo se revisa."
+  ],
+  "alcance_titulo": "Qué es automático y qué decide el ingeniero",
+  "alcance": [
+    { "titulo": "Funciones automatizadas", "texto": "Organización de resultados, despieces, planos, planillas, cartillas y cuantificaciones." },
+    { "titulo": "Verificaciones implementadas", "texto": "Artículos específicos de NSR-10 y ACI 318-25 que se han programado y documentado. Cuando ambas normas difieren, se adopta la más exigente. No se verifica la totalidad de ninguna de las dos." },
+    { "titulo": "Parámetros configurables", "texto": "Recubrimientos, diámetros, separaciones mínimas, tolerancias de agrupación, límites de deflexión, parámetros sísmicos y estilo de plano, entre otros." },
+    { "titulo": "Criterio profesional", "texto": "Alertas, casos con varias opciones y todo resultado de diseño. La validación y aprobación corresponden al ingeniero competente." }
+  ],
+  "aviso": "NSR-10 y ACI 318-25 son referencias técnicas de trabajo. El programa no garantiza cumplimiento normativo automático ni sustituye la revisión y firma del profesional responsable.",
+  "demo_titulo": "Capturas y ejemplos",
+  "demo_texto": "Espacio para capturas reales del software, planos, detalles y modelos. Se incorporarán cuando estén seleccionadas y aprobadas para publicación.",
+  "demos": [
+    { "titulo": "Plano de despiece de una viga", "imagen": "" },
+    { "titulo": "Cartilla de despiece", "imagen": "" },
+    { "titulo": "Detalle de nudo", "imagen": "" },
+    { "titulo": "Modelo 3D del refuerzo", "imagen": "" }
+  ],
+  "cta": "¿Necesitas detallamiento estructural o documentación técnica? Cuéntanos tu proyecto."
+}

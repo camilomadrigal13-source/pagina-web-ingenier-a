@@ -1,0 +1,26 @@
+{
+  "seo": {
+    "titulo": "Ingeniería civil, arquitectura y gestión de proyectos en Sabaneta y Medellín",
+    "descripcion": "Firma multidisciplinaria con sede en Sabaneta, Antioquia: diseño estructural y arquitectónico, BIM y planos, construcción y gestión de proyectos, y gestión documental. Trabajamos en todo Colombia."
+  },
+  "eyebrow": "Firma multidisciplinaria · Sabaneta, Antioquia",
+  "hero_titulo": "Del primer trazo al último detalle.",
+  "hero_texto": "Reunimos ingeniería, arquitectura, tecnología, gestión de proyectos y gestión documental. Podemos acompañar tu proyecto de principio a fin, o encargarnos solo del servicio que necesitas.",
+  "hero_notas": ["Medellín y Valle de Aburrá", "Antioquia y todo Colombia", "Servicios remotos"],
+  "audiencias_titulo": "Trabajamos con",
+  "audiencias": ["Empresas", "Constructoras", "Arquitectos e ingenieros", "Particulares", "Entidades públicas"],
+  "unidades_titulo": "Qué hacemos",
+  "unidades_texto": "Cuatro unidades que funcionan juntas o por separado.",
+  "valores_titulo": "Cómo trabajamos",
+  "valores": [
+    { "titulo": "Una mirada integral", "texto": "Arquitectura, estructura, costos y obra se resuelven en conjunto, no una tras otra." },
+    { "titulo": "Rigor y entregables claros", "texto": "Documentos ordenados, revisados y con criterios explícitos." },
+    { "titulo": "A la medida", "texto": "El alcance se define con cada cliente. No vendemos paquetes cerrados." },
+    { "titulo": "Recursos bien usados", "texto": "Evaluamos alternativas de costo y tiempo antes de definir." },
+    { "titulo": "Tecnología con propósito", "texto": "BIM y automatización donde reducen errores y tiempo." }
+  ],
+  "tec_titulo": "Tecnología aplicada a la ingeniería",
+  "tec_texto": "Desarrollamos herramientas propias para automatizar tareas repetitivas, como el detallamiento de refuerzo y la generación de planos y cartillas. Siempre con revisión del ingeniero.",
+  "cta_titulo": "¿Tienes un proyecto, una duda técnica o un archivo por organizar?",
+  "cta_texto": "Cuéntanos qué necesitas. Te respondemos con una propuesta o con las preguntas que nos faltan para hacerla."
+}
