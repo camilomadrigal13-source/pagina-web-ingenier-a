@@ -12,7 +12,7 @@
       "resumen": "Diseño de estructuras y edificaciones nuevas, y evaluación y reforzamiento de las existentes.",
       "seo": {
         "titulo": "Ingeniería civil, diseño estructural y arquitectura en Medellín y Antioquia",
-        "descripcion": "Diseño estructural, diseño arquitectónico, cimentaciones, reforzamiento y evaluación de estructuras existentes. Desde Sabaneta, para Medellín, Antioquia y Colombia."
+        "descripcion": "Diseño y revisión de diseños estructurales, diseño arquitectónico, cimentaciones, vulnerabilidad sísmica y reforzamiento. Desde Sabaneta, para Medellín, Antioquia y Colombia."
       },
       "intro": "Diseñamos y evaluamos estructuras y edificaciones con un criterio común: que lo que se dibuja se pueda construir, revisar y mantener. Usamos como referencia técnica la NSR-10 y, cuando el proyecto lo requiere, otras normas internacionales.",
       "nota": "Estudios de suelos, topografía y otros estudios especializados los gestionamos con profesionales o empresas aliadas cuando el proyecto los necesita. No los presentamos como capacidad propia.",
@@ -26,8 +26,17 @@
           "para": ["Propietarios y desarrolladores", "Constructoras", "Arquitectos y diseñadores"]
         },
         {
+          "nombre": "Revisión de diseños estructurales",
+          "incluye": ["Revisión de memorias de cálculo", "Revisión de planos y detalles de refuerzo", "Concepto técnico sobre diseños de terceros"],
+          "ofrecemos": "Una segunda mirada técnica sobre un diseño estructural ya hecho: revisamos supuestos, modelo, resultados, planos y detalles, y señalamos lo que hay que corregir, justificar o mejorar.",
+          "problema": "Un error de diseño o un detalle mal resuelto se descubre tarde, en obra o en el trámite, y cuesta mucho más que revisarlo a tiempo.",
+          "entregables": ["Informe de revisión con observaciones priorizadas", "Lista de puntos por corregir o justificar", "Concepto técnico escrito", "Seguimiento a la respuesta del diseñador"],
+          "para": ["Propietarios e inversionistas", "Constructoras", "Arquitectos y diseñadores", "Entidades que reciben diseños"],
+          "nota": "Cuando la normativa exige una revisión independiente formal, confirmamos antes de proponer que se cumplan los requisitos del profesional y del proyecto."
+        },
+        {
           "nombre": "Evaluación, patología y reforzamiento",
-          "incluye": ["Evaluación y diagnóstico de estructuras existentes", "Patología estructural", "Vulnerabilidad sísmica", "Reforzamiento estructural"],
+          "incluye": ["Evaluación y diagnóstico de estructuras existentes", "Patología estructural", "Estudios de vulnerabilidad sísmica", "Reforzamiento estructural"],
           "ofrecemos": "Revisión de edificaciones existentes: qué tienen, cómo se comportan, qué les pasó y qué hacer. Si hace falta intervenir, diseñamos el reforzamiento.",
           "problema": "Fisuras, cambios de uso, ampliaciones o dudas sobre la seguridad de una edificación que necesitan un criterio técnico claro.",
           "entregables": ["Informe de diagnóstico", "Recomendaciones priorizadas", "Diseño de reforzamiento", "Planos y detalles de la intervención"],

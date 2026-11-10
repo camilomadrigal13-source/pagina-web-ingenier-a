@@ -20,6 +20,7 @@
   },
   "servicios": {
     "A: Diseño estructural y cimentaciones": { "modo": "m2", "valor": 28000 },
+    "A: Revisión de diseños estructurales": { "modo": "cotizar" },
     "A: Evaluación, patología y reforzamiento": { "modo": "cotizar" },
     "A: Diseño arquitectónico": { "modo": "m2", "valor": 45000 },
     "A: Coordinación y acompañamiento técnico": { "modo": "cotizar" },

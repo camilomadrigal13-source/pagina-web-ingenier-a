@@ -29,6 +29,7 @@ ${u.bloques.map((b, i) => `<article class="bloque" id="${esc(b.nombre.toLowerCas
     <div><h3 class="mini">Qué problema resuelve</h3><p>${esc(b.problema)}</p></div>
     <div><h3 class="mini">Entregables</h3><ul class="lista">${b.entregables.map((x) => `<li>${esc(x)}</li>`).join("")}</ul></div>
     <div><h3 class="mini">Es apropiado para</h3><ul class="lista">${b.para.map((x) => `<li>${esc(x)}</li>`).join("")}</ul></div>
+    ${b.nota ? `<p class="nota-sm bloque-nota">${esc(b.nota)}</p>` : ""}
     <div class="bloque-acc"><a class="btn btn-sm" href="/cotizador/?u=${u.id}&amp;s=${encodeURIComponent(b.nombre)}">Pedir propuesta</a>${b.enlace_tecnologia ? `<a class="enlace" href="/tecnologia/">Ver nuestra tecnología de detallamiento</a>` : ""}</div>
   </div>
 </article>`).join("")}
