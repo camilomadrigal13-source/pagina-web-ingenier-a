@@ -101,7 +101,7 @@ ${c.modo_prototipo ? `<aside class="aviso" role="note"><p class="mono aviso-t">B
 <h2 class="h3">Datos que recolectamos</h2><p>Los que ingresas en los formularios: nombre, correo, teléfono, datos del proyecto y el mensaje.</p>
 <h2 class="h3">Para qué los usamos</h2><p>Para responder tu solicitud y preparar una propuesta. No vendemos tus datos.</p>
 <h2 class="h3">Tus derechos</h2><p>Puedes conocer, actualizar, rectificar y solicitar la supresión de tus datos, conforme a la Ley 1581 de 2012 y sus normas reglamentarias.</p>
-<h2 class="h3">Servicios de terceros</h2><p>El sitio usa un proveedor de correo para entregar tus mensajes y Google Fonts para las tipografías.</p>
+<h2 class="h3">Servicios de terceros</h2><p>Para recibir y guardar tu solicitud usamos un proveedor de correo, una hoja de cálculo de Google y un servicio de avisos por WhatsApp. El sitio también usa Google Fonts para las tipografías.</p>
 </div></section>`;
 }
 

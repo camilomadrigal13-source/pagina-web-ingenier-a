@@ -66,11 +66,13 @@ Cambiar de nombre: editar `nombre` en `site.config.json` y poner `nombre_definit
 
 Variables en Vercel → Settings → Environment Variables (ver `.env.example`): `RESEND_API_KEY`, `CONTACT_TO`, `CONTACT_FROM`. Las claves nunca van en el navegador.
 
-Sin la clave, el formulario responde "El envío de mensajes aún no está configurado" y ofrece WhatsApp si hay número. No se muestra un falso éxito.
+Además del correo, cada solicitud puede guardarse en una **hoja de Google** y avisarse por **WhatsApp** con toda la información. Se envía por todos los canales configurados a la vez; basta con que uno llegue para confirmar al cliente. Guía paso a paso: [`docs/INTEGRACIONES.md`](docs/INTEGRACIONES.md).
+
+Sin ningún canal configurado, el formulario responde "El envío de mensajes aún no está configurado" y ofrece WhatsApp si hay número. No se muestra un falso éxito.
 
 ## Publicar (paso a paso)
 
-1. **GitHub**: subir esta carpeta como repositorio propio (recomendado separarlo del repositorio del programa de despiece) o usarla como subcarpeta (en Vercel, *Root Directory* = `sitio_web`).
+1. **GitHub**: subir esta carpeta como repositorio propio (recomendado separarlo del repositorio del programa de despiece) o usarla como subcarpeta (en Vercel, *Root Directory* = la carpeta del sitio). Este repositorio ya es independiente.
 2. **Vercel**: crear cuenta, *Add New Project*, importar el repositorio. No requiere configuración extra: `vercel.json` ya define compilación y carpeta de salida.
 3. **Resend**: crear cuenta, verificar el dominio (registros DNS que indica Resend), crear una API key. Mientras no haya dominio verificado, Resend solo permite enviar al correo del dueño de la cuenta, y sirve para probar.
 4. **Variables de entorno** en Vercel: `RESEND_API_KEY`, `CONTACT_TO`, `CONTACT_FROM`. Volver a desplegar.

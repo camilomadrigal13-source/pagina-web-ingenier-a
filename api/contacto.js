@@ -1,11 +1,11 @@
-// Función serverless (Vercel, Node) que recibe los formularios y los entrega por correo con Resend.
+// Función serverless (Vercel, Node) que recibe los formularios y los entrega por los canales configurados:
+// correo (Resend), hoja de Google y aviso de WhatsApp. Ver api/_canales.js y docs/INTEGRACIONES.md.
 // Las claves viven en variables de entorno del servidor. Nunca se envían al navegador.
-//   RESEND_API_KEY   clave de Resend (obligatoria)
-//   CONTACT_TO       correo que recibe las solicitudes (obligatoria; puede ser una lista separada por comas)
-//   CONTACT_FROM     remitente verificado en Resend, p. ej. "Sitio web <web@tudominio.co>" (opcional)
 //   ALLOWED_ORIGINS  orígenes extra permitidos, separados por comas (opcional; el propio dominio siempre se permite)
 
-const LIMITE = { ventanaMs: 10 * 60 * 1000, max: 6 };
+import { configurados, correo, hoja, whatsapp } from "./_canales.js";
+
+const LIMITE ={ ventanaMs: 10 * 60 * 1000, max: 6 };
 const visitas = new Map(); // mejor esfuerzo: en serverless cada instancia tiene su propia memoria
 
 const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
@@ -81,25 +81,18 @@ export default async function handler(req, res) {
   const { d, e } = validar(b);
   if (Object.keys(e).length) return responder(400, { error: "Revisa los datos del formulario.", campos: e });
 
-  const { RESEND_API_KEY: clave, CONTACT_TO: para, CONTACT_FROM: de } = process.env;
-  if (!clave || !para) return responder(503, { error: "El envío de mensajes aún no está configurado." });
+  // Se envía por todos los canales configurados a la vez. Basta con que uno llegue para confirmar al cliente.
+  const cfg = configurados();
+  const canales = [];
+  if (cfg.correo) canales.push(["correo", correo(d, armar(d))]);
+  if (cfg.hoja) canales.push(["hoja", hoja(d)]);
+  if (cfg.whatsapp) canales.push(["whatsapp", whatsapp(d)]);
+  if (!canales.length) return responder(503, { error: "El envío de mensajes aún no está configurado." });
 
-  const { plano, html, asunto } = armar(d);
-  try {
-    const r = await fetch("https://api.resend.com/emails", {
-      method: "POST",
-      headers: { Authorization: `Bearer ${clave}`, "Content-Type": "application/json" },
-      body: JSON.stringify({
-        from: de || "Sitio web <onboarding@resend.dev>",
-        to: para.split(",").map((x) => x.trim()).filter(Boolean),
-        reply_to: d.correo, subject: asunto, text: plano, html
-      })
-    });
-    if (!r.ok) { console.error("Resend respondió", r.status); return responder(502, { error: "No se pudo entregar el mensaje." }); }
-    return responder(200, { ok: true });
-  } catch (err) {
-    console.error("Error enviando con Resend:", err?.message);
-    return responder(502, { error: "No se pudo entregar el mensaje." });
-  }
+  const resultados = await Promise.all(canales.map(async ([nombre, p]) => [nombre, await p.catch(() => false)]));
+  const fallan = resultados.filter(([, ok]) => !ok).map(([n]) => n);
+  if (fallan.length === resultados.length) return responder(502, { error: "No se pudo entregar el mensaje." });
+  if (fallan.length) console.error("Canales con falla (el resto entregó):", fallan.join(", "));
+  return responder(200, { ok: true });
 }
 export const _prueba = { visitas };
