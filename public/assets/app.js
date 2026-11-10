@@ -164,7 +164,8 @@
     var sel = $$("input[name=servicios]:checked", cot);
     var r = $("#res-serv"), info = $("#res-info"), lista = $("#res-lista");
     r.textContent = "";
-    if (!sel.length) { r.textContent = "Aún no has seleccionado servicios."; info.hidden = true; return; }
+    var dl = $("#resumen"); if (dl) dl.hidden = !sel.length;
+    if (!sel.length) { info.hidden = true; return; }
     var ul = document.createElement("ul"); ul.className = "lista";
     sel.forEach(function (c) { var li = document.createElement("li"); li.textContent = c.value.replace(/^[A-D]: /, ""); ul.appendChild(li); });
     r.appendChild(ul);
@@ -183,7 +184,9 @@
   function estimar() {
     if (!cot || !tar) return;
     var caja = $("#estimado"), sel = $$("input[name=servicios]:checked", cot), campoEst = $("#cot-estimacion");
-    if (!sel.length) { caja.hidden = true; if (campoEst) campoEst.value = ""; return; }
+    var vacio = $("#est-vacio"), barra = $("#est-barra");
+    if (vacio) vacio.hidden = sel.length > 0;
+    if (!sel.length) { caja.hidden = true; if (barra) barra.hidden = true; if (campoEst) campoEst.value = ""; return; }
     var area = parseFloat($("#cot-area").value) || 0;
     var f = (tar.factor_tipo && tar.factor_tipo[$("#cot-tipo").value]) || 1;
     var bajo = 0, alto = 0, lineas = [], faltaArea = false, otros = false;
@@ -207,6 +210,7 @@
     if (alto > 0) { base = cop(bajo) + " – " + cop(alto); tot.textContent = base + (otros || faltaArea ? " + otros por definir" : ""); }
     else { base = faltaArea ? "Falta el área para estimar" : "Valor a definir con la propuesta"; tot.textContent = base; }
     caja.hidden = false;
+    if (barra) { barra.hidden = false; $("#est-barra-t").textContent = alto > 0 ? cop(bajo) + " – " + cop(alto) : base; }
     if (campoEst) campoEst.value = ("Estimación mostrada al cliente (" + (tar.demo ? "valores de ejemplo" : "referencial") + "): " + base + "\n" + lineas.map(function (l) { return l[0] + ": " + l[1]; }).join("\n")).slice(0, 1800);
   }
   var bEnv = $("#est-enviar");

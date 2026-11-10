@@ -54,11 +54,10 @@ export function cotizador(c, q, servicios, tarifas) {
   const verEstimado = c.modo_prototipo || tarifas.verificadas;
   return `${cabecera("Solicitar cotización", q.titulo, q.intro)}
 <section class="sec sec-top"><div class="wrap cot">
-  <div class="cot-form">${formulario(c, servicios, q)}</div>
-  <aside class="cot-res" aria-labelledby="res-t"><h2 class="h3" id="res-t">Resumen de tu solicitud</h2>
-    <dl id="resumen" class="resumen"><dt>Servicios</dt><dd id="res-serv">Aún no has seleccionado servicios.</dd></dl>
-    <div id="res-info" hidden><h3 class="mini">Información que acelera la propuesta</h3><ul class="lista" id="res-lista"></ul></div>
-    ${verEstimado ? `<div id="estimado" class="estimado" hidden>
+  <div class="cot-form">${formulario(c, servicios, q, verEstimado ? tarifas : null)}</div>
+  <aside class="cot-res" id="panel-cot" aria-labelledby="res-t"><h2 class="h3" id="res-t">Tu cotización</h2>
+    ${verEstimado ? `<p class="est-vacio nota-sm" id="est-vacio">Marca servicios y completa el área para ver tu estimado.</p>
+    <div id="estimado" class="estimado" hidden>
       <h3 class="mini">Estimación referencial</h3>
       ${tarifas.verificadas ? "" : `<p class="ejemplo mono">${esc(tarifas.aviso_ejemplo)}</p>`}
       <p class="est-total" id="est-total"></p>
@@ -66,7 +65,10 @@ export function cotizador(c, q, servicios, tarifas) {
       <p class="nota-sm" id="est-nota">${esc(tarifas.nota)}</p>
       <div class="est-final"><p>${esc(tarifas.mensaje_final)}</p><button type="button" class="btn btn-sm" id="est-enviar">Quiero la cotización detallada</button></div>
     </div>` : `<p class="nota-sm">Cada propuesta se define según alcance, entregables y plazo. Envía tu solicitud y te respondemos con el valor.</p>`}
+    <dl id="resumen" class="resumen" hidden><dt>Servicios elegidos</dt><dd id="res-serv"></dd></dl>
+    <div id="res-info" hidden><h3 class="mini">Información que acelera la propuesta</h3><ul class="lista" id="res-lista"></ul></div>
   </aside>
+  ${verEstimado ? `<a class="est-barra" id="est-barra" href="#panel-cot" hidden><span class="mono">Tu estimado</span><strong id="est-barra-t"></strong></a>` : ""}
 </div><script type="application/json" id="info-servicio">${JSON.stringify(q.info_por_servicio)}</script>${verEstimado ? `<script type="application/json" id="tarifas">${JSON.stringify({ demo: !tarifas.verificadas, moneda: tarifas.moneda, redondeo: tarifas.redondeo, rango: tarifas.rango, factor_tipo: tarifas.factor_tipo, servicios: tarifas.servicios })}</script>` : ""}</section>`;
 }
 

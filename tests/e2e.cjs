@@ -106,7 +106,7 @@ const ok = (n, c, d = "") => { res.push([c, n, d]); console.log(`${c ? "OK  " : 
   await page.click("#form-cotizar button[type=submit]");
   const errs = await page.$$eval("#form-cotizar .error:not([hidden])", (e) => e.length);
   const foco = await page.evaluate(() => document.activeElement && document.activeElement.id);
-  ok("Validación muestra errores y enfoca el primero", errs >= 5 && foco === "cotizar-nombre", `${errs} errores, foco=${foco}`);
+  ok("Validación muestra errores y enfoca el primero", errs >= 5 && foco === "cot-tipo", `${errs} errores, foco=${foco}`);
   await page.fill("#cotizar-nombre", "Ana Pérez");
   await page.fill("#cotizar-correo", "malo");
   await page.fill("#cotizar-msg", "Necesito despiece de vigas de un edificio.");

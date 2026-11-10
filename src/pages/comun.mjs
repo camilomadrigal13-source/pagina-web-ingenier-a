@@ -20,13 +20,15 @@ const campo = (id, label, control, ayuda = "") => `<div class="campo"><label for
 const opciones = (arr, vacio) => `${vacio ? `<option value="">${vacio}</option>` : ""}${arr.map((o) => `<option>${esc(o)}</option>`).join("")}`;
 
 /** Formulario de contacto o cotización. Se envía por fetch a la función serverless. */
-export function formulario(c, servicios, cot = null) {
+export function formulario(c, servicios, cot = null, tarifas = null) {
   const esCot = !!cot;
+  const paso = (n, t) => `<p class="paso-f"><span class="mono">${n}</span>${t}</p>`;
+  const etiqueta = (u, b) => { const t = tarifas && tarifas.servicios[`${u.id}: ${b.nombre}`]; return t ? `<small class="tag-est mono">${t.modo === "m2" ? "estimable" : "a cotizar"}</small>` : ""; };
   const idf = esCot ? "cotizar" : "contacto";
   const unidadesOpc = [...servicios.map((u) => `${u.id}. ${u.nombre}`), "Varias unidades", "No estoy seguro"];
   const bloque1 = campo(`${idf}-nombre`, "Nombre completo", `<input id="${idf}-nombre" name="nombre" type="text" autocomplete="name" required maxlength="120">`)
     + `<div class="fila">${campo(`${idf}-correo`, "Correo electrónico", `<input id="${idf}-correo" name="correo" type="email" autocomplete="email" required maxlength="160" inputmode="email">`)}${campo(`${idf}-tel`, "Teléfono o WhatsApp (opcional)", `<input id="${idf}-tel" name="telefono" type="tel" autocomplete="tel" maxlength="30" inputmode="tel">`)}</div>`;
-  const cotCampos = esCot ? `
+  const cotProyecto = esCot ? `
     <div class="fila">
       ${campo("cot-tipo", "Tipo de proyecto", `<select id="cot-tipo" name="tipo_proyecto" required>${opciones(cot.tipos_proyecto, "Selecciona")}</select>`)}
       ${campo("cot-ubic", "Ubicación", `<select id="cot-ubic" name="ubicacion" required>${opciones(cot.ubicaciones, "Selecciona")}</select>`)}
@@ -34,19 +36,21 @@ export function formulario(c, servicios, cot = null) {
     <div class="fila">
       ${campo("cot-area", "Área aproximada en m² (si aplica)", `<input id="cot-area" name="area_m2" type="number" min="1" max="1000000" step="1" inputmode="numeric">`, "Puedes dejarlo vacío si no aplica.")}
       ${campo("cot-nivel", "Nivel de desarrollo del proyecto", `<select id="cot-nivel" name="nivel" required>${opciones(cot.niveles.map((n) => n.texto), "Selecciona")}</select>`)}
-    </div>
-    <fieldset class="grupo" id="cot-servicios"><legend>Servicios que necesitas</legend>
-      <p class="ayuda">Marca todos los que apliquen. También puedes pedir uno solo.</p>
-      ${servicios.map((u) => `<div class="grupo-u"><p class="grupo-t"><span class="mono">${u.id}</span> ${esc(u.corto)}</p><div class="checks">${u.bloques.map((b, i) => `<label class="chk"><input type="checkbox" name="servicios" value="${esc(u.id)}: ${esc(b.nombre)}" data-u="${u.id}"><span>${esc(b.nombre)}</span></label>`).join("")}</div></div>`).join("")}
+    </div>` : "";
+  const cotServicios = esCot ? `
+    <fieldset class="grupo" id="cot-servicios"><legend class="sr">Servicios que necesitas</legend>
+      ${servicios.map((u) => `<div class="grupo-u"><p class="grupo-t"><span class="mono">${u.id}</span> ${esc(u.corto)}</p><div class="checks">${u.bloques.map((b, i) => `<label class="chk"><input type="checkbox" name="servicios" value="${esc(u.id)}: ${esc(b.nombre)}" data-u="${u.id}"><span>${esc(b.nombre)}${etiqueta(u, b)}</span></label>`).join("")}</div></div>`).join("")}
       <p class="error" id="cot-servicios-error" role="alert" hidden></p>
-    </fieldset>`
-    : campo("contacto-servicio", "Servicio de interés", `<select id="contacto-servicio" name="servicio" required>${opciones(unidadesOpc, "Selecciona")}</select>`);
+    </fieldset>` : "";
+  const cotCampos = esCot ? "" : campo("contacto-servicio", "Servicio de interés", `<select id="contacto-servicio" name="servicio" required>${opciones(unidadesOpc, "Selecciona")}</select>`);
   const msg = campo(`${idf}-msg`, esCot ? "Describe tu proyecto o necesidad" : "Cuéntanos tu proyecto", `<textarea id="${idf}-msg" name="mensaje" rows="5" required minlength="15" maxlength="4000" placeholder="Qué necesitas, dónde, en qué estado está y para cuándo."></textarea>`);
   const pref = campo(`${idf}-pref`, "¿Cómo prefieres que te contactemos?", `<select id="${idf}-pref" name="contacto_preferido" required>${opciones(esCot ? cot.contacto_preferido : ["Correo electrónico", "WhatsApp", "Llamada"], "Selecciona")}</select>`);
   return `<form class="form" id="form-${idf}" data-form="${idf}" novalidate>
     <input type="hidden" name="origen" value="${idf}">${esCot ? '<input type="hidden" name="estimacion" id="cot-estimacion">' : ""}
     <div class="hp" aria-hidden="true"><label>No llenar este campo<input type="text" name="sitio_web" tabindex="-1" autocomplete="off"></label></div>
-    ${bloque1}${cotCampos}${msg}${pref}
+    ${esCot
+      ? `${paso(1, "Tu proyecto")}${cotProyecto}${paso(2, "Servicios que necesitas")}<p class="ayuda">Marca todos los que apliquen. También puedes pedir uno solo.</p>${cotServicios}${paso(3, "Tus datos")}${bloque1}${paso(4, "Cuéntanos más")}${msg}${pref}`
+      : `${bloque1}${cotCampos}${msg}${pref}`}
     <div class="campo chk-uno"><label class="chk"><input type="checkbox" name="acepto" id="${idf}-acepto" required><span>Autorizo el tratamiento de mis datos para responder esta solicitud, según la <a href="/privacidad/" target="_blank" rel="noopener">política de privacidad</a>.</span></label><p class="error" id="${idf}-acepto-error" role="alert" hidden></p></div>
     <div class="form-acc">
       <button class="btn" type="submit"><span class="btn-t">${esCot ? "Enviar solicitud" : "Enviar mensaje"}</span><span class="btn-c" hidden>Enviando…</span></button>

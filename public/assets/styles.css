@@ -260,7 +260,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 /* formularios */
 .cot{display:grid;grid-template-columns:1.4fr .8fr;gap:clamp(28px,5vw,72px);align-items:start}
 .cot-res{position:sticky;top:96px;border:1px solid var(--linea);background:var(--sup);padding:26px;display:grid;gap:16px;min-width:0}
-@media(max-width:900px){.cot{grid-template-columns:1fr}.cot-res{position:static;order:-1}}
+@media(max-width:900px){.cot{grid-template-columns:1fr}.cot-res{position:static}}
 .form{display:grid;gap:22px;min-width:0}
 .fila{display:grid;grid-template-columns:1fr 1fr;gap:20px}
 @media(max-width:640px){.fila{grid-template-columns:1fr}}
@@ -286,6 +286,19 @@ input:focus,select:focus,textarea:focus{outline:2px solid var(--tec);outline-off
 .resumen{display:grid;gap:6px;margin:0}.resumen dt{font:500 .72rem var(--f-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--suave)}.resumen dd{margin:0}
 .nota-sm{font-size:.84rem;color:var(--suave)}
 .prosa{max-width:72ch}.prosa .h3{margin:30px 0 8px}.prosa p{color:var(--suave)}
+
+/* cotizador: pasos, etiquetas y barra móvil */
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.paso-f{display:flex;align-items:center;gap:12px;font:400 1.35rem/1.2 var(--f-disp);padding-top:18px;border-top:1px solid var(--tinta);margin-top:6px}
+.paso-f:first-of-type{margin-top:0}
+.paso-f .mono{display:grid;place-items:center;width:28px;height:28px;border:1px solid var(--tec);color:var(--tec);border-radius:50%;font-size:.78rem}
+.tag-est{display:inline-block;margin-left:8px;padding:1px 6px;border:1px solid var(--linea);color:var(--suave);font-size:.66rem;letter-spacing:.04em;vertical-align:middle}
+.est-vacio{padding:14px;border:1px dashed var(--tenue)}
+.est-barra{display:none}
+@media(max-width:900px){
+  .est-barra:not([hidden]){display:flex;justify-content:space-between;align-items:center;gap:12px;position:fixed;left:0;right:0;bottom:0;z-index:45;background:var(--marca);color:var(--sobre-marca);text-decoration:none;padding:12px max(20px,env(safe-area-inset-right,0px)) max(12px,env(safe-area-inset-bottom,0px)) max(20px,env(safe-area-inset-left,0px))}
+  .est-barra strong{font:500 1rem var(--f-txt);font-variant-numeric:tabular-nums}
+}
 
 /* estimación del cotizador */
 .estimado{display:grid;gap:12px;border-top:1px solid var(--tinta);padding-top:16px}
