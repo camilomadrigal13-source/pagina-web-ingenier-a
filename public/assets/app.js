@@ -211,7 +211,7 @@
     else { base = faltaArea ? "Falta el área para estimar" : "Valor a definir con la propuesta"; tot.textContent = base; }
     caja.hidden = false;
     if (barra) { barra.hidden = false; $("#est-barra-t").textContent = alto > 0 ? cop(bajo) + " – " + cop(alto) : base; }
-    if (campoEst) campoEst.value = ("Estimación mostrada al cliente (" + (tar.demo ? "valores de ejemplo" : "referencial") + "): " + base + "\n" + lineas.map(function (l) { return l[0] + ": " + l[1]; }).join("\n")).slice(0, 1800);
+    if (campoEst) campoEst.value = ("Cotización preliminar mostrada al cliente (" + (tar.demo ? "valores de ejemplo" : "referencial") + "): " + base + "\n" + lineas.map(function (l) { return l[0] + ": " + l[1]; }).join("\n")).slice(0, 1800);
   }
   var bEnv = $("#est-enviar");
   if (bEnv) bEnv.addEventListener("click", function () {

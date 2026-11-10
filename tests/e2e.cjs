@@ -98,7 +98,7 @@ const ok = (n, c, d = "") => { res.push([c, n, d]); console.log(`${c ? "OK  " : 
   await page.selectOption("#cot-tipo", { label: "Edificación existente (evaluación o reforzamiento)" });
   const e2 = await page.textContent("#est-total");
   ok("Estimado calcula un rango en COP y cambia con el tipo de proyecto", /\$/.test(e1) && /–/.test(e1) && e1 !== e2, `${e1} → ${e2}`);
-  ok("Estimado muestra el aviso de valores de ejemplo y el mensaje final", /ejemplo/.test(await page.textContent(".ejemplo")) && /cotización detallada/.test(await page.textContent(".est-final")));
+  ok("Estimado muestra el aviso de valores de ejemplo y el mensaje final", /ejemplo/.test(await page.textContent(".ejemplo")) && /ajustada/.test(await page.textContent(".est-final")) && /preliminar/.test(await page.textContent(".est-etq")));
   await page.click("#est-enviar");
   ok("Botón del estimado lleva al formulario", await page.evaluate(() => document.activeElement.id) === "cotizar-nombre");
   await page.fill("#cot-area", "");

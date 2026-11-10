@@ -58,12 +58,14 @@ export function cotizador(c, q, servicios, tarifas) {
   <aside class="cot-res" id="panel-cot" aria-labelledby="res-t"><h2 class="h3" id="res-t">Tu cotización</h2>
     ${verEstimado ? `<p class="est-vacio nota-sm" id="est-vacio">Marca servicios y completa el área para ver tu estimado.</p>
     <div id="estimado" class="estimado" hidden>
-      <h3 class="mini">Estimación referencial</h3>
-      ${tarifas.verificadas ? "" : `<p class="ejemplo mono">${esc(tarifas.aviso_ejemplo)}</p>`}
+      <p class="est-etq mono">${esc(tarifas.etiqueta)}</p>
+      <p class="nota-sm">${esc(tarifas.intro_preliminar)}</p>
       <p class="est-total" id="est-total"></p>
       <ul class="est-lineas" id="est-lineas"></ul>
       <p class="nota-sm" id="est-nota">${esc(tarifas.nota)}</p>
-      <div class="est-final"><p>${esc(tarifas.mensaje_final)}</p><button type="button" class="btn btn-sm" id="est-enviar">Quiero la cotización detallada</button></div>
+      <div class="est-final"><h3 class="est-final-t">${esc(tarifas.final_titulo)}</h3><p>${esc(tarifas.mensaje_final)}</p>
+        <div class="est-final-b"><button type="button" class="btn btn-sm" id="est-enviar">${esc(tarifas.boton_final)}</button>${c.waNumero ? `<a class="btn btn-sm btn-borde" href="${esc(waLink(c, "Hola, vi la cotización preliminar y quiero una cotización más ajustada."))}" target="_blank" rel="noopener">Escribir por WhatsApp</a>` : ""}</div></div>
+      ${tarifas.verificadas ? "" : `<p class="ejemplo mono">${esc(tarifas.aviso_ejemplo)}</p>`}
     </div>` : `<p class="nota-sm">Cada propuesta se define según alcance, entregables y plazo. Envía tu solicitud y te respondemos con el valor.</p>`}
     <dl id="resumen" class="resumen" hidden><dt>Servicios elegidos</dt><dd id="res-serv"></dd></dl>
     <div id="res-info" hidden><h3 class="mini">Información que acelera la propuesta</h3><ul class="lista" id="res-lista"></ul></div>
