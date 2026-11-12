@@ -1,31 +1,31 @@
 /* Diseño: editorial arquitectónico. Petróleo, grafito, marfil y arena; azul de copia solo para el dibujo técnico. */
 :root{
-  --bg:#E9E4DA;          /* marfil */
-  --bg-alt:#DED8CB;
-  --sup:#F5F2EB;
-  --tinta:#272A29;       /* grafito */
-  --suave:#4F5552;
-  --tenue:#8C8E86;
-  --linea:#C6BFB0;
-  --marca:#263B42;       /* verde petróleo */
-  --sobre-marca:#F2EEE4;
-  --arena:#B4A58F;
-  --tec:#2F5FA8;         /* azul de copia: cotas y ejes */
-  --banda:#263B42;
-  --sobre-banda:#E9E4DA;
-  --ok:#2C6B4A;
-  --err:#A3342B;
+  --bg:#F4F0E7;          /* marfil cálido */
+  --bg-alt:#EAE4D6;
+  --sup:#FBF9F4;
+  --tinta:#1B2427;       /* grafito verdoso */
+  --suave:#44545A;
+  --tenue:#556367;
+  --linea:#CFC7B5;
+  --marca:#1F4A52;       /* verde petróleo profundo */
+  --sobre-marca:#F4F0E7;
+  --arena:#8A6320;       /* bronce-arena: legible sobre marfil (4,75:1) */
+  --tec:#2F5FA8;         /* azul técnico: cotas y ejes */
+  --banda:#17363D;
+  --sobre-banda:#F4F0E7;
+  --ok:#2F6B45;
+  --err:#A8321F;
   --f-disp:"Newsreader","Iowan Old Style",Georgia,serif;
   --f-txt:"Manrope","Helvetica Neue",Arial,sans-serif;
   --f-mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
   --ancho:1180px;
 }
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
-  --bg:#151A1B;--bg-alt:#1B2224;--sup:#202A2D;--tinta:#E9E4DA;--suave:#B6B3A8;--tenue:#7F8782;--linea:#33403F;
-  --marca:#B4A58F;--sobre-marca:#151A1B;--tec:#8FB0E6;--banda:#0E1517;--sobre-banda:#E9E4DA;--ok:#6CCB9B;--err:#F08A80;color-scheme:dark}}
+  --bg:#0F1B1E;--bg-alt:#142529;--sup:#1A2D32;--tinta:#EDE8DC;--suave:#B7C1C2;--tenue:#8FA0A3;--linea:#2C4247;
+  --marca:#7DBAC4;--sobre-marca:#0F1B1E;--arena:#D9B36C;--tec:#8DB2EC;--banda:#1F4A52;--sobre-banda:#F4F0E7;--ok:#6DC08B;--err:#F08C7A;color-scheme:dark}}
 :root[data-theme="dark"]{
-  --bg:#151A1B;--bg-alt:#1B2224;--sup:#202A2D;--tinta:#E9E4DA;--suave:#B6B3A8;--tenue:#7F8782;--linea:#33403F;
-  --marca:#B4A58F;--sobre-marca:#151A1B;--tec:#8FB0E6;--banda:#0E1517;--sobre-banda:#E9E4DA;--ok:#6CCB9B;--err:#F08A80;color-scheme:dark}
+  --bg:#0F1B1E;--bg-alt:#142529;--sup:#1A2D32;--tinta:#EDE8DC;--suave:#B7C1C2;--tenue:#8FA0A3;--linea:#2C4247;
+  --marca:#7DBAC4;--sobre-marca:#0F1B1E;--arena:#D9B36C;--tec:#8DB2EC;--banda:#1F4A52;--sobre-banda:#F4F0E7;--ok:#6DC08B;--err:#F08C7A;color-scheme:dark}
 
 *,*::before,*::after{box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
@@ -80,7 +80,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .btn:hover{transform:translateY(-1px)}
 .btn-sm{min-height:42px;padding:10px 18px;font-size:.88rem}
 .btn-borde{background:transparent;color:var(--tinta);border-color:var(--tinta)}
-.btn-claro{background:var(--sobre-banda);color:#263B42;border-color:var(--sobre-banda)}
+.btn-claro{background:var(--sobre-banda);color:#17363D;border-color:var(--sobre-banda)}
 .btn[disabled]{opacity:.6;cursor:progress}
 .cta-banda .btn-borde{color:var(--sobre-banda);border-color:var(--sobre-banda)}
 
@@ -186,11 +186,11 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .otras a{text-decoration:none;display:block;padding:12px 0;border-bottom:1px solid var(--linea)}
 .otras a:hover{border-bottom-color:var(--tinta)}
 .otras .mono{color:var(--tec);margin-right:8px}
-.u-D{--arena:#B4A58F}
-.u-D .cab{background:var(--arena);color:#272A29}
-.u-D .cab .lead,.u-D .cab .eyebrow{color:#3A3D3B}
-.u-D .cab .trama{--tenue:#6F6A5E;--tec:#263B42}
-.u-pg.u-D .cab{--tec:#263B42}
+/* Unidad D (gestión documental): identidad propia en arena clara, con texto oscuro (≥ 8:1) en claro y oscuro */
+.u-D .cab{background:#DCCBA6;color:#1B2427}
+.u-D .cab .lead,.u-D .cab .eyebrow{color:#33403F}
+.u-D .cab .trama{--tenue:#6F6A5E;--tec:#1F4A52}
+.u-pg.u-D .cab{--tec:#1F4A52}
 
 /* tecnología */
 .flujo-dib{margin-bottom:12px}

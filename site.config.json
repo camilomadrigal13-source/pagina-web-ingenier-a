@@ -1,7 +1,7 @@
 {
   "_ayuda": "Todo lo que cambia con la firma está aquí. Lo vacío (\"\") no se publica ni se inventa. Después de editar: npm run build (Vercel lo hace solo al subir a GitHub).",
 
-  "nombre": "Cota Estudio",
+  "nombre": "Crisol Estudio",
   "nombre_definitivo": false,
   "lema": "Del primer trazo al último detalle.",
   "descriptor": "Ingeniería, arquitectura, BIM, construcción y gestión documental",

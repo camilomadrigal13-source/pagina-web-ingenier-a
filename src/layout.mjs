@@ -74,7 +74,7 @@ export function pagina(c, { ruta, titulo, descripcion, cuerpo, servicios, migas 
 <title>${esc(tituloCompleto)}</title>
 <meta name="description" content="${esc(descripcion)}">
 <link rel="canonical" href="${esc(canon)}">
-<meta name="theme-color" content="#263B42">
+<meta name="theme-color" content="#1F4A52">
 ${c.modo_prototipo ? '<meta name="robots" content="noindex,nofollow">' : ""}
 <meta property="og:type" content="website">
 <meta property="og:locale" content="es_CO">

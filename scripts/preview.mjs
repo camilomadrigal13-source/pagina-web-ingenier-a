@@ -52,7 +52,7 @@ const enrutador = `
   window.addEventListener("hashchange",ir);ir();
 })();`;
 
-const html = `<title>Cota Estudio</title>
+const html = `<title>${(readFileSync(join(RAIZ, "site.config.json"), "utf8").match(/"nombre":\s*"([^"]+)"/) || [, "Sitio"])[1]}</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="stylesheet" href="${fuentes}">
 <style>${css}
