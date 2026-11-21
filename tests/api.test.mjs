@@ -98,6 +98,35 @@ test("si todos los canales configurados fallan, 502", async () => {
 test("proveedor de WhatsApp incompleto no cuenta como configurado (503)", async () => {
   limpiar(); process.env.WA_PROVIDER = "callmebot"; simularCanales({}); assert.equal((await llamar(completo)).code, 503);
 });
+/* Adaptador de Cloudflare Pages Functions: misma lógica, con Request/Response y variables en context.env */
+import { onRequest as cf } from "../functions/api/contacto.js";
+const llamarCF = async (body, { method = "POST", headers = {}, env = {} } = {}) => {
+  const request = new Request("https://sitio.pages.dev/api/contacto", {
+    method, headers: { "content-type": "application/json", "cf-connecting-ip": "7.7.7.7", ...headers },
+    body: method === "POST" ? JSON.stringify(body) : undefined
+  });
+  const res = await cf({ request, env });
+  return { code: res.status, json: await res.json(), headers: res.headers };
+};
+test("Cloudflare: GET responde 405 con Allow", async () => { limpiar(); const r = await llamarCF(null, { method: "GET" }); assert.equal(r.code, 405); assert.equal(r.headers.get("allow"), "POST"); });
+test("Cloudflare: sin configuración responde 503", async () => { limpiar(); simularCanales({}); assert.equal((await llamarCF(completo)).code, 503); });
+test("Cloudflare: usa las variables de context.env (no process.env) y escribe en la hoja", async () => {
+  limpiar(); simularCanales({});
+  const r = await llamarCF(completo, { env: { SHEETS_WEBHOOK_URL: "https://script.google.com/macros/s/ABC/exec", SHEETS_TOKEN: "tok_cf" } });
+  assert.equal(r.code, 200); assert.equal(llamadas.length, 1);
+  assert.equal(JSON.parse(llamadas[0].o.body).token, "tok_cf"); assert.equal(r.headers.get("cache-control"), "no-store");
+});
+test("Cloudflare: rechaza origen ajeno y acepta el propio", async () => {
+  limpiar(); simularCanales({});
+  const env = { SHEETS_WEBHOOK_URL: "https://script.google.com/macros/s/ABC/exec", SHEETS_TOKEN: "t" };
+  assert.equal((await llamarCF(completo, { env, headers: { origin: "https://malo.com" } })).code, 403);
+  assert.equal((await llamarCF(completo, { env, headers: { origin: "https://sitio.pages.dev" } })).code, 200);
+});
+test("Cloudflare: cuerpo que no es JSON responde 400", async () => {
+  limpiar();
+  const request = new Request("https://sitio.pages.dev/api/contacto", { method: "POST", body: "no es json" });
+  const res = await cf({ request, env: {} }); assert.equal(res.status, 400);
+});
 test("falla de Resend responde 502 sin filtrar detalles", async () => { limpiar(); entorno(); simular(false); const r = await llamar(valido); assert.equal(r.code, 502); assert.ok(!JSON.stringify(r.json).includes("re_test")); });
 test("limita envíos repetidos por IP", async () => {
   limpiar(); entorno(); simular(); let ultimo;

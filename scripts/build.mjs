@@ -56,6 +56,24 @@ writeFileSync(join(dist, "sitemap.xml"),
 writeFileSync(join(dist, "robots.txt"),
   c.modo_prototipo ? "User-agent: *\nDisallow: /\n" : `User-agent: *\nAllow: /\nDisallow: /api/\n\nSitemap: ${c.url}/sitemap.xml\n`);
 
+// Cloudflare Pages no lee vercel.json: las cabeceras de seguridad van en un archivo _headers dentro de dist/.
+// Solo se escribe al compilar en Cloudflare (CF_PAGES=1) o con TARGET=cloudflare, para no exponerlo en otros hostings.
+if (process.env.CF_PAGES || process.env.TARGET === "cloudflare") {
+  writeFileSync(join(dist, "_headers"), `/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+  Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'
+
+/assets/*
+  Cache-Control: public, max-age=3600, must-revalidate
+
+/img/*
+  Cache-Control: public, max-age=86400
+`);
+}
+
 console.log(`Sitio generado: ${rutas.length + 1} páginas en dist/ (modo ${c.modo_prototipo ? "prototipo, sin indexar" : "producción"}).`);
 const pend = pendientes(c);
 if (pend.length) console.log("Pendiente de definir:\n  - " + pend.join("\n  - "));

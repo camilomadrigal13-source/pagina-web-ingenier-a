@@ -56,6 +56,10 @@ Al guardar y subir a GitHub, Vercel recompila. No hay que tocar código. Lo que 
 
 Cambiar de nombre: editar `nombre` en `site.config.json` y poner `nombre_definitivo: true`. Cambiar el logo: poner la ruta en `logo`. Regenerar `public/img/og.png` (imagen para compartir) con el nombre nuevo.
 
+## Dónde publicarlo
+
+El sitio funciona en **Vercel** (`api/contacto.js`, configuración en `vercel.json`) y en **Cloudflare Pages** (`functions/api/contacto.js`, guía en [`docs/CLOUDFLARE.md`](docs/CLOUDFLARE.md)). Las dos comparten la misma lógica (`api/_nucleo.js`). Con muy pocas visitas, el plan gratis de cualquiera de las dos cubre el uso. Antes de lanzar, revisa los términos de uso comercial de cada plan gratis: el de Vercel (Hobby) es para uso no comercial.
+
 ## Formularios: recomendación
 
 | Opción | Costo | Mantenimiento | Seguridad |
