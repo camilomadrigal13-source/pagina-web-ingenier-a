@@ -3,7 +3,8 @@
 const { chromium } = require("playwright");
 const BASE = process.env.BASE || "http://localhost:3111";
 const SHOTS = process.argv[2];
-const WA = process.env.EXPECT_WA || ""; // número esperado si el sitio se compiló con SITE_WHATSAPP
+// Número esperado: el de site.config.json, o el de SITE_WHATSAPP si el sitio se compiló con esa variable.
+const WA = process.env.EXPECT_WA ?? String(require("../site.config.json").contacto.whatsapp || "").replace(/\D/g, "");
 
 const res = [];
 const ok = (n, c, d = "") => { res.push([c, n, d]); console.log(`${c ? "OK  " : "FALLA"} ${n}${d ? " — " + d : ""}`); };
