@@ -1,7 +1,7 @@
 # Sitio web de la firma (prototipo v2)
 
 Sitio corporativo en español: Inicio, Nosotros, Servicios (4 unidades, cada una con su página), Tecnología, Proyectos, Proceso, Cotizador, Contacto y Privacidad.
-Nombre de trabajo: **Dimen-city** (se cambia en un solo archivo).
+Nombre de trabajo: **Crisol Estudio** (se cambia en un solo archivo).
 
 ## Decisión técnica: por qué NO Next.js (todavía)
 
