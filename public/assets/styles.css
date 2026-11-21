@@ -58,6 +58,10 @@ ul,ol{margin:0;padding:0;list-style:none}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:41}
 .enc-in{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:68px}
 .logo{display:inline-flex;align-items:center;gap:10px;text-decoration:none;font:500 1.25rem/1 var(--f-disp);letter-spacing:-.01em;color:var(--tinta)}
+.logo-t{display:grid;gap:4px}
+.logo small{font:500 .56rem/1 var(--f-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--suave);white-space:nowrap}
+@media(max-width:350px){.logo small{display:none}}
+@media(max-width:480px){.logo small{font-size:.5rem;letter-spacing:.06em}.logo{gap:8px}.enc-in{gap:10px}}
 .logo img,.marca{width:28px;height:28px;color:var(--tinta);flex:none}
 .nav ul{display:flex;gap:26px}
 .nav a{text-decoration:none;font-size:.92rem;color:var(--suave);padding:8px 0;border-bottom:1px solid transparent}

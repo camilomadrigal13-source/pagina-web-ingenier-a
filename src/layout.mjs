@@ -16,9 +16,9 @@ export const NAV = [
 export const waLink = (c, texto = "") =>
   c.waNumero ? `https://wa.me/${c.waNumero}${texto ? `?text=${encodeURIComponent(texto)}` : ""}` : "";
 
-export function logo(c) {
+export function logo(c, cabecera = false) {
   const img = c.logo ? `<img src="${esc(c.logo)}" alt="" width="28" height="28">` : marca();
-  return `<a class="logo" href="/" aria-label="${esc(c.nombre)}, inicio">${img}<span>${esc(c.nombre)}</span></a>`;
+  return `<a class="logo" href="/" aria-label="${esc(c.nombre)}, inicio">${img}<span class="logo-t"><span>${esc(c.nombre)}</span>${cabecera && c.descriptor_corto ? `<small>${esc(c.descriptor_corto)}</small>` : ""}</span></a>`;
 }
 
 function jsonLd(c, servicios) {
@@ -96,7 +96,7 @@ ${c.modo_prototipo ? '<meta name="robots" content="noindex,nofollow">' : ""}
 ${banner}
 <header class="enc">
   <div class="wrap enc-in">
-    ${logo(c)}
+    ${logo(c, true)}
     <nav id="menu" class="nav" aria-label="Principal"><ul>${nav}</ul></nav>
     <div class="enc-acc">
       <button class="icono" id="tema" type="button" aria-label="Cambiar entre modo claro y oscuro" aria-pressed="false">
