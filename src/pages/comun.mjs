@@ -12,7 +12,8 @@ export const migaHtml = (items) => `<nav class="miga" aria-label="Ruta"><ol>${it
 /** Espacio para imagen real. Si hay archivo lo muestra; si no, deja un marcador editable. */
 export function ranura(titulo, imagen = "", c, ancho = 4, alto = 3) {
   if (imagen) return `<figure class="ranura con-img"><img src="${esc(imagen)}" alt="${esc(titulo)}" width="${ancho * 200}" height="${alto * 200}" loading="lazy" decoding="async"><figcaption>${esc(titulo)}</figcaption></figure>`;
-  const nota = c.modo_prototipo ? "Espacio para imagen real" : "Imagen próximamente";
+  if (!c.modo_prototipo) return ""; // en producción no se publican espacios vacíos
+  const nota = "Espacio para imagen real";
   return `<figure class="ranura" style="--r:${ancho}/${alto}"><div class="ranura-in"><span class="mono">${nota}</span></div><figcaption>${esc(titulo)}</figcaption></figure>`;
 }
 

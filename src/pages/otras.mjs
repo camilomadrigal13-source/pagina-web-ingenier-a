@@ -52,7 +52,7 @@ ${cta(c, "¿Tu proyecto puede ser el próximo?", "Cuéntanos qué necesitas.")}`
 
 export function cotizador(c, q, servicios, tarifas) {
   const verEstimado = c.modo_prototipo || tarifas.verificadas;
-  return `${cabecera("Solicitar cotización", q.titulo, q.intro)}
+  return `${cabecera("Solicitar cotización", q.titulo, verEstimado ? q.intro : (q.intro_sin_estimado || q.intro))}
 <section class="sec sec-top"><div class="wrap cot">
   <div class="cot-form">${formulario(c, servicios, q, verEstimado ? tarifas : null)}</div>
   <aside class="cot-res" id="panel-cot" aria-labelledby="res-t"><h2 class="h3" id="res-t">Tu cotización</h2>

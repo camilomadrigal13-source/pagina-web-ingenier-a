@@ -4,6 +4,8 @@ import { cta } from "../layout.mjs";
 import { ranura, migaHtml } from "./comun.mjs";
 
 export function tecnologia(c, t) {
+  // En producción, los espacios para capturas solo aparecen si ya hay imágenes reales.
+  const conImg = c.modo_prototipo || t.demos.some((d) => d.imagen);
   return `<section class="cab cab-tec"><div class="wrap">
   <p class="eyebrow">${esc(t.eyebrow)}</p><h1 class="h1">${esc(t.titulo)}</h1><p class="lead">${esc(t.subtitulo)}</p>
   <p class="contexto">${esc(t.contexto)}</p></div></section>
@@ -12,7 +14,7 @@ export function tecnologia(c, t) {
 <section class="sec sec-top"><div class="wrap">
   <div class="sec-cab"><h2 class="h2">${esc(t.flujo_titulo)}</h2></div>
   <div class="flujo-dib">${flujo()}</div>
-  <ol class="pasos">${t.flujo.map((p, i) => `<li class="paso"><div class="paso-txt"><p class="mono paso-n">${i + 1} · ${esc(p.n)}</p><h3 class="h3">${esc(p.titulo)}</h3><p>${esc(p.texto)}</p></div>${ranura(p.captura, "", c, 16, 9)}</li>`).join("")}</ol>
+  <ol class="pasos">${t.flujo.map((p, i) => `<li class="paso${conImg ? "" : " sin-img"}"><div class="paso-txt"><p class="mono paso-n">${i + 1} · ${esc(p.n)}</p><h3 class="h3">${esc(p.titulo)}</h3><p>${esc(p.texto)}</p></div>${ranura(p.captura, "", c, 16, 9)}</li>`).join("")}</ol>
 </div></section>
 
 <section class="sec sec-alt"><div class="wrap">
@@ -32,9 +34,9 @@ export function tecnologia(c, t) {
   <aside class="aviso" role="note"><p class="mono aviso-t">Alcance normativo</p><p>${esc(t.aviso)}</p></aside>
 </div></section>
 
-<section class="sec"><div class="wrap">
+${conImg ? `<section class="sec"><div class="wrap">
   <div class="sec-cab"><h2 class="h2">${esc(t.demo_titulo)}</h2><p class="lead">${esc(t.demo_texto)}</p></div>
   <div class="galeria-tec">${t.demos.map((d) => ranura(d.titulo, d.imagen, c, 4, 3)).join("")}</div>
-</div></section>
+</div></section>` : ""}
 ${cta(c, t.cta, "Te respondemos con una propuesta o con las preguntas necesarias para hacerla.", "?u=B")}`;
 }

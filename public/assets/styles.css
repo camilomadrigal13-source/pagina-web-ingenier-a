@@ -197,6 +197,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .pasos{display:grid;gap:0}
 .paso{display:grid;grid-template-columns:1fr 1fr;gap:28px 56px;align-items:center;padding-block:36px;border-top:1px solid var(--linea)}
 .paso:nth-child(even) .ranura{order:-1}
+.paso.sin-img{grid-template-columns:1fr}
 .paso-txt{display:grid;gap:10px;max-width:46ch}
 .paso-n{color:var(--tec)}
 @media(max-width:820px){.paso{grid-template-columns:1fr}.paso:nth-child(even) .ranura{order:0}}

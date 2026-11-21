@@ -24,6 +24,11 @@ const Q = leer("contenido/cotizador.json");
 const TAR = leer("contenido/tarifas.json");
 const unidades = S.unidades;
 
+// En producción no se publican los casos ilustrativos. Si no hay proyectos reales, la sección Proyectos se omite.
+const hayReales = PR.proyectos.some((x) => !x.ilustrativo);
+if (!c.modo_prototipo) PR.proyectos = PR.proyectos.filter((x) => !x.ilustrativo);
+c.mostrarProyectos = c.modo_prototipo || hayReales;
+
 const rutas = [];
 function emitir(ruta, opts, archivo) {
   const html = pagina(c, { ruta, servicios: unidades, ...opts });
@@ -43,7 +48,7 @@ for (const u of unidades) {
   });
 }
 emitir("/tecnologia/", { titulo: T.seo.titulo, descripcion: T.seo.descripcion, cuerpo: tecnologia(c, T), migas: [{ nombre: "Tecnología", ruta: "/tecnologia/" }], bodyClass: "pg-tec" });
-emitir("/proyectos/", { titulo: PR.seo.titulo, descripcion: PR.seo.descripcion, cuerpo: proyectos(c, PR), migas: [{ nombre: "Proyectos", ruta: "/proyectos/" }] });
+if (c.mostrarProyectos) emitir("/proyectos/", { titulo: PR.seo.titulo, descripcion: PR.seo.descripcion, cuerpo: proyectos(c, PR), migas: [{ nombre: "Proyectos", ruta: "/proyectos/" }] });
 emitir("/proceso/", { titulo: P.seo.titulo, descripcion: P.seo.descripcion, cuerpo: proceso(c, P, S), migas: [{ nombre: "Proceso", ruta: "/proceso/" }] });
 emitir("/cotizador/", { titulo: Q.seo.titulo, descripcion: Q.seo.descripcion, cuerpo: cotizador(c, Q, unidades, TAR), migas: [{ nombre: "Cotización", ruta: "/cotizador/" }] });
 emitir("/contacto/", { titulo: "Contacto", descripcion: `Escríbenos desde ${c.ubicacion.municipio}, ${c.ubicacion.departamento}, o por WhatsApp. Atendemos todo Colombia.`, cuerpo: contacto(c, unidades, Q), migas: [{ nombre: "Contacto", ruta: "/contacto/" }] });

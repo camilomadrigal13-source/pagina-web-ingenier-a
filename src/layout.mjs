@@ -62,7 +62,7 @@ export function pagina(c, { ruta, titulo, descripcion, cuerpo, servicios, migas 
       itemListElement: [{ nombre: "Inicio", ruta: "/" }, ...migas].map((m, i) => ({ "@type": "ListItem", position: i + 1, name: m.nombre, item: `${c.url}${m.ruta}` }))
     });
   }
-  const nav = NAV.map((n) => `<li><a href="${n.href}"${ruta.startsWith(n.href) ? ' aria-current="page"' : ""}>${n.texto}</a></li>`).join("");
+  const nav = NAV.filter((n) => c.mostrarProyectos !== false || n.href !== "/proyectos/").map((n) => `<li><a href="${n.href}"${ruta.startsWith(n.href) ? ' aria-current="page"' : ""}>${n.texto}</a></li>`).join("");
   const banner = c.modo_prototipo
     ? `<div class="proto" role="note">Prototipo en revisión. El nombre, los datos de contacto, los proyectos y las imágenes son provisionales.</div>` : "";
   const wa = waLink(c, `Hola, quiero información sobre sus servicios.`);
@@ -123,7 +123,7 @@ ${cuerpo}
       ${servicios.map((u) => `<li><a href="/servicios/${u.slug}/">${esc(u.corto)}</a></li>`).join("")}
     </ul></nav>
     <nav aria-label="Firma"><h2 class="pie-t">Firma</h2><ul>
-      <li><a href="/nosotros/">Nosotros</a></li><li><a href="/tecnologia/">Tecnología</a></li><li><a href="/proyectos/">Proyectos</a></li><li><a href="/proceso/">Proceso</a></li><li><a href="/privacidad/">Privacidad</a></li>
+      <li><a href="/nosotros/">Nosotros</a></li><li><a href="/tecnologia/">Tecnología</a></li>${c.mostrarProyectos === false ? "" : '<li><a href="/proyectos/">Proyectos</a></li>'}<li><a href="/proceso/">Proceso</a></li><li><a href="/privacidad/">Privacidad</a></li>
     </ul></nav>
     <div><h2 class="pie-t">Contacto</h2><ul>
       <li><a href="/cotizador/">Solicitar cotización</a></li>
