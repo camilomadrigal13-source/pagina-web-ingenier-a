@@ -47,7 +47,7 @@ ul,ol{margin:0;padding:0;list-style:none}
 .h1{font-size:clamp(1.8rem,4.4vw,3.1rem)}
 .h2{font-size:clamp(1.45rem,3.2vw,2.2rem)}
 .h3{font-size:1.25rem;line-height:1.2;font-weight:700}
-.eyebrow{font:500 .74rem/1 var(--f-mono);letter-spacing:.16em;text-transform:uppercase;color:var(--suave);margin-bottom:18px}
+.eyebrow{font:500 .74rem/1.5 var(--f-mono);letter-spacing:.16em;text-transform:uppercase;color:var(--suave);margin-bottom:18px}
 .lead{font-size:1.14rem;line-height:1.65;color:var(--suave);max-width:62ch}
 .mini{font:500 .72rem/1.2 var(--f-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--suave);margin:0 0 8px}
 .enlace{display:inline-block;font-weight:600;border-bottom:1px solid currentColor;text-decoration:none;padding-bottom:2px}
@@ -338,3 +338,11 @@ input:focus,select:focus,textarea:focus{outline:2px solid var(--tec);outline-off
   .dib-hero .eje,.dib-hero .cota{animation:none;opacity:1}
   .btn,.unidad-a{transition:none}
 }
+
+/* Ajustes de celular */
+@media(max-width:900px){
+  .est-barra{padding-right:84px}
+  body:has(.est-barra:not([hidden])) .wa-flot{bottom:calc(68px + max(16px,env(safe-area-inset-bottom,0px)))}
+  .flujo-dib{display:none} /* los cinco pasos ya se detallan debajo: el diagrama sería ilegible */
+}
+@media(max-width:520px){.pie{padding-bottom:88px}}
