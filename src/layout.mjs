@@ -2,7 +2,7 @@
 import { esc } from "./lib.mjs";
 import { marca } from "./svg.mjs";
 
-const FUENTES = "https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&display=swap";
+const FUENTES = "https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Michroma&display=swap";
 
 export const NAV = [
   { href: "/nosotros/", texto: "Nosotros" },
@@ -74,7 +74,7 @@ export function pagina(c, { ruta, titulo, descripcion, cuerpo, servicios, migas 
 <title>${esc(tituloCompleto)}</title>
 <meta name="description" content="${esc(descripcion)}">
 <link rel="canonical" href="${esc(canon)}">
-<meta name="theme-color" content="#1F4A52">
+<meta name="theme-color" content="#0A0B0D">
 ${c.modo_prototipo ? '<meta name="robots" content="noindex,nofollow">' : ""}
 <meta property="og:type" content="website">
 <meta property="og:locale" content="es_CO">

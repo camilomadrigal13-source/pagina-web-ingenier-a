@@ -10,7 +10,7 @@
   function temaActual() {
     var t = document.documentElement.getAttribute("data-theme");
     if (t) return t;
-    return window.matchMedia && matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    return "dark"; // el diseño es oscuro por defecto; el modo claro es opcional con el botón
   }
   function pintarTema() { if (btnTema) btnTema.setAttribute("aria-pressed", temaActual() === "dark" ? "true" : "false"); }
   if (btnTema) {

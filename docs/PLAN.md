@@ -1,5 +1,7 @@
 # Plan y verificación del sitio
 
+> La paleta y las tipografías de este documento son las del diseño inicial. La identidad vigente es la ruta C: ver `IDENTIDAD.md`.
+
 ## Fase 1 · Diagnóstico del prototipo anterior
 - **Se conservó:** el lenguaje de planos (cotas, ejes, retículas), el cotizador como idea (ahora solicitud de propuesta), las etapas con cotas y el nombre provisional.
 - **Se corrigió:** tarifas ficticias en el cotizador (eliminadas), formulario que no enviaba nada, datos inventados (correo, teléfono, proyectos).

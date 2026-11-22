@@ -1,9 +1,10 @@
 // Diagramas propios (SVG). Todos usan variables CSS para funcionar en claro y oscuro.
 
-export const marca = () => `<svg class="marca" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
-  <rect x="3.5" y="3.5" width="25" height="25" fill="none" stroke="currentColor" stroke-width="1.6"/>
-  <path d="M3.5 16h25M16 3.5v25" stroke="currentColor" stroke-width="1" opacity=".55"/>
-  <path d="M3.5 22.5v6h6" fill="none" stroke="var(--tec)" stroke-width="1.8"/>
+// Isotipo «D de sección» (ruta C): una D cortada, con el plano superior desplazado y una cota que mide la ranura.
+export const marca = () => `<svg class="marca" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+  <path d="M15 8H35A24 24 0 0 1 58.24 26H15Z" fill="currentColor"/>
+  <path d="M10 30H53.92A24 24 0 0 1 30 56H10Z" fill="currentColor" opacity=".62"/>
+  <path d="M4 28H62M4 22v12M62 22v12" fill="none" stroke="var(--tec)" stroke-width="3" stroke-linecap="square"/>
 </svg>`;
 
 /** Alzado arquitectónico con ejes, cotas y retícula: imagen principal de la portada. */
@@ -14,7 +15,7 @@ export function hero() {
   return `<svg class="dib dib-hero" viewBox="0 0 560 420" role="img" aria-label="Alzado de un edificio con ejes y cotas">
   <defs>
     <pattern id="ret" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M20 0H0V20" fill="none" stroke="var(--linea)" stroke-width=".5"/></pattern>
-    <linearGradient id="vid" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="var(--arena)" stop-opacity=".35"/><stop offset="1" stop-color="var(--arena)" stop-opacity=".08"/></linearGradient>
+    <linearGradient id="vid" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="var(--suave)" stop-opacity=".28"/><stop offset="1" stop-color="var(--suave)" stop-opacity=".06"/></linearGradient>
   </defs>
   <rect width="560" height="420" fill="url(#ret)" opacity=".8"/>
   <!-- terreno -->

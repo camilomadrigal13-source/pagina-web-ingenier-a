@@ -13,6 +13,10 @@ El sitio es de contenido (páginas informativas, un portafolio y dos formularios
 
 Next.js/React/Tailwind se justifican cuando haya cuentas de cliente, panel de administración, blog con muchas entradas o un CMS. La estructura (contenido en JSON, páginas como funciones) migra a Next.js sin rehacer el contenido. Hoy sumaría costo de mantenimiento sin beneficio visible.
 
+## Identidad visual
+
+La identidad vigente (ruta C, futurista tecnológica, con el nombre de trabajo Dimenza) está en [`docs/IDENTIDAD.md`](docs/IDENTIDAD.md), con sus imágenes en `identidad/`.
+
 ## Estructura
 
 ```
