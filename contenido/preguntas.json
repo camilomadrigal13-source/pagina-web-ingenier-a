@@ -1,0 +1,38 @@
+{
+  "seo": { "titulo": "Preguntas frecuentes", "descripcion": "Respuestas a las dudas más comunes: cómo cotizamos, qué servicios se pueden contratar por separado, dónde trabajamos y cómo tratamos tus datos." },
+  "titulo": "Preguntas frecuentes",
+  "texto": "Lo que más nos preguntan antes de empezar. Si la tuya no está, escríbenos.",
+  "grupos": [
+    {
+      "titulo": "Servicios y alcance",
+      "items": [
+        { "p": "¿Puedo contratar solo un servicio?", "r": "Sí. Cada uno de los cuatro servicios (ingeniería y arquitectura; BIM y documentación técnica; construcción, consultoría y gestión; gestión documental) se contrata de forma independiente. También se pueden combinar." },
+        { "p": "¿Trabajan solo en Sabaneta?", "r": "Tenemos sede en Sabaneta y atendemos de forma presencial Medellín y el Valle de Aburrá. En el resto de Antioquia y Colombia trabajamos con visitas programadas, y varios servicios se prestan de forma remota." },
+        { "p": "¿Trabajan con arquitectos e ingenieros que ya tienen su proyecto?", "r": "Sí. Podemos entrar solo en una etapa: estructura, planos, despieces, presupuesto o documentación, y coordinar con tu equipo." }
+      ]
+    },
+    {
+      "titulo": "Cotización y plazos",
+      "items": [
+        { "p": "¿Cómo funciona la cotización?", "r": "Llenas el formulario con tu proyecto y los servicios que necesitas. Revisamos la información y te respondemos con una propuesta con alcance, entregables, plazo y valor." },
+        { "p": "¿La cotización del sitio es definitiva?", "r": "No. Cualquier referencia que veas en el sitio es preliminar y no vinculante. El valor final se define en la propuesta formal, cuando conocemos el alcance real. Si quieres una cotización más ajustada, escríbenos." },
+        { "p": "¿Por qué no publican precios?", "r": "Porque cada proyecto es distinto en tamaño, estado y alcance. Preferimos cotizar con información antes que dar cifras que no apliquen a tu caso." },
+        { "p": "¿Qué información me piden para empezar?", "r": "Qué necesitas, dónde está el proyecto, su estado (idea, anteproyecto, planos, obra) y, si existen, planos, estudios o fotos. Con poco podemos empezar y te decimos qué más hace falta." }
+      ]
+    },
+    {
+      "titulo": "Ingeniería y responsabilidad",
+      "items": [
+        { "p": "¿Quién firma los diseños?", "r": "Las decisiones de ingeniería las valida y firma el profesional competente, con su matrícula profesional. Nuestras herramientas de automatización siempre pasan por revisión de un ingeniero." },
+        { "p": "¿Pueden actuar como revisor independiente de diseños estructurales?", "r": "Esa función exige requisitos de experiencia y habilitación. Antes de aceptar un encargo de ese tipo confirmamos si los cumplimos y te lo decimos por escrito." }
+      ]
+    },
+    {
+      "titulo": "Tus datos",
+      "items": [
+        { "p": "¿Qué hacen con mis datos?", "r": "Los usamos para responder tu solicitud y preparar una propuesta. No los vendemos. Puedes ver el detalle y tus derechos en la política de privacidad." },
+        { "p": "¿Cómo pido que borren mis datos?", "r": "Escríbenos por el canal indicado en la política de privacidad y atendemos tu solicitud." }
+      ]
+    }
+  ]
+}

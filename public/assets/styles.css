@@ -1,3 +1,8 @@
+/* Fuentes alojadas en el propio sitio (sin pedir nada a Google) */
+@font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:400;font-display:swap;src:url(/assets/fonts/ibm-plex-mono-400.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:500;font-display:swap;src:url(/assets/fonts/ibm-plex-mono-500.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'Michroma';font-style:normal;font-weight:400;font-display:swap;src:url(/assets/fonts/michroma-400.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'Manrope';font-style:normal;font-weight:400 800;font-display:swap;src:url(/assets/fonts/manrope.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
 /* Identidad ruta C (futurista tecnológica): oscuro por defecto, acento lima solo como luz sobre una cara, una línea o un dato.
    Modo claro disponible con el botón; ahí el acento pasa a oliva para mantener el contraste. */
 :root{
@@ -346,3 +351,24 @@ input:focus,select:focus,textarea:focus{outline:2px solid var(--tec);outline-off
   .flujo-dib{display:none} /* los cinco pasos ya se detallan debajo: el diagrama sería ilegible */
 }
 @media(max-width:520px){.pie{padding-bottom:88px}}
+
+/* Guías, preguntas frecuentes y temas */
+.hero-lema{color:var(--tec);letter-spacing:.06em;font-size:.9rem;margin:-6px 0 0}
+.faq{display:grid;gap:0;margin:6px 0 10px;border-top:1px solid var(--linea)}
+.faq details{border-bottom:1px solid var(--linea)}
+.faq summary{cursor:pointer;list-style:none;padding:16px 36px 16px 0;font-weight:600;position:relative;min-height:48px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";position:absolute;right:4px;top:12px;font:400 1.4rem/1 var(--f-mono);color:var(--tec)}
+.faq details[open] summary::after{content:"\2212"}
+.faq details p{margin:0 0 18px;color:var(--suave)}
+.pasos-g{list-style:none;margin:6px 0 10px;padding:0;display:grid;gap:14px}
+.pasos-g li{display:grid;grid-template-columns:32px 1fr;gap:14px;align-items:start}
+.pasos-g .mono{display:grid;place-items:center;width:28px;height:28px;border:1px solid var(--tec);color:var(--tec);border-radius:50%;font-size:.78rem}
+.pasos-g p{margin:2px 0 0;color:var(--suave)}
+.temas{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--linea);border:1px solid var(--linea)}
+.temas a{display:grid;grid-template-columns:1fr auto;gap:4px 14px;padding:20px 22px;background:var(--bg);text-decoration:none;color:var(--tinta);height:100%;align-content:start}
+.temas a:hover{background:var(--sup)}
+.temas-t{font-weight:700;font-family:var(--f-head)}
+.temas-d{grid-column:1;color:var(--suave);font-size:.92rem}
+.temas a>span[aria-hidden]{grid-row:1/3;grid-column:2;align-self:center;color:var(--tec)}
+@media(max-width:700px){.temas{grid-template-columns:1fr}}

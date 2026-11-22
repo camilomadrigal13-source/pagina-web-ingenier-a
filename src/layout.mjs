@@ -2,8 +2,6 @@
 import { esc } from "./lib.mjs";
 import { marca } from "./svg.mjs";
 
-const FUENTES = "https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Michroma&display=swap";
-
 export const NAV = [
   { href: "/nosotros/", texto: "Nosotros" },
   { href: "/servicios/", texto: "Servicios" },
@@ -85,8 +83,7 @@ ${c.modo_prototipo ? '<meta name="robots" content="noindex,nofollow">' : ""}
 <meta property="og:image" content="${esc(og)}">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="${FUENTES}">
+<link rel="preload" href="/assets/fonts/manrope.woff2" as="font" type="font/woff2" crossorigin>
 <script src="/assets/theme.js"></script>
 <link rel="stylesheet" href="/assets/styles.css">
 <script type="application/ld+json">${JSON.stringify(ld)}</script>
@@ -123,7 +120,7 @@ ${cuerpo}
       ${servicios.map((u) => `<li><a href="/servicios/${u.slug}/">${esc(u.corto)}</a></li>`).join("")}
     </ul></nav>
     <nav aria-label="Firma"><h2 class="pie-t">Firma</h2><ul>
-      <li><a href="/nosotros/">Nosotros</a></li><li><a href="/tecnologia/">Tecnología</a></li>${c.mostrarProyectos === false ? "" : '<li><a href="/proyectos/">Proyectos</a></li>'}<li><a href="/proceso/">Proceso</a></li><li><a href="/privacidad/">Privacidad</a></li>
+      <li><a href="/nosotros/">Nosotros</a></li><li><a href="/tecnologia/">Tecnología</a></li>${c.mostrarProyectos === false ? "" : '<li><a href="/proyectos/">Proyectos</a></li>'}<li><a href="/proceso/">Proceso</a></li><li><a href="/preguntas/">Preguntas frecuentes</a></li><li><a href="/privacidad/">Privacidad</a></li>
     </ul></nav>
     <div><h2 class="pie-t">Contacto</h2><ul>
       <li><a href="/cotizador/">Solicitar cotización</a></li>
@@ -137,6 +134,7 @@ ${cuerpo}
 </footer>
 ${wa ? `<a class="wa-flot" href="${esc(wa)}" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.7 13.6L3 21l4.5-1.2A9 9 0 1 0 12 3Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M8.8 8.6c.2-.5.5-.5.8-.5s.4.4.6.9c.1.3-.1.5-.3.8-.2.2-.3.4-.1.7.5.9 1.4 1.7 2.4 2.1.3.1.5 0 .7-.2.2-.3.4-.5.7-.4l1.1.5c.3.2.4.3.3.6-.2.9-1.1 1.4-2 1.3-2.7-.4-5.2-2.7-5.8-5.2-.1-.4 0-.8.2-1.1Z" fill="currentColor"/></svg><span>WhatsApp</span></a>` : ""}
 <script src="/assets/app.js" defer></script>
+${c.turnstile ? '<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>' : ""}
 </body>
 </html>`;
 }

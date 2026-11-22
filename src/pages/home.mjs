@@ -2,7 +2,7 @@ import { esc } from "../lib.mjs";
 import { hero } from "../svg.mjs";
 import { cta, waLink } from "../layout.mjs";
 
-export function home(c, h, servicios) {
+export function home(c, h, servicios, G) {
   const foto = c.imagenes.hero
     ? `<figure class="hero-foto"><img src="${esc(c.imagenes.hero)}" alt="" width="1200" height="900" fetchpriority="high" decoding="async"></figure>`
     : `<div class="hero-dib">${hero()}</div>`;
@@ -12,6 +12,7 @@ export function home(c, h, servicios) {
   <div class="hero-txt">
     <p class="eyebrow">${esc(h.eyebrow)}</p>
     <h1 class="display">${esc(h.hero_titulo)}</h1>
+    <p class="hero-lema mono">${esc(h.hero_lema)}</p>
     <p class="lead">${esc(h.hero_texto)}</p>
     <div class="hero-cta">
       <a class="btn" href="/cotizador/">Solicitar cotización</a>
@@ -35,6 +36,11 @@ export function home(c, h, servicios) {
         <span class="unidad-go" aria-hidden="true">→</span>
       </a></li>`).join("")}
   </ol>
+</div></section>
+
+<section class="sec"><div class="wrap">
+  <div class="sec-cab"><p class="eyebrow">${esc(G.indice_titulo)}</p><h2 class="h2">Temas que resolvemos a diario.</h2></div>
+  <ul class="temas">${G.guias.map((g) => `<li><a href="/${g.slug}/"><span class="temas-t">${esc(g.corto)}</span><span class="temas-d">${esc(g.seo.descripcion)}</span><span aria-hidden="true">→</span></a></li>`).join("")}<li><a href="/preguntas/"><span class="temas-t">Preguntas frecuentes</span><span class="temas-d">Cómo cotizamos, dónde trabajamos y qué puedes contratar por separado.</span><span aria-hidden="true">→</span></a></li></ul>
 </div></section>
 
 <section class="sec sec-alt"><div class="wrap">

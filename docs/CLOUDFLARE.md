@@ -16,6 +16,11 @@ El código ya está preparado: la carpeta `functions/` contiene la función del 
 5. Variables del formulario: en el proyecto, **Settings → Variables and secrets**, agrega las de `docs/INTEGRACIONES.md` (por ejemplo `SHEETS_WEBHOOK_URL` y `SHEETS_TOKEN`). Las claves van como **Secret**, no como texto. Después, en **Deployments**, vuelve a desplegar.
 6. Dominio propio: **Custom domains → Set up a domain**. Pon también el dominio en `dominio` de `site.config.json`.
 
+## Antibots gratis: Turnstile (recomendado antes de publicar)
+1. En el panel de Cloudflare: **Turnstile → Add widget**. Nombre libre, dominio: el de tu sitio (`.pages.dev` o el propio), modo **Managed**. Te da dos claves.
+2. En el proyecto de Pages → **Settings → Variables and secrets**: `TURNSTILE_SITE_KEY` (clave del sitio, texto normal) y `TURNSTILE_SECRET` (clave secreta, tipo **Secret**).
+3. Vuelve a desplegar. El formulario muestra la verificación y el servidor rechaza los envíos sin ella. Sin las claves, todo sigue funcionando como antes.
+
 ## Versión informativa (lista para publicar)
 
 Mientras no definas nada, el sitio se publica como **prototipo**: con un aviso arriba, oculto a Google, con los proyectos de ejemplo y los espacios de imagen. Para publicar la versión final sin tocar el código, agrega estas variables en **Settings → Variables and secrets** (como texto) y vuelve a desplegar:

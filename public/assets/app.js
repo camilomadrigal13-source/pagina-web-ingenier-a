@@ -145,7 +145,7 @@
           else { estado(form, "err", "No pudimos enviar el mensaje", (r.j && r.j.error ? r.j.error + " " : "") + "Inténtalo de nuevo" + (wa ? " o escríbenos por WhatsApp." : ".")); }
         })
         .catch(function () { estado(form, "err", "Sin conexión con el servidor", "Revisa tu conexión e inténtalo de nuevo" + (wa ? ", o escríbenos por WhatsApp." : ".")); })
-        .then(function () { clearTimeout(to); btn.disabled = false; $(".btn-t", btn).hidden = false; $(".btn-c", btn).hidden = true; });
+        .then(function () { if (window.turnstile) { try { window.turnstile.reset(); } catch (e) {} } clearTimeout(to); btn.disabled = false; $(".btn-t", btn).hidden = false; $(".btn-c", btn).hidden = true; });
     });
     var bw = $("[data-wa-form]", form);
     if (bw) bw.addEventListener("click", function () {

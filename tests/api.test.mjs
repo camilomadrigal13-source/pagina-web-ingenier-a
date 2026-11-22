@@ -11,7 +11,7 @@ function llamar(body, { method = "POST", headers = {}, ip = "1.1.1.1" } = {}) {
   });
 }
 const entorno = () => { process.env.RESEND_API_KEY = "re_test"; process.env.CONTACT_TO = "yo@ejemplo.com"; };
-const VARS = ["RESEND_API_KEY", "CONTACT_TO", "CONTACT_FROM", "SHEETS_WEBHOOK_URL", "SHEETS_TOKEN", "WA_PROVIDER", "CALLMEBOT_PHONE", "CALLMEBOT_APIKEY", "WA_META_TOKEN", "WA_META_PHONE_ID", "WA_META_TO", "WA_META_TEMPLATE"];
+const VARS = ["RESEND_API_KEY", "CONTACT_TO", "CONTACT_FROM", "SHEETS_WEBHOOK_URL", "SHEETS_TOKEN", "WA_PROVIDER", "CALLMEBOT_PHONE", "CALLMEBOT_APIKEY", "WA_META_TOKEN", "WA_META_PHONE_ID", "WA_META_TO", "WA_META_TEMPLATE", "TURNSTILE_SECRET"];
 const limpiar = () => { VARS.forEach((v) => delete process.env[v]); _prueba.visitas.clear(); };
 const entornoHoja = () => { process.env.SHEETS_WEBHOOK_URL = "https://script.google.com/macros/s/ABC/exec"; process.env.SHEETS_TOKEN = "tok_secreto"; };
 const entornoCallmebot = () => { process.env.WA_PROVIDER = "callmebot"; process.env.CALLMEBOT_PHONE = "+573001112233"; process.env.CALLMEBOT_APIKEY = "k123"; };
@@ -132,4 +132,23 @@ test("limita envíos repetidos por IP", async () => {
   limpiar(); entorno(); simular(); let ultimo;
   for (let i = 0; i < 7; i++) ultimo = await llamar(valido, { ip: "9.9.9.9" });
   assert.equal(ultimo.code, 429);
+});
+
+test("Turnstile: con TURNSTILE_SECRET exige token y lo verifica", async () => {
+  limpiar(); entorno(); process.env.TURNSTILE_SECRET = "ts_secreto";
+  llamadas = [];
+  globalThis.fetch = async (u, o) => { llamadas.push({ u: String(u), o }); return String(u).includes("turnstile") ? { ok: true, json: async () => ({ success: o.body.get("response") === "bueno" }) } : { ok: true, status: 200, json: async () => ({}) }; };
+  const sin = await llamar(valido);
+  assert.equal(sin.code, 400); assert.equal(llamadas.length, 0);
+  const malo = await llamar({ ...valido, "cf-turnstile-response": "malo" });
+  assert.equal(malo.code, 400); assert.ok(!llamadas.some((x) => x.u.includes("resend")));
+  const ok = await llamar({ ...valido, "cf-turnstile-response": "bueno" });
+  assert.equal(ok.code, 200); assert.ok(llamadas.some((x) => x.u.includes("resend")));
+  delete process.env.TURNSTILE_SECRET;
+});
+test("Turnstile: si el verificador falla, no se envía", async () => {
+  limpiar(); entorno(); process.env.TURNSTILE_SECRET = "ts_secreto";
+  globalThis.fetch = async () => { throw new Error("red"); };
+  assert.equal((await llamar({ ...valido, "cf-turnstile-response": "x" })).code, 400);
+  delete process.env.TURNSTILE_SECRET;
 });

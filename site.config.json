@@ -31,6 +31,8 @@
     "og": "/img/og.png"
   },
 
+  "legal": { "razon_social": "", "documento": "", "direccion": "" },
+
   "formulario": { "endpoint": "/api/contacto" },
 
   "tarifas": null,

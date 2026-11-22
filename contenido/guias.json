@@ -1,0 +1,168 @@
+{
+  "aviso": "Esta guía es informativa y general. Cada edificación y cada trámite son distintos: las decisiones de ingeniería las valida y firma el profesional competente, y los requisitos legales se confirman con la curaduría o la autoridad de planeación del municipio.",
+  "indice_titulo": "Lo que más nos consultan",
+  "guias": [
+    {
+      "slug": "reforzamiento-estructural-medellin",
+      "unidad": "A",
+      "corto": "Reforzamiento estructural",
+      "seo": {
+        "titulo": "Reforzamiento y evaluación estructural en Medellín y el Valle de Aburrá",
+        "descripcion": "Evaluamos edificaciones existentes y proponemos su reforzamiento estructural en Medellín, Sabaneta, Envigado e Itagüí: diagnóstico, alternativas, diseño y planos."
+      },
+      "titulo": "Reforzamiento estructural de edificaciones existentes",
+      "lead": "Si tienes una casa, un edificio o una bodega que va a cambiar de uso, crecer, o que simplemente te genera dudas, el primer paso es entender cómo está y qué necesita. Desde Sabaneta atendemos Medellín y el Valle de Aburrá.",
+      "secciones": [
+        {
+          "h": "Cuándo conviene evaluar una estructura",
+          "lista": [
+            "Vas a ampliar, subir pisos o cambiar el uso de la edificación.",
+            "Hay fisuras, deformaciones, humedad en el concreto o corrosión del acero.",
+            "La construcción es anterior a las normas sismo resistentes actuales o se hizo sin diseño estructural.",
+            "Vas a comprar un inmueble y quieres saber qué estás comprando.",
+            "Una entidad, aseguradora o curaduría pide un concepto técnico."
+          ]
+        },
+        {
+          "h": "Cómo trabajamos",
+          "pasos": [
+            { "t": "Levantamiento y revisión de información", "p": "Visita, registro de la estructura y revisión de planos o antecedentes, si existen." },
+            { "t": "Diagnóstico", "p": "Identificamos el estado de los elementos, los daños (patología) y los puntos críticos, con las pruebas o ensayos que cada caso necesite." },
+            { "t": "Alternativas", "p": "Te presentamos opciones de intervención con su alcance, para decidir con información y no a ciegas." },
+            { "t": "Diseño del reforzamiento", "p": "Memorias, planos y detalles constructivos de la alternativa elegida." },
+            { "t": "Acompañamiento", "p": "Apoyo técnico durante la ejecución, directamente o con quien construya." }
+          ]
+        },
+        {
+          "h": "Qué recibes",
+          "lista": [
+            "Informe de diagnóstico con las conclusiones explicadas en lenguaje claro.",
+            "Alternativas de intervención con su alcance.",
+            "Planos y memorias del reforzamiento elegido.",
+            "Recomendaciones para la ejecución y el seguimiento."
+          ]
+        }
+      ],
+      "faq": [
+        { "p": "¿Todas las edificaciones necesitan reforzamiento?", "r": "No. Primero se evalúa. Muchas veces el resultado es que la estructura está bien, o que basta una intervención puntual." },
+        { "p": "¿Pueden evaluar una casa sin planos?", "r": "Sí, es frecuente. Se hace un levantamiento de la estructura y, si hace falta, ensayos en sitio. El alcance se define tras conocer el caso." },
+        { "p": "¿Cuánto cuesta?", "r": "Depende del tamaño, el estado y la información disponible. Por eso no publicamos precios fijos: cuéntanos tu caso y te enviamos una propuesta." }
+      ]
+    },
+    {
+      "slug": "vulnerabilidad-sismica-nsr-10",
+      "unidad": "A",
+      "corto": "Vulnerabilidad sísmica",
+      "seo": {
+        "titulo": "Estudio de vulnerabilidad sísmica de edificaciones (NSR-10) en Antioquia",
+        "descripcion": "Qué es un estudio de vulnerabilidad sísmica, cuándo se necesita y qué incluye según la NSR-10. Atendemos Sabaneta, Medellín y el Valle de Aburrá."
+      },
+      "titulo": "Estudio de vulnerabilidad sísmica",
+      "lead": "Un estudio de vulnerabilidad sísmica estima cómo se comportaría una edificación existente frente a un sismo y qué se debe hacer para que se comporte mejor. En Colombia, la referencia es el Reglamento Colombiano de Construcción Sismo Resistente (NSR-10).",
+      "secciones": [
+        {
+          "h": "Para qué sirve",
+          "lista": [
+            "Saber si la edificación cumple, o qué tan lejos está, de lo que hoy pide el reglamento.",
+            "Priorizar qué intervenir primero cuando el presupuesto es limitado.",
+            "Tener un soporte técnico para decidir sobre reforzar, adecuar o cambiar de uso.",
+            "Responder a requerimientos de entidades, propietarios o aseguradoras que lo exijan."
+          ]
+        },
+        {
+          "h": "Referencia normativa",
+          "p": "La NSR-10 incluye el Título A.10, sobre evaluación e intervención de edificaciones existentes. Ese título y los demás aplicables se consultan según el caso. Medellín y el Valle de Aburrá se ubican en una zona de amenaza sísmica intermedia según el reglamento; el diseño y la evaluación dependen además del suelo, del tipo de estructura y del uso."
+        },
+        {
+          "h": "Qué suele incluir",
+          "lista": [
+            "Recopilación de información de la edificación y visita técnica.",
+            "Revisión del sistema estructural, los materiales y el estado de los elementos.",
+            "Análisis de la estructura y verificación frente a los requisitos aplicables.",
+            "Informe con conclusiones, nivel de riesgo observado y alternativas de reforzamiento."
+          ]
+        }
+      ],
+      "faq": [
+        { "p": "¿El estudio garantiza que la edificación no se dañará en un sismo?", "r": "No. Ningún estudio puede garantizarlo. Sirve para conocer y reducir el riesgo con criterio técnico." },
+        { "p": "¿Es lo mismo que un avalúo o una inspección visual?", "r": "No. Una inspección visual es un primer paso. El estudio de vulnerabilidad incluye análisis y verificación técnica de la estructura." },
+        { "p": "¿Pueden hacer también el diseño del reforzamiento?", "r": "Sí, es parte de nuestros servicios: del diagnóstico al diseño y los planos, o solo la etapa que necesites." }
+      ]
+    },
+    {
+      "slug": "diseno-estructural-sabaneta",
+      "unidad": "A",
+      "corto": "Diseño estructural",
+      "seo": {
+        "titulo": "Diseño estructural y arquitectónico en Sabaneta, Envigado e Itagüí",
+        "descripcion": "Diseño estructural, cimentaciones y diseño arquitectónico para casas, edificios y obras comerciales en Sabaneta y el Valle de Aburrá."
+      },
+      "titulo": "Diseño estructural y arquitectónico para edificaciones nuevas",
+      "lead": "Diseñamos la estructura y, si lo necesitas, la arquitectura de tu proyecto, desde Sabaneta y para el Valle de Aburrá, con el mismo criterio y la misma información.",
+      "secciones": [
+        {
+          "h": "Qué diseñamos",
+          "lista": [
+            "Estructuras de concreto reforzado y cimentaciones.",
+            "Anteproyecto y proyecto arquitectónico.",
+            "Planos, memorias y detalles de refuerzo para construcción.",
+            "Coordinación entre arquitectura, estructura y presupuesto."
+          ]
+        },
+        {
+          "h": "Por qué juntar arquitectura y estructura",
+          "p": "Las decisiones de forma, luces, altura y uso cambian la estructura, y la estructura cambia el costo. Cuando se piensan juntas desde el principio, se evitan rediseños y sobrecostos. Si ya tienes arquitecto o ingeniero, podemos entrar solo en la parte que necesites y coordinar con tu equipo."
+        },
+        {
+          "h": "Cómo es el proceso",
+          "pasos": [
+            { "t": "Información inicial", "p": "Lote, uso, alcance, presupuesto y estudio de suelos si ya existe." },
+            { "t": "Propuesta", "p": "Alcance, entregables y plazos por escrito." },
+            { "t": "Desarrollo y revisión", "p": "Avances revisados contigo y coordinados con el resto del proyecto." },
+            { "t": "Entrega", "p": "Planos y memorias ordenados, listos para construir o para presentar donde se requiera." }
+          ]
+        }
+      ],
+      "faq": [
+        { "p": "¿Atienden solo Sabaneta?", "r": "Atendemos de forma presencial Medellín y el Valle de Aburrá. En otras zonas de Antioquia y Colombia trabajamos con visitas programadas, y varios servicios se prestan de forma remota." },
+        { "p": "¿Necesito estudio de suelos?", "r": "Para diseñar la cimentación de una edificación nueva normalmente sí. Te orientamos sobre qué estudio hace falta según tu proyecto." },
+        { "p": "¿Puedo contratar solo la estructura?", "r": "Sí. Cada servicio se puede contratar por separado." }
+      ]
+    },
+    {
+      "slug": "revision-estructural-licencia-construccion",
+      "unidad": "A",
+      "corto": "Revisión y licencia",
+      "seo": {
+        "titulo": "Revisión de diseños estructurales y documentos técnicos para licencia de construcción",
+        "descripcion": "Revisamos diseños estructurales y preparamos planos y memorias para licencia de construcción en Sabaneta, Medellín y el Valle de Aburrá."
+      },
+      "titulo": "Revisión de diseños estructurales y documentos para licencia",
+      "lead": "Antes de construir, los diseños deben estar completos, coherentes y presentados como los pide la entidad que los revisa. Te ayudamos a revisarlos y a ordenarlos.",
+      "secciones": [
+        {
+          "h": "Qué podemos hacer",
+          "lista": [
+            "Revisar un diseño estructural existente: supuestos, cargas, resultados y planos.",
+            "Detectar inconsistencias entre planos arquitectónicos y estructurales.",
+            "Organizar planos, memorias y anexos para la radicación.",
+            "Responder observaciones técnicas que haga la curaduría."
+          ]
+        },
+        {
+          "h": "Qué debes saber",
+          "p": "Las licencias de construcción se tramitan ante una curaduría urbana o, en municipios sin ella, ante la autoridad de planeación. En ciertos casos, según el área y la complejidad de la edificación, la normativa exige una revisión independiente de los diseños estructurales (Ley 1796 de 2016 y sus decretos reglamentarios). Los requisitos exactos cambian y deben confirmarse con la entidad antes de contratar."
+        },
+        {
+          "h": "Una advertencia honesta",
+          "p": "Para actuar como revisor independiente se exigen requisitos de experiencia y habilitación del profesional. Antes de aceptar un encargo de ese tipo, confirmamos con claridad si cumplimos los requisitos y te lo decimos por escrito."
+        }
+      ],
+      "faq": [
+        { "p": "¿Tramitan la licencia por mí?", "r": "Podemos preparar y ordenar los documentos técnicos. El alcance de la gestión del trámite se define en la propuesta." },
+        { "p": "¿Cuánto tarda una revisión?", "r": "Depende del tamaño del proyecto y de la calidad de la información. Te damos un plazo estimado en la propuesta." },
+        { "p": "¿Qué necesito enviar para empezar?", "r": "Planos, memorias y estudios disponibles, y una descripción del proyecto. Con eso te decimos qué falta." }
+      ]
+    }
+  ]
+}

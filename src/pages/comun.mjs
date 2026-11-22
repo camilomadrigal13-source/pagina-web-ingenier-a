@@ -53,6 +53,7 @@ export function formulario(c, servicios, cot = null, tarifas = null) {
       ? `${paso(1, "Tu proyecto")}${cotProyecto}${paso(2, "Servicios que necesitas")}<p class="ayuda">Marca todos los que apliquen. También puedes pedir uno solo.</p>${cotServicios}${paso(3, "Tus datos")}${bloque1}${paso(4, "Cuéntanos más")}${msg}${pref}`
       : `${bloque1}${cotCampos}${msg}${pref}`}
     <div class="campo chk-uno"><label class="chk"><input type="checkbox" name="acepto" id="${idf}-acepto" required><span>Autorizo el tratamiento de mis datos para responder esta solicitud, según la <a href="/privacidad/" target="_blank" rel="noopener">política de privacidad</a>.</span></label><p class="error" id="${idf}-acepto-error" role="alert" hidden></p></div>
+    ${c.turnstile ? `<div class="cf-turnstile" data-sitekey="${esc(c.turnstile)}" data-language="es" data-theme="auto"></div>` : ""}
     <div class="form-acc">
       <button class="btn" type="submit"><span class="btn-t">${esCot ? "Enviar solicitud" : "Enviar mensaje"}</span><span class="btn-c" hidden>Enviando…</span></button>
       ${c.waNumero ? `<button class="btn btn-borde" type="button" data-wa-form>Enviar por WhatsApp</button>` : ""}

@@ -65,3 +65,23 @@ test("prototipo: se conserva todo lo de revisión", () => {
   assert.ok(leer("robots.txt").includes("Disallow: /"));
   assert.ok(!existsSync(dist("_headers")));
 });
+
+test("guías, preguntas frecuentes y privacidad completa: existen, con datos estructurados y sin Google Fonts", () => {
+  compilar({ SITE_PROTOTYPE: "0", SITE_URL: "https://ejemplo.co", SITE_WHATSAPP: "573001112233", SITE_EMAIL_PUBLIC: "hola@ejemplo.co", TURNSTILE_SITE_KEY: "0xTEST" });
+  for (const r of ["reforzamiento-estructural-medellin", "vulnerabilidad-sismica-nsr-10", "diseno-estructural-sabaneta", "revision-estructural-licencia-construccion", "preguntas"]) {
+    const h = leer(`${r}/index.html`);
+    assert.ok(h.includes("FAQPage"), r);
+    assert.ok(leer("sitemap.xml").includes(`/${r}/`), r);
+  }
+  const inicio = leer("index.html");
+  assert.ok(inicio.includes("Ingeniería estructural y arquitectura en Sabaneta"));
+  assert.ok(!inicio.includes("fonts.googleapis") && !inicio.includes("fonts.gstatic"));
+  const p = leer("privacidad/index.html");
+  assert.ok(p.includes("hola@ejemplo.co") && p.includes("diez (10) días hábiles") && p.includes("Ley 1581") && !p.includes("por definir") && !p.includes("[razón"));
+  assert.ok(leer("contacto/index.html").includes("cf-turnstile") && leer("contacto/index.html").includes("challenges.cloudflare.com"));
+});
+
+test("sin clave de Turnstile no se carga nada de Cloudflare en la página", () => {
+  compilar({ SITE_PROTOTYPE: "0", SITE_URL: "https://ejemplo.co", TURNSTILE_SITE_KEY: "" });
+  assert.ok(!leer("contacto/index.html").includes("cf-turnstile"));
+});

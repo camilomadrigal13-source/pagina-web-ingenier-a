@@ -6,6 +6,7 @@ import { pagina } from "../src/layout.mjs";
 import { home } from "../src/pages/home.mjs";
 import { indice, unidad } from "../src/pages/servicios.mjs";
 import { tecnologia } from "../src/pages/tecnologia.mjs";
+import { guia, preguntas, faqLd, todasLasPreguntas } from "../src/pages/guias.mjs";
 import { nosotros, proceso, proyectos, cotizador, contacto, privacidad, noEncontrada } from "../src/pages/otras.mjs";
 
 const c = cargarConfig();
@@ -22,6 +23,8 @@ const P = leer("contenido/proceso.json");
 const PR = leer("contenido/proyectos.json");
 const Q = leer("contenido/cotizador.json");
 const TAR = leer("contenido/tarifas.json");
+const G = leer("contenido/guias.json");
+const FAQ = leer("contenido/preguntas.json");
 const unidades = S.unidades;
 
 // En producción no se publican los casos ilustrativos. Si no hay proyectos reales, la sección Proyectos se omite.
@@ -38,7 +41,7 @@ function emitir(ruta, opts, archivo) {
   if (!archivo) rutas.push(ruta);
 }
 
-emitir("/", { titulo: H.seo.titulo, descripcion: H.seo.descripcion, cuerpo: home(c, H, S), home: true, bodyClass: "pg-home" });
+emitir("/", { titulo: H.seo.titulo, descripcion: H.seo.descripcion, cuerpo: home(c, H, S, G), home: true, bodyClass: "pg-home" });
 emitir("/nosotros/", { titulo: N.seo.titulo, descripcion: N.seo.descripcion, cuerpo: nosotros(c, N), migas: [{ nombre: "Nosotros", ruta: "/nosotros/" }] });
 emitir("/servicios/", { titulo: "Servicios de ingeniería, arquitectura, BIM, construcción y gestión documental", descripcion: S.intro.texto, cuerpo: indice(c, S), migas: [{ nombre: "Servicios", ruta: "/servicios/" }] });
 for (const u of unidades) {
@@ -53,6 +56,10 @@ emitir("/proceso/", { titulo: P.seo.titulo, descripcion: P.seo.descripcion, cuer
 emitir("/cotizador/", { titulo: Q.seo.titulo, descripcion: Q.seo.descripcion, cuerpo: cotizador(c, Q, unidades, TAR), migas: [{ nombre: "Cotización", ruta: "/cotizador/" }] });
 emitir("/contacto/", { titulo: "Contacto", descripcion: `Escríbenos desde ${c.ubicacion.municipio}, ${c.ubicacion.departamento}, o por WhatsApp. Atendemos todo Colombia.`, cuerpo: contacto(c, unidades, Q), migas: [{ nombre: "Contacto", ruta: "/contacto/" }] });
 emitir("/privacidad/", { titulo: "Política de privacidad", descripcion: "Cómo tratamos los datos que nos envías por los formularios del sitio.", cuerpo: privacidad(c), migas: [{ nombre: "Privacidad", ruta: "/privacidad/" }] });
+for (const g of G.guias) {
+  emitir(`/${g.slug}/`, { titulo: g.seo.titulo, descripcion: g.seo.descripcion, cuerpo: guia(c, G, g, unidades), migas: [{ nombre: "Servicios", ruta: "/servicios/" }, { nombre: g.corto, ruta: `/${g.slug}/` }], extraLd: [faqLd(g.faq)] });
+}
+emitir("/preguntas/", { titulo: FAQ.seo.titulo, descripcion: FAQ.seo.descripcion, cuerpo: preguntas(c, FAQ), migas: [{ nombre: "Preguntas frecuentes", ruta: "/preguntas/" }], extraLd: [faqLd(todasLasPreguntas(FAQ))] });
 emitir("/404.html", { titulo: "Página no encontrada", descripcion: "Página no encontrada.", cuerpo: noEncontrada(c) }, "404.html");
 
 const hoy = new Date().toISOString().slice(0, 10);
@@ -69,7 +76,7 @@ if (process.env.CF_PAGES || process.env.TARGET === "cloudflare") {
   X-Frame-Options: DENY
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=()
-  Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'
+  Content-Security-Policy: default-src 'self'; script-src 'self' https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src 'self'; frame-src https://challenges.cloudflare.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self'
 
 /assets/*
   Cache-Control: public, max-age=3600, must-revalidate

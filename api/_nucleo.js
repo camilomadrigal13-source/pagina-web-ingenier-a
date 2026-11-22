@@ -61,6 +61,18 @@ function armar(d) {
   return { plano, html, asunto: `${d.origen === "cotizar" ? "Cotización" : "Contacto"}: ${d.nombre}` };
 }
 
+/** Verifica el token de Cloudflare Turnstile (antibots gratis). Solo se exige si TURNSTILE_SECRET está definida. */
+async function turnstileOk(token, ip, env) {
+  if (!token || typeof token !== "string" || token.length > 2048) return false;
+  try {
+    const p = new URLSearchParams({ secret: env.TURNSTILE_SECRET, response: token });
+    if (ip) p.set("remoteip", ip);
+    const r = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", { method: "POST", body: p, signal: AbortSignal.timeout(8000) });
+    const j = await r.json();
+    return j.success === true;
+  } catch { return false; }
+}
+
 /**
  * Procesa una solicitud del formulario.
  * @param {{metodo:string, origin?:string, host:string, ip:string, body:any, env:Record<string,string|undefined>}} p
@@ -79,6 +91,10 @@ export async function procesar({ metodo, origin, host, ip, body, env }) {
 
   const { d, e } = validar(b);
   if (Object.keys(e).length) return { codigo: 400, cuerpo: { error: "Revisa los datos del formulario.", campos: e } };
+
+  if (env.TURNSTILE_SECRET && !(await turnstileOk(b["cf-turnstile-response"], ip, env))) {
+    return { codigo: 400, cuerpo: { error: "No pudimos verificar que eres una persona. Recarga la página e inténtalo de nuevo." } };
+  }
 
   // Se envía por todos los canales configurados a la vez. Basta con que uno llegue para confirmar al cliente.
   const cfg = configurados(env);

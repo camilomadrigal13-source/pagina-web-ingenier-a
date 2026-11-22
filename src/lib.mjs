@@ -21,6 +21,7 @@ export function cargarConfig() {
   let url = env.SITE_URL || c.dominio || (env.VERCEL_PROJECT_PRODUCTION_URL ? `https://${env.VERCEL_PROJECT_PRODUCTION_URL}` : "") || env.CF_PAGES_URL || "";
   c.urlPendiente = !url;
   c.url = (url || "https://dominio-pendiente.example").replace(/\/+$/, "");
+  c.turnstile = env.TURNSTILE_SITE_KEY || "";
   c.waNumero = (c.contacto.whatsapp || "").replace(/\D/g, "");
   return c;
 }
@@ -31,6 +32,7 @@ export function pendientes(c) {
   if (!c.nombre_definitivo) p.push("nombre definitivo de la firma");
   if (!c.logo) p.push("logotipo (se usa una marca provisional)");
   if (!c.contacto.correo) p.push("correo público");
+  if (!c.legal?.razon_social || !c.legal?.documento) p.push("razón social e identificación del responsable de datos (política de privacidad)");
   if (!c.waNumero) p.push("número de WhatsApp");
   if (c.urlPendiente) p.push("dominio (SITE_URL o dominio en site.config.json)");
   if (!Object.values(c.redes).some(Boolean)) p.push("redes sociales");
