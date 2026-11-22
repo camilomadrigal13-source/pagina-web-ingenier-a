@@ -22,8 +22,8 @@ const inicio = leer("/");
 const cabecera = reenlazar(inicio.match(/<header class="enc">[\s\S]*?<\/header>/)[0]);
 const pie = reenlazar(inicio.match(/<footer class="pie">[\s\S]*?<\/footer>/)[0]);
 const banner = (inicio.match(/<div class="proto"[\s\S]*?<\/div>/) || [""])[0];
-const fuentes = inicio.match(/<link rel="stylesheet" href="(https:\/\/fonts[^"]+)">/)[1];
-const css = readFileSync(join(dist, "assets/styles.css"), "utf8");
+// Las fuentes se incrustan en el archivo único (no hay servidor que las sirva).
+const css = readFileSync(join(dist, "assets/styles.css"), "utf8").replace(/url\(\/assets\/fonts\/([^)]+)\)/g, (m, f) => `url(data:font/woff2;base64,${readFileSync(join(dist, "assets/fonts", f)).toString("base64")})`);
 const tema = readFileSync(join(dist, "assets/theme.js"), "utf8");
 const app = readFileSync(join(dist, "assets/app.js"), "utf8");
 
@@ -54,7 +54,6 @@ const enrutador = `
 
 const html = `<title>${(readFileSync(join(RAIZ, "site.config.json"), "utf8").match(/"nombre":\s*"([^"]+)"/) || [, "Sitio"])[1]}</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<link rel="stylesheet" href="${fuentes}">
 <style>${css}
 .salto{display:none}</style>
 <script>${tema}</script>
