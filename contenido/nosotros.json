@@ -1,7 +1,7 @@
 {
-  "seo": { "titulo": "Nosotros", "descripcion": "Firma multidisciplinaria de ingeniería, arquitectura y servicios profesionales con sede en Sabaneta, Antioquia. Trabajamos en el Valle de Aburrá, Antioquia y todo Colombia." },
+  "seo": { "titulo": "Nosotros", "descripcion": "Firma multidisciplinaria de ingeniería, arquitectura y servicios profesionales con sede en Medellín, Antioquia. Atendemos toda el área metropolitana del Valle de Aburrá y vamos a cualquier lugar de Antioquia y del país." },
   "titulo": "Una firma que junta disciplinas que casi siempre se contratan por separado.",
-  "intro": "Somos un estudio de servicios profesionales con sede en Sabaneta, Antioquia. Reunimos ingeniería civil y estructural, arquitectura, modelado y documentación técnica, construcción y gestión de proyectos, y gestión documental. Cada servicio puede contratarse de forma independiente. Cuando se combinan, trabajan con la misma información y el mismo criterio.",
+  "intro": "Somos un estudio de servicios profesionales con sede en Medellín, Antioquia. Reunimos ingeniería civil y estructural, arquitectura, modelado y documentación técnica, construcción y gestión de proyectos, y gestión documental. Cada servicio puede contratarse de forma independiente. Cuando se combinan, trabajan con la misma información y el mismo criterio.",
   "principios": [
     { "titulo": "Filosofía de trabajo", "texto": "Un proyecto bien resuelto es el que se entiende, se puede construir y se puede mantener. Preferimos preguntar y definir alcance antes que corregir después." },
     { "titulo": "Enfoque multidisciplinario", "texto": "Las decisiones de arquitectura, estructura, costos y obra se afectan entre sí. Las miramos juntas desde el comienzo, o las coordinamos con tu equipo si ya tienes uno." },
@@ -12,7 +12,7 @@
   ],
   "alcance": {
     "titulo": "Dónde trabajamos",
-    "texto": "Con sede en Sabaneta, atendemos de forma presencial Medellín y el Valle de Aburrá. En el resto de Antioquia y de Colombia trabajamos con visitas programadas cuando el servicio lo requiere. Los servicios de modelado, documentación, presupuestos, consultoría y gestión documental pueden prestarse de manera remota."
+    "texto": "Estamos ubicados en Medellín y atendemos toda el área metropolitana del Valle de Aburrá. Vamos a cualquier lugar de Antioquia y del país cuando el servicio lo requiere. Los servicios de modelado, documentación, presupuestos, consultoría y gestión documental pueden prestarse de manera remota."
   },
   "clientes": {
     "titulo": "Con quién trabajamos",

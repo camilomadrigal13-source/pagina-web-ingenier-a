@@ -86,7 +86,7 @@ Sin ningún canal configurado, el formulario responde "El envío de mensajes aú
 4. **Variables de entorno** en Vercel: `RESEND_API_KEY`, `CONTACT_TO`, `CONTACT_FROM`. Volver a desplegar.
 5. **Dominio**: comprar uno (registrador colombiano o internacional), agregarlo en Vercel → Domains y poner los registros DNS que indica. Poner el dominio en `dominio` de `site.config.json`.
 6. **Salir de prototipo**: poner `"modo_prototipo": false` en `site.config.json`. Eso quita el aviso, permite que Google indexe (`robots.txt` y `meta robots`) y exige que haya dominio.
-7. **Google**: registrar el sitio en Search Console y enviar `/sitemap.xml`. Crear la ficha de Google Business Profile con la dirección de Sabaneta.
+7. **Google**: registrar el sitio en Search Console y enviar `/sitemap.xml`. Crear la ficha de Google Business Profile con la dirección de Medellín.
 
 ### Costos recurrentes
 - Dominio: unos USD 10–20 al año (.com) o más para .co.

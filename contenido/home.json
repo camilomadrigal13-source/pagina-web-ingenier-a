@@ -1,13 +1,13 @@
 {
   "seo": {
-    "titulo": "Ingeniería civil, arquitectura y gestión de proyectos en Sabaneta y Medellín",
-    "descripcion": "Firma multidisciplinaria con sede en Sabaneta, Antioquia: diseño estructural y arquitectónico, BIM y planos, construcción y gestión de proyectos, y gestión documental. Trabajamos en todo Colombia."
+    "titulo": "Ingeniería civil, arquitectura y gestión de proyectos en Medellín y el Valle de Aburrá",
+    "descripcion": "Firma multidisciplinaria con sede en Medellín, Antioquia: diseño estructural y arquitectónico, BIM y planos, construcción y gestión de proyectos, y gestión documental. Trabajamos en todo Colombia."
   },
   "eyebrow": "Valle de Aburrá · Antioquia · Colombia",
-  "hero_titulo": "Ingeniería estructural y arquitectura en Sabaneta.",
+  "hero_titulo": "Ingeniería estructural y arquitectura en Medellín.",
   "hero_lema": "Del primer trazo al último detalle.",
   "hero_texto": "Reunimos ingeniería, arquitectura, tecnología, gestión de proyectos y gestión documental. Podemos acompañar tu proyecto de principio a fin, o encargarnos solo del servicio que necesitas.",
-  "hero_notas": ["Medellín y Valle de Aburrá", "Antioquia y todo Colombia", "Servicios remotos"],
+  "hero_notas": ["Medellín y toda el área metropolitana", "Cualquier lugar de Antioquia y del país", "Servicios remotos"],
   "audiencias_titulo": "Trabajamos con",
   "audiencias": ["Empresas", "Constructoras", "Arquitectos e ingenieros", "Particulares", "Entidades públicas"],
   "unidades_titulo": "Qué hacemos",
