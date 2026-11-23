@@ -8,7 +8,7 @@
       "corto": "Reforzamiento estructural",
       "seo": {
         "titulo": "Reforzamiento y evaluación estructural en Medellín y el Valle de Aburrá",
-        "descripcion": "Evaluamos edificaciones existentes y proponemos su reforzamiento estructural en Medellín y toda el área metropolitana (Sabaneta, Envigado, Itagüí y más): diagnóstico, alternativas, diseño y planos."
+        "descripcion": "Evaluamos edificaciones existentes y proponemos su reforzamiento estructural en Medellín, Sabaneta, Envigado, Itagüí y toda el área metropolitana, y vamos a cualquier lugar de Antioquia y del país."
       },
       "titulo": "Reforzamiento estructural de edificaciones existentes",
       "lead": "Si tienes una casa, un edificio o una bodega que va a cambiar de uso, crecer, o que simplemente te genera dudas, el primer paso es entender cómo está y qué necesita. Estamos en Medellín, atendemos toda el área metropolitana y vamos a cualquier lugar de Antioquia y del país.",
@@ -26,11 +26,26 @@
         {
           "h": "Cómo trabajamos",
           "pasos": [
-            { "t": "Levantamiento y revisión de información", "p": "Visita, registro de la estructura y revisión de planos o antecedentes, si existen." },
-            { "t": "Diagnóstico", "p": "Identificamos el estado de los elementos, los daños (patología) y los puntos críticos, con las pruebas o ensayos que cada caso necesite." },
-            { "t": "Alternativas", "p": "Te presentamos opciones de intervención con su alcance, para decidir con información y no a ciegas." },
-            { "t": "Diseño del reforzamiento", "p": "Memorias, planos y detalles constructivos de la alternativa elegida." },
-            { "t": "Acompañamiento", "p": "Apoyo técnico durante la ejecución, directamente o con quien construya." }
+            {
+              "t": "Levantamiento y revisión de información",
+              "p": "Visita, registro de la estructura y revisión de planos o antecedentes, si existen."
+            },
+            {
+              "t": "Diagnóstico",
+              "p": "Identificamos el estado de los elementos, los daños (patología) y los puntos críticos, con las pruebas o ensayos que cada caso necesite."
+            },
+            {
+              "t": "Alternativas",
+              "p": "Te presentamos opciones de intervención con su alcance, para decidir con información y no a ciegas."
+            },
+            {
+              "t": "Diseño del reforzamiento",
+              "p": "Memorias, planos y detalles constructivos de la alternativa elegida."
+            },
+            {
+              "t": "Acompañamiento",
+              "p": "Apoyo técnico durante la ejecución, directamente o con quien construya."
+            }
           ]
         },
         {
@@ -44,9 +59,18 @@
         }
       ],
       "faq": [
-        { "p": "¿Todas las edificaciones necesitan reforzamiento?", "r": "No. Primero se evalúa. Muchas veces el resultado es que la estructura está bien, o que basta una intervención puntual." },
-        { "p": "¿Pueden evaluar una casa sin planos?", "r": "Sí, es frecuente. Se hace un levantamiento de la estructura y, si hace falta, ensayos en sitio. El alcance se define tras conocer el caso." },
-        { "p": "¿Cuánto cuesta?", "r": "Depende del tamaño, el estado y la información disponible. Por eso no publicamos precios fijos: cuéntanos tu caso y te enviamos una propuesta." }
+        {
+          "p": "¿Todas las edificaciones necesitan reforzamiento?",
+          "r": "No. Primero se evalúa. Muchas veces el resultado es que la estructura está bien, o que basta una intervención puntual."
+        },
+        {
+          "p": "¿Pueden evaluar una casa sin planos?",
+          "r": "Sí, es frecuente. Se hace un levantamiento de la estructura y, si hace falta, ensayos en sitio. El alcance se define tras conocer el caso."
+        },
+        {
+          "p": "¿Cuánto cuesta?",
+          "r": "Depende del tamaño, el estado y la información disponible. Por eso no publicamos precios fijos: cuéntanos tu caso y te enviamos una propuesta."
+        }
       ]
     },
     {
@@ -55,7 +79,7 @@
       "corto": "Vulnerabilidad sísmica",
       "seo": {
         "titulo": "Estudio de vulnerabilidad sísmica de edificaciones (NSR-10) en Antioquia",
-        "descripcion": "Qué es un estudio de vulnerabilidad sísmica, cuándo se necesita y qué incluye según la NSR-10. Estamos en Medellín, atendemos el área metropolitana y vamos a cualquier lugar de Antioquia y del país."
+        "descripcion": "Qué es un estudio de vulnerabilidad sísmica, cuándo se necesita y qué incluye según la NSR-10. Estamos en Medellín, atendemos Sabaneta y toda el área metropolitana, y vamos a cualquier lugar de Antioquia y del país."
       },
       "titulo": "Estudio de vulnerabilidad sísmica",
       "lead": "Un estudio de vulnerabilidad sísmica estima cómo se comportaría una edificación existente frente a un sismo y qué se debe hacer para que se comporte mejor. En Colombia, la referencia es el Reglamento Colombiano de Construcción Sismo Resistente (NSR-10).",
@@ -84,9 +108,18 @@
         }
       ],
       "faq": [
-        { "p": "¿El estudio garantiza que la edificación no se dañará en un sismo?", "r": "No. Ningún estudio puede garantizarlo. Sirve para conocer y reducir el riesgo con criterio técnico." },
-        { "p": "¿Es lo mismo que un avalúo o una inspección visual?", "r": "No. Una inspección visual es un primer paso. El estudio de vulnerabilidad incluye análisis y verificación técnica de la estructura." },
-        { "p": "¿Pueden hacer también el diseño del reforzamiento?", "r": "Sí, es parte de nuestros servicios: del diagnóstico al diseño y los planos, o solo la etapa que necesites." }
+        {
+          "p": "¿El estudio garantiza que la edificación no se dañará en un sismo?",
+          "r": "No. Ningún estudio puede garantizarlo. Sirve para conocer y reducir el riesgo con criterio técnico."
+        },
+        {
+          "p": "¿Es lo mismo que un avalúo o una inspección visual?",
+          "r": "No. Una inspección visual es un primer paso. El estudio de vulnerabilidad incluye análisis y verificación técnica de la estructura."
+        },
+        {
+          "p": "¿Pueden hacer también el diseño del reforzamiento?",
+          "r": "Sí, es parte de nuestros servicios: del diagnóstico al diseño y los planos, o solo la etapa que necesites."
+        }
       ]
     },
     {
@@ -94,8 +127,8 @@
       "unidad": "A",
       "corto": "Diseño estructural",
       "seo": {
-        "titulo": "Diseño estructural y arquitectónico en Medellín y el área metropolitana",
-        "descripcion": "Diseño estructural, cimentaciones y diseño arquitectónico para casas, edificios y obras comerciales en Medellín y toda el área metropolitana del Valle de Aburrá."
+        "titulo": "Diseño estructural y arquitectónico en Medellín, Sabaneta y el área metropolitana",
+        "descripcion": "Diseño estructural, cimentaciones y diseño arquitectónico para casas, edificios y obras comerciales en Medellín, Sabaneta y toda el área metropolitana, y en cualquier lugar de Antioquia y del país."
       },
       "titulo": "Diseño estructural y arquitectónico para edificaciones nuevas",
       "lead": "Diseñamos la estructura y, si lo necesitas, la arquitectura de tu proyecto, desde Medellín, para el área metropolitana y cualquier lugar de Antioquia o del país, con el mismo criterio y la misma información.",
@@ -116,17 +149,38 @@
         {
           "h": "Cómo es el proceso",
           "pasos": [
-            { "t": "Información inicial", "p": "Lote, uso, alcance, presupuesto y estudio de suelos si ya existe." },
-            { "t": "Propuesta", "p": "Alcance, entregables y plazos por escrito." },
-            { "t": "Desarrollo y revisión", "p": "Avances revisados contigo y coordinados con el resto del proyecto." },
-            { "t": "Entrega", "p": "Planos y memorias ordenados, listos para construir o para presentar donde se requiera." }
+            {
+              "t": "Información inicial",
+              "p": "Lote, uso, alcance, presupuesto y estudio de suelos si ya existe."
+            },
+            {
+              "t": "Propuesta",
+              "p": "Alcance, entregables y plazos por escrito."
+            },
+            {
+              "t": "Desarrollo y revisión",
+              "p": "Avances revisados contigo y coordinados con el resto del proyecto."
+            },
+            {
+              "t": "Entrega",
+              "p": "Planos y memorias ordenados, listos para construir o para presentar donde se requiera."
+            }
           ]
         }
       ],
       "faq": [
-        { "p": "¿Dónde atienden?", "r": "Estamos ubicados en Medellín y atendemos toda el área metropolitana. También vamos a cualquier lugar de Antioquia y del país, y varios servicios se prestan de forma remota." },
-        { "p": "¿Necesito estudio de suelos?", "r": "Para diseñar la cimentación de una edificación nueva normalmente sí. Te orientamos sobre qué estudio hace falta según tu proyecto." },
-        { "p": "¿Puedo contratar solo la estructura?", "r": "Sí. Cada servicio se puede contratar por separado." }
+        {
+          "p": "¿Dónde atienden?",
+          "r": "Estamos ubicados en Medellín y atendemos toda el área metropolitana. También vamos a cualquier lugar de Antioquia y del país, y varios servicios se prestan de forma remota."
+        },
+        {
+          "p": "¿Necesito estudio de suelos?",
+          "r": "Para diseñar la cimentación de una edificación nueva normalmente sí. Te orientamos sobre qué estudio hace falta según tu proyecto."
+        },
+        {
+          "p": "¿Puedo contratar solo la estructura?",
+          "r": "Sí. Cada servicio se puede contratar por separado."
+        }
       ]
     },
     {
@@ -135,7 +189,7 @@
       "corto": "Revisión y licencia",
       "seo": {
         "titulo": "Revisión de diseños estructurales y documentos técnicos para licencia de construcción",
-        "descripcion": "Revisamos diseños estructurales y preparamos planos y memorias para licencia de construcción en Medellín, el área metropolitana y cualquier lugar de Antioquia o del país."
+        "descripcion": "Revisamos diseños estructurales y preparamos planos y memorias para licencia de construcción en Medellín, Sabaneta y el área metropolitana, y en cualquier lugar de Antioquia y del país."
       },
       "titulo": "Revisión de diseños estructurales y documentos para licencia",
       "lead": "Antes de construir, los diseños deben estar completos, coherentes y presentados como los pide la entidad que los revisa. Te ayudamos a revisarlos y a ordenarlos.",
@@ -159,9 +213,18 @@
         }
       ],
       "faq": [
-        { "p": "¿Tramitan la licencia por mí?", "r": "Podemos preparar y ordenar los documentos técnicos. El alcance de la gestión del trámite se define en la propuesta." },
-        { "p": "¿Cuánto tarda una revisión?", "r": "Depende del tamaño del proyecto y de la calidad de la información. Te damos un plazo estimado en la propuesta." },
-        { "p": "¿Qué necesito enviar para empezar?", "r": "Planos, memorias y estudios disponibles, y una descripción del proyecto. Con eso te decimos qué falta." }
+        {
+          "p": "¿Tramitan la licencia por mí?",
+          "r": "Podemos preparar y ordenar los documentos técnicos. El alcance de la gestión del trámite se define en la propuesta."
+        },
+        {
+          "p": "¿Cuánto tarda una revisión?",
+          "r": "Depende del tamaño del proyecto y de la calidad de la información. Te damos un plazo estimado en la propuesta."
+        },
+        {
+          "p": "¿Qué necesito enviar para empezar?",
+          "r": "Planos, memorias y estudios disponibles, y una descripción del proyecto. Con eso te decimos qué falta."
+        }
       ]
     }
   ]
