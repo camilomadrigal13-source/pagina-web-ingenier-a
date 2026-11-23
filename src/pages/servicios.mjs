@@ -3,7 +3,7 @@ import { expediente } from "../svg.mjs";
 import { cta } from "../layout.mjs";
 import { cabecera, migaHtml } from "./comun.mjs";
 
-export function indice(c, s) {
+export function indice(c, s, G) {
   return `${cabecera("Servicios", s.intro.titulo, s.intro.texto)}
 <section class="sec"><div class="wrap"><ol class="unidades unidades-lg">
 ${s.unidades.map((u) => `<li class="unidad u-${u.id}"><a class="unidad-a" href="/servicios/${u.slug}/">
@@ -12,6 +12,10 @@ ${s.unidades.map((u) => `<li class="unidad u-${u.id}"><a class="unidad-a" href="
   <span class="unidad-l">${u.bloques.map((b) => esc(b.nombre)).join(" · ")}</span><span class="unidad-go" aria-hidden="true">→</span></a></li>`).join("")}
 </ol>
 <p class="nota-pie">Cada servicio se puede contratar de forma independiente. <a href="/cotizador/">Cuéntanos qué necesitas</a> y armamos la propuesta.</p></div></section>
+<section class="sec sec-alt"><div class="wrap">
+  <div class="sec-cab"><p class="eyebrow">${esc(G.indice_titulo)}</p><h2 class="h2">Temas que resolvemos a diario.</h2></div>
+  <ul class="temas">${G.guias.map((g) => `<li><a href="/${g.slug}/"><span class="temas-t">${esc(g.corto)}</span><span class="temas-d">${esc(g.seo.descripcion)}</span><span aria-hidden="true">→</span></a></li>`).join("")}<li><a href="/preguntas/"><span class="temas-t">Preguntas frecuentes</span><span class="temas-d">Cómo cotizamos, dónde trabajamos y qué puedes contratar por separado.</span><span aria-hidden="true">→</span></a></li></ul>
+</div></section>
 ${cta(c, "¿No sabes por dónde empezar?", "Cuéntanos tu situación y te decimos qué servicios hacen falta y cuáles no.")}`;
 }
 
