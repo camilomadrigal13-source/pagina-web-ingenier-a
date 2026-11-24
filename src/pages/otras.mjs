@@ -36,7 +36,7 @@ export function proyectos(c, p) {
 <p class="mono filtros-n" id="filtros-n" role="status" aria-live="polite">${p.proyectos.length} ${p.proyectos.length === 1 ? "proyecto" : "proyectos"}</p>
 <ul class="proy" id="proy">${p.proyectos.map((x) => `<li class="proy-i" data-cat="${x.categorias.join(" ")}">
   <button type="button" class="proy-b" data-abrir="${esc(x.id)}" aria-haspopup="dialog">
-    ${ranura(x.nombre, x.imagenes[0] || "", c, 4, 3)}
+    ${ranura(x.nombre, x.imagenes[0] || "", c, 4, 3, false)}
     <span class="proy-m"><span class="mono proy-c">${x.categorias.map((k) => esc(nom[k])).join(" · ")}</span><span class="proy-n">${esc(x.nombre)}</span>${x.ilustrativo ? `<span class="etq-ilus mono">Caso ilustrativo</span>` : ""}</span>
   </button></li>`).join("")}</ul>
 </div></section>
@@ -44,7 +44,7 @@ ${p.proyectos.map((x) => `<dialog class="modal" id="m-${esc(x.id)}" aria-labelle
   <div class="modal-in"><button class="modal-x" type="button" data-cerrar aria-label="Cerrar">×</button>
   <p class="mono">${x.ilustrativo ? "Caso ilustrativo · no corresponde a una obra real" : esc(x.ubicacion || "Ubicación por definir")}</p>
   <h2 class="h2" id="m-${esc(x.id)}-t">${esc(x.nombre)}</h2><p class="lead">${esc(x.descripcion)}</p>
-  <div class="modal-g">${(x.imagenes.length ? x.imagenes : ["", ""]).map((im, i) => ranura(`Fotografía ${i + 1}`, im, c, 4, 3)).join("")}${x.planos.map((im, i) => ranura(`Plano ${i + 1}`, im, c, 4, 3)).join("")}</div>
+  <div class="modal-g">${(x.imagenes.length ? x.imagenes : ["", ""]).map((im, i) => ranura(`${x.nombre}, fotografía ${i + 1}`, im, c, 4, 3, false)).join("")}${x.planos.map((im, i) => ranura(`${x.nombre}, plano ${i + 1}`, im, c, 4, 3, false)).join("")}</div>
   <dl class="modal-d"><div><dt>Alcance</dt><dd>${x.alcance.map(esc).join(" · ")}</dd></div><div><dt>Resultados</dt><dd>${esc(x.resultados || "Por documentar")}</dd></div></dl>
   <a class="btn btn-sm" href="/cotizador/?u=${esc(x.servicios[0] || "")}">Solicitar algo similar</a></div></dialog>`).join("")}
 ${cta(c, "¿Tu proyecto puede ser el próximo?", "Cuéntanos qué necesitas.")}`;
