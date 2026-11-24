@@ -27,13 +27,13 @@ ${cta(c, "Empecemos por el diagnóstico", "Cuéntanos qué necesitas y definimos
 
 export function proyectos(c, p) {
   const nom = Object.fromEntries(p.categorias.map((x) => [x.id, x.nombre]));
-  return `${cabecera("Proyectos y portafolio", p.titulo, p.intro)}
+  return `${cabecera("Proyectos y portafolio", p.titulo, p.proyectos.some((x) => x.ilustrativo) || !p.intro_real ? p.intro : p.intro_real)}
 <section class="sec sec-top"><div class="wrap">
 <div class="filtros" role="group" aria-label="Filtrar proyectos por área">
   <button type="button" class="filtro" data-filtro="todos" aria-pressed="true">Todos</button>
   ${p.categorias.map((x) => `<button type="button" class="filtro" data-filtro="${x.id}" aria-pressed="false">${esc(x.nombre)}</button>`).join("")}
 </div>
-<p class="mono filtros-n" id="filtros-n" role="status" aria-live="polite">${p.proyectos.length} proyectos</p>
+<p class="mono filtros-n" id="filtros-n" role="status" aria-live="polite">${p.proyectos.length} ${p.proyectos.length === 1 ? "proyecto" : "proyectos"}</p>
 <ul class="proy" id="proy">${p.proyectos.map((x) => `<li class="proy-i" data-cat="${x.categorias.join(" ")}">
   <button type="button" class="proy-b" data-abrir="${esc(x.id)}" aria-haspopup="dialog">
     ${ranura(x.nombre, x.imagenes[0] || "", c, 4, 3)}

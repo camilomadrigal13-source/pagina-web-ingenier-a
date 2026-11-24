@@ -19,9 +19,9 @@ test("producción: sin banner de prototipo, indexable, sin proyectos ilustrativo
   const inicio = leer("index.html");
   assert.ok(!inicio.includes("Prototipo en revisión"));
   assert.ok(!inicio.includes("noindex"));
-  assert.ok(!existsSync(dist("proyectos")), "no debe publicarse /proyectos/ sin proyectos reales");
-  assert.ok(!inicio.includes("/proyectos/"));
-  assert.ok(!leer("sitemap.xml").includes("/proyectos/"));
+  assert.ok(existsSync(dist("proyectos")), "con un proyecto real se publica /proyectos/");
+  assert.ok(!leer("proyectos/index.html").includes("ilustrativ"), "sin casos ilustrativos en producción");
+  assert.ok(inicio.includes("/proyectos/") && leer("sitemap.xml").includes("/proyectos/"));
   const robots = leer("robots.txt");
   assert.ok(robots.includes("Allow: /") && robots.includes("Sitemap: https://ejemplo.co/sitemap.xml") && !robots.includes("Disallow: /\n"));
   for (const f of todosLosHtml()) {
