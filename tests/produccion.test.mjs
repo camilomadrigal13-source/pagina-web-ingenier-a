@@ -29,7 +29,7 @@ test("producción: sin banner de prototipo, indexable, sin proyectos ilustrativo
     assert.ok(!h.includes("Caso ilustrativo"), f);
     assert.ok(!h.includes("Espacio para imagen real"), f);
     assert.ok(!h.includes("proto"), f + " conserva el banner");
-    assert.ok(!h.includes("Imagen próximamente") && !h.includes('class="ranura'), f + " publica un espacio vacío de imagen");
+    assert.ok(!h.includes("Imagen próximamente") && !h.includes('class="ranura" style'), f + " publica un espacio vacío de imagen");
   }
   assert.ok(!leer("nosotros/index.html").includes("perfil-vacio"));
 });

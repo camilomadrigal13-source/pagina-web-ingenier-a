@@ -41,7 +41,7 @@
         "arquitectura",
         "construccion"
       ],
-      "descripcion": "Edificación de uso hotelero, con habitaciones y apartaestudios, construida en 2008 en el sector de Laureles, en Medellín. Realizamos el diseño arquitectónico y la interventoría, con participación activa en la supervisión y la ejecución de la obra.",
+      "descripcion": "Edificación de uso hotelero, con habitaciones y apartaestudios, del año 2007 en el sector de Laureles, en Medellín. Realizamos el diseño arquitectónico y la interventoría, con participación activa en la supervisión y la ejecución de la obra.",
       "alcance": [
         "Diseño arquitectónico",
         "Interventoría",
@@ -51,9 +51,18 @@
         "A",
         "C"
       ],
-      "imagenes": [],
+      "imagenes": [
+        "/img/proyectos/living-montes-1-fachada-general.jpg",
+        "/img/proyectos/living-montes-2-fachada-arboles.jpg",
+        "/img/proyectos/living-montes-3-esquina-acceso.jpg",
+        "/img/proyectos/living-montes-4-acceso-jardin.jpg",
+        "/img/proyectos/living-montes-5-fachada-banderas.jpg",
+        "/img/proyectos/living-montes-6-circulacion-escalera.jpg",
+        "/img/proyectos/living-montes-7-balcon.jpg",
+        "/img/proyectos/living-montes-8-apartaestudio.jpg"
+      ],
       "planos": [],
-      "resultados": "Edificación construida en 2008."
+      "resultados": "Edificación del año 2007, en operación como aparthotel."
     },
     {
       "id": "caso-1",
