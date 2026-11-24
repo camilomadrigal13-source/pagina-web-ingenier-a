@@ -65,6 +65,29 @@
       "resultados": "Del diseño a la obra entregada: un hotel en funcionamiento desde 2007."
     },
     {
+      "id": "edificio-marat",
+      "nombre": "Edificio Marat",
+      "ubicacion": "Sabaneta, Antioquia",
+      "categorias": [
+        "construccion",
+        "gestion",
+        "ingenieria"
+      ],
+      "descripcion": "Acompañamos este edificio en Sabaneta de principio a fin. Participamos en la gerencia técnica del proyecto, revisamos los diseños, construimos y supervisamos cada etapa de la obra, desde el inicio hasta su entrega.",
+      "alcance": [
+        "Gerencia técnica del proyecto",
+        "Revisión de diseños",
+        "Construcción y supervisión de la obra"
+      ],
+      "servicios": [
+        "A",
+        "C"
+      ],
+      "imagenes": [],
+      "planos": [],
+      "resultados": "Un mismo equipo responsable desde el inicio hasta el final de la obra."
+    },
+    {
       "id": "caso-1",
       "ilustrativo": true,
       "nombre": "Edificio de vivienda de mediana altura",
