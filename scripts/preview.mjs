@@ -27,9 +27,12 @@ const css = readFileSync(join(dist, "assets/styles.css"), "utf8").replace(/url\(
 const tema = readFileSync(join(dist, "assets/theme.js"), "utf8");
 const app = readFileSync(join(dist, "assets/app.js"), "utf8");
 
+// Las fotos de /img/ se incrustan también (archivo único, sin servidor).
+const incrustar = (html) => html.replace(/src="(\/img\/[^"]+\.(?:jpg|png))"/g, (m, r) => `src="data:image/${r.endsWith(".png") ? "png" : "jpeg"};base64,${readFileSync(join(dist, r)).toString("base64")}"`);
+
 const vistas = rutas.map((r) => {
   const h = leer(r);
-  const cuerpo = reenlazar(h.match(/<main id="contenido">([\s\S]*?)<\/main>/)[1]);
+  const cuerpo = incrustar(reenlazar(h.match(/<main id="contenido">([\s\S]*?)<\/main>/)[1]));
   const clase = (h.match(/<body class="([^"]*)"/) || [, ""])[1];
   const titulo = h.match(/<title>([^<]*)<\/title>/)[1];
   return `<div class="vista" id="v-${slug(r)}" data-ruta="${r}" data-body="${clase}" data-titulo="${titulo.replace(/"/g, "&quot;")}" hidden>${cuerpo}</div>`;
