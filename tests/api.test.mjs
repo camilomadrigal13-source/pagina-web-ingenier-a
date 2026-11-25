@@ -11,7 +11,7 @@ function llamar(body, { method = "POST", headers = {}, ip = "1.1.1.1" } = {}) {
   });
 }
 const entorno = () => { process.env.RESEND_API_KEY = "re_test"; process.env.CONTACT_TO = "yo@ejemplo.com"; };
-const VARS = ["RESEND_API_KEY", "CONTACT_TO", "CONTACT_FROM", "SHEETS_WEBHOOK_URL", "SHEETS_TOKEN", "WA_PROVIDER", "CALLMEBOT_PHONE", "CALLMEBOT_APIKEY", "WA_META_TOKEN", "WA_META_PHONE_ID", "WA_META_TO", "WA_META_TEMPLATE", "TURNSTILE_SECRET"];
+const VARS = ["RESEND_API_KEY", "CONTACT_TO", "CONTACT_FROM", "SHEETS_WEBHOOK_URL", "SHEETS_TOKEN", "WA_PROVIDER", "CALLMEBOT_PHONE", "CALLMEBOT_APIKEY", "WA_META_TOKEN", "WA_META_PHONE_ID", "WA_META_TO", "WA_META_TEMPLATE", "TURNSTILE_SECRET", "TELEGRAM_BOT_TOKEN", "TELEGRAM_CHAT_ID"];
 const limpiar = () => { VARS.forEach((v) => delete process.env[v]); _prueba.visitas.clear(); };
 const entornoHoja = () => { process.env.SHEETS_WEBHOOK_URL = "https://script.google.com/macros/s/ABC/exec"; process.env.SHEETS_TOKEN = "tok_secreto"; };
 const entornoCallmebot = () => { process.env.WA_PROVIDER = "callmebot"; process.env.CALLMEBOT_PHONE = "+573001112233"; process.env.CALLMEBOT_APIKEY = "k123"; };
@@ -163,4 +163,23 @@ test("sin correo ni teléfono se rechaza", async () => {
   limpiar(); entorno(); simular();
   const r = await llamar({ ...valido, correo: "", telefono: "" });
   assert.equal(r.code, 400); assert.ok(r.json.campos.correo); assert.equal(llamadas.length, 0);
+});
+
+test("Telegram: avisa con toda la información y sin asteriscos", async () => {
+  limpiar(); simular();
+  process.env.TELEGRAM_BOT_TOKEN = "123:ABC"; process.env.TELEGRAM_CHAT_ID = "999";
+  const r = await llamar(completo);
+  assert.equal(r.code, 200);
+  const tg = llamadas.find((x) => String(x.u).includes("api.telegram.org/bot123:ABC/sendMessage"));
+  assert.ok(tg, "llamó a Telegram");
+  const c = JSON.parse(tg.o.body);
+  assert.equal(c.chat_id, "999");
+  for (const x of ["Ana Pérez", "ana@ejemplo.com", "Sabaneta", "1200 m²", "$60.600.000"]) assert.ok(c.text.includes(x), x);
+  assert.ok(!c.text.includes("*"));
+  delete process.env.TELEGRAM_BOT_TOKEN; delete process.env.TELEGRAM_CHAT_ID;
+});
+test("Telegram a medias no cuenta como configurado (503)", async () => {
+  limpiar(); simular(); process.env.TELEGRAM_BOT_TOKEN = "123:ABC";
+  assert.equal((await llamar(valido)).code, 503);
+  delete process.env.TELEGRAM_BOT_TOKEN;
 });

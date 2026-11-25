@@ -4,6 +4,7 @@
 // Variables de entorno (todas del SERVIDOR; ver docs/INTEGRACIONES.md):
 //   Correo (Resend):   RESEND_API_KEY, CONTACT_TO, CONTACT_FROM
 //   Hoja de cálculo:   SHEETS_WEBHOOK_URL, SHEETS_TOKEN
+//   Telegram (aviso al celular, gratis): TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID
 //   WhatsApp:          WA_PROVIDER = "callmebot" | "meta"
 //     callmebot:       CALLMEBOT_PHONE, CALLMEBOT_APIKEY
 //     meta (oficial):  WA_META_TOKEN, WA_META_PHONE_ID, WA_META_TO, [WA_META_TEMPLATE, WA_META_LANG]
@@ -23,6 +24,7 @@ export function configurados(env = process.env) {
   return {
     correo: !!(env.RESEND_API_KEY && env.CONTACT_TO),
     hoja: !!(env.SHEETS_WEBHOOK_URL && env.SHEETS_TOKEN),
+    telegram: !!(env.TELEGRAM_BOT_TOKEN && env.TELEGRAM_CHAT_ID),
     whatsapp:
       (wa === "callmebot" && !!(env.CALLMEBOT_PHONE && env.CALLMEBOT_APIKEY)) ||
       (wa === "meta" && !!(env.WA_META_TOKEN && env.WA_META_PHONE_ID && env.WA_META_TO))
@@ -99,4 +101,16 @@ export async function whatsapp(d, env = process.env) {
     if (!r.ok) console.error("Canal WhatsApp: respondió", r.status);
     return r.ok;
   } catch (e) { console.error("Canal WhatsApp falló:", e?.name); return false; }
+}
+
+/** Aviso por Telegram: llega como notificación al celular. Crear el bot con @BotFather (ver docs/INTEGRACIONES.md). */
+export async function telegram(d, env = process.env) {
+  try {
+    const r = await pedir(`https://api.telegram.org/bot${env.TELEGRAM_BOT_TOKEN}/sendMessage`, {
+      method: "POST", headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ chat_id: env.TELEGRAM_CHAT_ID, text: textoWhatsApp(d).replace(/\*/g, ""), disable_web_page_preview: true })
+    });
+    if (!r.ok) console.error("Canal Telegram: respondió", r.status);
+    return r.ok;
+  } catch (e) { console.error("Canal Telegram falló:", e?.name); return false; }
 }

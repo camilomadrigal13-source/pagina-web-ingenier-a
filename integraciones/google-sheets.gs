@@ -31,10 +31,31 @@ function doPost(e) {
     var destino = hoja.getRange(hoja.getLastRow() + 1, 1, 1, COLUMNAS.length);
     destino.setNumberFormat("@");
     destino.setValues([fila]);
+    avisar(f);
     return salida({ ok: true });
   } catch (err) {
     return salida({ ok: false });
   }
+}
+
+/**
+ * Envía un correo con la solicitud a quien es dueño de la hoja (o a las direcciones de la propiedad AVISO_CORREO,
+ * separadas por comas). Con la app de Gmail en el celular, llega como notificación. Si falla, la fila ya quedó guardada.
+ */
+function avisar(f) {
+  try {
+    var para = PropertiesService.getScriptProperties().getProperty("AVISO_CORREO") || Session.getEffectiveUser().getEmail();
+    var lineas = ["Origen: " + (f.origen || ""), "Nombre: " + (f.nombre || ""), "Correo: " + (f.correo || ""),
+      "Teléfono: " + (f.telefono || ""), "Prefiere: " + (f.contacto_preferido || ""), "Servicio(s): " + (f.servicio || f.servicios || ""),
+      "Proyecto: " + (f.tipo_proyecto || ""), "Ubicación: " + (f.ubicacion || ""), "Área: " + (f.area_m2 || ""), "Nivel: " + (f.nivel || ""),
+      "", "Mensaje:", f.mensaje || "", "", f.estimacion || "", "", "Hoja: " + SpreadsheetApp.getActiveSpreadsheet().getUrl()];
+    MailApp.sendEmail({
+      to: para,
+      subject: "Nueva solicitud: " + (f.nombre || "sin nombre") + " · " + (f.servicio || f.servicios || f.origen || ""),
+      body: lineas.join("\n"),
+      replyTo: f.correo || para
+    });
+  } catch (err) { /* el aviso es un extra: nunca debe impedir que se guarde la solicitud */ }
 }
 
 function salida(obj) {

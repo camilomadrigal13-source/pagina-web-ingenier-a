@@ -3,7 +3,7 @@
 // El archivo empieza con "_" para que Vercel no lo publique como ruta.
 //   ALLOWED_ORIGINS  orígenes extra permitidos, separados por comas (opcional; el propio dominio siempre se permite)
 
-import { configurados, correo, hoja, whatsapp } from "./_canales.js";
+import { configurados, correo, hoja, whatsapp, telegram } from "./_canales.js";
 
 const LIMITE = { ventanaMs: 10 * 60 * 1000, max: 6 };
 export const visitas = new Map(); // mejor esfuerzo: en serverless cada instancia tiene su propia memoria
@@ -103,6 +103,7 @@ export async function procesar({ metodo, origin, host, ip, body, env }) {
   if (cfg.correo) canales.push(["correo", correo(d, armar(d), env)]);
   if (cfg.hoja) canales.push(["hoja", hoja(d, env)]);
   if (cfg.whatsapp) canales.push(["whatsapp", whatsapp(d, env)]);
+  if (cfg.telegram) canales.push(["telegram", telegram(d, env)]);
   if (!canales.length) return { codigo: 503, cuerpo: { error: "El envío de mensajes aún no está configurado." } };
 
   const resultados = await Promise.all(canales.map(async ([nombre, p]) => [nombre, await p.catch(() => false)]));

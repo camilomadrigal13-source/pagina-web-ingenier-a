@@ -13,6 +13,33 @@ Todas las claves se guardan solo en Vercel (Settings → Environment Variables),
 
 ---
 
+## Avisos al celular: qué conviene configurar (en este orden)
+
+Cuando alguien envía una solicitud, la fila ya queda en la hoja. Para que además **te avisen**:
+
+| Aviso | Costo | Dificultad | Qué recibes |
+|---|---|---|---|
+| **A. Correo desde la hoja** | Gratis | Muy fácil (5 min) | Un correo con todos los datos. Con la app de Gmail en el celular, llega como notificación. |
+| **B. Telegram** | Gratis | Fácil (10 min) | Un mensaje con todos los datos, como notificación del celular. Es estable y oficial. |
+| C. WhatsApp con CallMeBot | Gratis | Media | Mensaje de WhatsApp a tu número. El servicio es gratuito y de terceros, y su número de activación ha cambiado antes: úsalo solo como respaldo. |
+| D. WhatsApp oficial (Meta) | Con cuenta de empresa | Alta | El más formal; requiere verificar un negocio. |
+
+### A. Correo desde la hoja (el más fácil)
+1. Abre la hoja de solicitudes → **Extensiones → Apps Script**.
+2. Reemplaza el código por el de `integraciones/google-sheets.gs` (ahora trae la función `avisar`). Guarda.
+3. **Implementar → Administrar implementaciones → ✏️ Editar → Versión: Nueva versión → Implementar.** Google te pide autorizar el permiso de enviar correo: acéptalo.
+4. Opcional: para avisar a más de una persona, en **Configuración del proyecto → Propiedades del script** agrega `AVISO_CORREO` con los correos separados por coma. Sin esa propiedad, el aviso va al dueño de la hoja.
+5. Prueba: envía una solicitud desde `/cotizador/` y revisa tu correo.
+
+### B. Telegram
+1. En Telegram busca **@BotFather**, escribe `/newbot` y sigue los pasos. Te entrega un **token**.
+2. Abre el chat con tu bot nuevo y escríbele cualquier mensaje.
+3. En el navegador abre `https://api.telegram.org/bot<TU_TOKEN>/getUpdates`. Busca `"chat":{"id":` y copia ese número: es tu `chat_id`.
+4. En Cloudflare, **Settings → Variables and secrets**, agrega `TELEGRAM_BOT_TOKEN` (como Secret) y `TELEGRAM_CHAT_ID`. Vuelve a desplegar.
+5. Activa las notificaciones de Telegram en tu celular.
+
+Se envían todos los canales configurados a la vez; con que uno llegue, el cliente ve «Recibimos tu mensaje».
+
 ## 1. Hoja de cálculo (Google Sheets)
 
 1. Crea una hoja nueva en Google Sheets, por ejemplo «Solicitudes del sitio».
