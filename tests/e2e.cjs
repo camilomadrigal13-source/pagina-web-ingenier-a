@@ -78,7 +78,7 @@ const ok = (n, c, d = "") => { res.push([c, n, d]); console.log(`${c ? "OK  " : 
   const filtrados = await page.$$eval(".proy-i:not([hidden])", (e) => e.length);
   const texto = await page.textContent("#filtros-n");
   await page.click('[data-filtro="todos"]');
-  ok("Filtros de proyectos", total === 8 && filtrados === 1 && /1 proyecto/.test(texto), `${total} → ${filtrados}`);
+  ok("Filtros de proyectos", total === 9 && filtrados === 1 && /1 proyecto/.test(texto), `${total} → ${filtrados}`);
   await page.click('[data-abrir="caso-1"]');
   const abierto = await page.$eval("#m-caso-1", (d) => d.open);
   await page.keyboard.press("Escape");

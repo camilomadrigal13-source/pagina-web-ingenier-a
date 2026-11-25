@@ -88,6 +88,29 @@
       "resultados": "Un mismo equipo responsable desde el inicio hasta el final de la obra."
     },
     {
+      "id": "edificio-marat-plus",
+      "nombre": "Edificio Marat Plus",
+      "ubicacion": "Sabaneta, Antioquia",
+      "categorias": [
+        "construccion",
+        "gestion",
+        "ingenieria"
+      ],
+      "descripcion": "Otro edificio de Sabaneta que llevamos de principio a fin. Participamos en la gerencia técnica del proyecto, revisamos los diseños, construimos y supervisamos la obra, desde el inicio hasta su entrega.",
+      "alcance": [
+        "Gerencia técnica del proyecto",
+        "Revisión de diseños",
+        "Construcción y supervisión de la obra"
+      ],
+      "servicios": [
+        "A",
+        "C"
+      ],
+      "imagenes": [],
+      "planos": [],
+      "resultados": "Un mismo equipo responsable desde el inicio hasta el final de la obra."
+    },
+    {
       "id": "caso-1",
       "ilustrativo": true,
       "nombre": "Edificio de vivienda de mediana altura",
