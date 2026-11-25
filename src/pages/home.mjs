@@ -4,7 +4,7 @@ import { cta, waLink } from "../layout.mjs";
 import { ranura } from "./comun.mjs";
 
 export function home(c, h, servicios, G, pr = null) {
-  const reales = pr ? pr.proyectos.filter((x) => !x.ilustrativo && x.imagenes.length) : [];
+  const reales = pr ? pr.proyectos.filter((x) => !x.ilustrativo && x.imagenes.length && !x.foto_provisional) : [];
   const foto = c.imagenes.hero
     ? `<figure class="hero-foto"><img src="${esc(c.imagenes.hero)}" alt="" width="1200" height="900" fetchpriority="high" decoding="async"></figure>`
     : `<div class="hero-dib">${hero()}</div>`;

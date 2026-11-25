@@ -90,7 +90,8 @@
       ],
       "planos": [],
       "resultados": "Un mismo equipo responsable desde el inicio hasta el final de la obra.",
-      "credito": "Imágenes: Google Street View."
+      "credito": "Imágenes: Google Street View.",
+      "foto_provisional": true
     },
     {
       "id": "edificio-marat-plus",
@@ -165,7 +166,8 @@
       ],
       "planos": [],
       "resultados": "Un edificio multifamiliar, del diseño a la obra terminada.",
-      "credito": "Imágenes: Google Street View."
+      "credito": "Imágenes: Google Street View.",
+      "foto_provisional": true
     },
     {
       "id": "caso-1",
