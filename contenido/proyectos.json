@@ -114,7 +114,11 @@
         "A",
         "C"
       ],
-      "imagenes": [],
+      "imagenes": [
+        "/img/proyectos/marat-plus-1-acceso.jpg",
+        "/img/proyectos/marat-plus-2-dron.jpg",
+        "/img/proyectos/marat-plus-3-obra.jpg"
+      ],
       "planos": [],
       "resultados": "Un mismo equipo responsable desde el inicio hasta el final de la obra."
     },
