@@ -18,7 +18,7 @@ export function cargarConfig() {
   if (env.SITE_WHATSAPP) c.contacto.whatsapp = env.SITE_WHATSAPP;
   if (env.SITE_EMAIL_PUBLIC) c.contacto.correo = env.SITE_EMAIL_PUBLIC;
   if (env.SITE_PROTOTYPE) c.modo_prototipo = env.SITE_PROTOTYPE === "1";
-  let url = env.SITE_URL || c.dominio || (env.VERCEL_PROJECT_PRODUCTION_URL ? `https://${env.VERCEL_PROJECT_PRODUCTION_URL}` : "") || env.CF_PAGES_URL || "";
+  let url = env.SITE_URL || c.dominio || (env.VERCEL_PROJECT_PRODUCTION_URL ? `https://${env.VERCEL_PROJECT_PRODUCTION_URL}` : "") || (env.CF_PAGES_URL || "").replace(/^(https?:\/\/)[0-9a-f]{8}\./i, "$1") || "";   // Cloudflare da una dirección por despliegue (hash.proyecto.pages.dev): se usa la estable del proyecto
   c.urlPendiente = !url;
   c.url = (url || "https://dominio-pendiente.example").replace(/\/+$/, "");
   c.turnstile = env.TURNSTILE_SITE_KEY || "";

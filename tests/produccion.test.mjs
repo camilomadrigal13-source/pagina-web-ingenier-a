@@ -101,3 +101,10 @@ test("páginas de proyecto, guías nuevas, llms.txt, WebP y portada con foto rea
   assert.ok(/name="correo"(?![^>]*required)/.test(leer("contacto/index.html")), "el correo ya no es obligatorio");
   assert.ok(leer("reforzamiento-estructural-medellin/index.html").includes("En resumen"));
 });
+
+test("en Cloudflare la dirección por despliegue (hash.proyecto.pages.dev) se reemplaza por la del proyecto", () => {
+  compilar({ SITE_PROTOTYPE: "0", CF_PAGES_URL: "https://2874dca9.sitio.pages.dev", CF_PAGES: "1" });
+  assert.ok(leer("index.html").includes('<link rel="canonical" href="https://sitio.pages.dev/">'));
+  assert.ok(leer("sitemap.xml").includes("<loc>https://sitio.pages.dev/</loc>") && !leer("sitemap.xml").includes("2874dca9"));
+  assert.ok(!leer("llms.txt").includes("2874dca9"));
+});
