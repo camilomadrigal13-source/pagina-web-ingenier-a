@@ -57,6 +57,38 @@
             "Planos y memorias del reforzamiento elegido.",
             "Recomendaciones para la ejecución y el seguimiento."
           ]
+        },
+        {
+          "h": "Señales que sí conviene mirar",
+          "lista": [
+            "Fisuras diagonales o en forma de «X» en muros o vigas, sobre todo si se abren con el tiempo.",
+            "Fisuras horizontales en columnas, o concreto que se desprende y deja el acero a la vista.",
+            "Puertas y ventanas que se atascan, pisos o placas con pendiente o vibración notable.",
+            "Humedad persistente que mancha el concreto o hace brotar manchas de óxido.",
+            "Cambios de uso o ampliaciones hechas sin un estudio estructural."
+          ]
+        },
+        {
+          "h": "Errores frecuentes al intervenir una estructura",
+          "lista": [
+            "Reparar solo lo que se ve, como resanar fisuras, sin averiguar por qué aparecieron.",
+            "Quitar muros o columnas para ganar espacio sin un diseño que lo respalde.",
+            "Agregar un piso sobre una cimentación que no fue pensada para esa carga.",
+            "Contratar el reforzamiento sin un diagnóstico previo, que es lo que define el alcance."
+          ]
+        },
+        {
+          "h": "Qué llevar a la primera reunión",
+          "lista": [
+            "Fotos de los daños y de la edificación completa.",
+            "Planos, memorias o licencias, si existen. Si no, no hay problema: se hace un levantamiento.",
+            "Historia de la edificación: año aproximado, reformas, cambios de uso y antecedentes de daños.",
+            "Lo que quieres hacer después: ampliar, cambiar el uso, vender o solo estar tranquilo."
+          ]
+        },
+        {
+          "h": "Cuánto tarda y cuánto cuesta",
+          "p": "Depende del tamaño de la edificación, de su estado y de la información disponible. Por eso no damos cifras sin conocer el caso. Después de la visita y del diagnóstico te entregamos una propuesta con alcance, entregables y plazo, y tú decides cómo continuar."
         }
       ],
       "faq": [
@@ -108,6 +140,40 @@
             "Análisis de la estructura y verificación frente a los requisitos aplicables.",
             "Informe con conclusiones, nivel de riesgo observado y alternativas de reforzamiento."
           ]
+        },
+        {
+          "h": "Cuándo se pide",
+          "lista": [
+            "Cuando una entidad, aseguradora o comprador necesita un soporte técnico sobre la estructura.",
+            "Antes de ampliar, subir pisos o cambiar el uso de una edificación existente.",
+            "Cuando una copropiedad quiere priorizar qué intervenir primero.",
+            "Cuando la edificación es antigua, se construyó sin diseño o tiene daños visibles."
+          ]
+        },
+        {
+          "h": "Cómo se hace, paso a paso",
+          "pasos": [
+            {
+              "t": "Recopilar información",
+              "p": "Planos, estudios de suelo, historia de la edificación y estado actual."
+            },
+            {
+              "t": "Inspección en sitio",
+              "p": "Se revisan los elementos, los materiales y los daños; si hace falta, se programan ensayos."
+            },
+            {
+              "t": "Modelo y análisis",
+              "p": "Se analiza la estructura con la información que se tiene y se compara con lo que pide el reglamento."
+            },
+            {
+              "t": "Informe y alternativas",
+              "p": "Conclusiones claras, nivel de riesgo observado y opciones de reforzamiento con su alcance."
+            }
+          ]
+        },
+        {
+          "h": "Qué debes saber antes de contratarlo",
+          "p": "El resultado depende de la calidad de la información. Si no hay planos, se reconstruyen con un levantamiento, y eso puede ampliar el alcance. Un estudio no vuelve sismo resistente a una edificación: dice qué tan lejos está y qué se necesita para acercarla. Las normas y sus versiones se confirman con el ingeniero antes de empezar."
         }
       ],
       "faq": [
@@ -171,6 +237,36 @@
               "p": "Planos y memorias ordenados, listos para construir o para presentar donde se requiera."
             }
           ]
+        },
+        {
+          "h": "Qué necesitamos para empezar",
+          "lista": [
+            "El lote o la edificación: ubicación, dimensiones y topografía.",
+            "El uso previsto y el número de pisos.",
+            "El estudio de suelos, cuando ya existe. Si no, te orientamos sobre cuál hace falta.",
+            "El anteproyecto arquitectónico, si ya lo tienes, o lo desarrollamos contigo."
+          ]
+        },
+        {
+          "h": "Qué recibes",
+          "lista": [
+            "Memorias de cálculo y criterios de diseño.",
+            "Planos estructurales con despieces y detalles constructivos.",
+            "Cuantificación de materiales, si la necesitas.",
+            "Respuestas a las observaciones técnicas que haga la entidad que revisa el proyecto."
+          ]
+        },
+        {
+          "h": "Errores que se evitan con un buen diseño",
+          "lista": [
+            "Rediseñar la estructura cuando cambia la arquitectura, y pagar dos veces.",
+            "Planos con inconsistencias entre estructura y arquitectura, que aparecen en obra.",
+            "Detalles de refuerzo difíciles de armar, que el maestro termina improvisando."
+          ]
+        },
+        {
+          "h": "Quién firma",
+          "p": "Los diseños estructurales los valida y firma un ingeniero civil con matrícula profesional vigente, como exige la normativa colombiana (Ley 400 de 1997 y sus decretos reglamentarios). Antes de contratar a cualquier profesional, puedes verificar su matrícula en el COPNIA."
         }
       ],
       "faq": [
@@ -213,6 +309,41 @@
         {
           "h": "Una advertencia honesta",
           "p": "Para actuar como revisor independiente se exigen requisitos de experiencia y habilitación del profesional. Antes de aceptar un encargo de ese tipo, confirmamos con claridad si cumplimos los requisitos y te lo decimos por escrito."
+        },
+        {
+          "h": "Qué revisamos",
+          "lista": [
+            "Que los supuestos de diseño coincidan con el proyecto: uso, cargas y suelo.",
+            "Que los resultados del cálculo sean coherentes con los planos.",
+            "Que los planos estructurales y los arquitectónicos no se contradigan.",
+            "Que los detalles de refuerzo se puedan construir.",
+            "Que los documentos estén completos para la radicación."
+          ]
+        },
+        {
+          "h": "Cómo trabajamos una revisión",
+          "pasos": [
+            {
+              "t": "Recibir el expediente",
+              "p": "Planos, memorias, estudios y la descripción del proyecto."
+            },
+            {
+              "t": "Revisión técnica",
+              "p": "Se contrastan supuestos, resultados y planos, y se anotan las observaciones."
+            },
+            {
+              "t": "Informe",
+              "p": "Lista ordenada de observaciones, clasificadas por importancia."
+            },
+            {
+              "t": "Seguimiento",
+              "p": "Revisamos de nuevo las correcciones y, si hace falta, respondemos a la curaduría."
+            }
+          ]
+        },
+        {
+          "h": "Cuándo conviene pedirla",
+          "p": "Conviene antes de radicar, para evitar devoluciones, y antes de construir, para encontrar los errores cuando todavía es barato corregirlos. En obra, un error de diseño cuesta mucho más que en el papel."
         }
       ],
       "faq": [
@@ -281,6 +412,28 @@
               "p": "Si lo necesitas, apoyo técnico durante la construcción."
             }
           ]
+        },
+        {
+          "h": "Decisiones que cambian el costo de un hotel",
+          "lista": [
+            "El número y el tamaño de las habitaciones, que definen la rentabilidad.",
+            "La modulación de la estructura, que debe coincidir con la distribución de las habitaciones.",
+            "La ubicación de ascensores, escaleras y ductos, que afecta todos los pisos.",
+            "Las zonas de servicio y de operación, que son tan importantes como las de huéspedes."
+          ]
+        },
+        {
+          "h": "Qué llevar a la primera reunión",
+          "lista": [
+            "El lote o el edificio existente, con sus medidas.",
+            "Una idea del tipo de huésped y del número de unidades.",
+            "El presupuesto de referencia y las fechas en las que quieres abrir.",
+            "Referencias de hoteles que te gusten, para entender el estilo."
+          ]
+        },
+        {
+          "h": "Cuándo involucrar a quien construye",
+          "p": "Cuanto antes mejor. Cuando el diseño y la obra se piensan juntos, se detectan los problemas de construcción durante el diseño, y no cuando el hotel ya está en obra."
         }
       ],
       "faq": [
@@ -333,6 +486,40 @@
         {
           "h": "Cómo se decide en una copropiedad",
           "p": "En propiedad horizontal las obras y los gastos se aprueban según el reglamento de la copropiedad y la Ley 675 de 2001. Por eso el informe se prepara pensando en quien lo va a leer: el consejo, la administración y los propietarios, que no son ingenieros."
+        },
+        {
+          "h": "Cómo empieza una evaluación",
+          "pasos": [
+            {
+              "t": "Visita de reconocimiento",
+              "p": "Se recorre el edificio con la administración, para ver su estado y escuchar lo que preocupa."
+            },
+            {
+              "t": "Revisión de información",
+              "p": "Planos, memorias, reformas y antecedentes de daños."
+            },
+            {
+              "t": "Diagnóstico",
+              "p": "Se identifican los problemas y se priorizan, con las pruebas necesarias."
+            },
+            {
+              "t": "Informe para la asamblea",
+              "p": "Un documento claro, que explica qué se encontró y qué se recomienda."
+            }
+          ]
+        },
+        {
+          "h": "Qué pasa después",
+          "p": "Si el informe concluye que hace falta intervenir, puedes pedir el diseño del reforzamiento, o llevar el informe a otro profesional. La decisión de qué hacer, cuándo y con qué presupuesto la toma la copropiedad."
+        },
+        {
+          "h": "Preguntas que conviene hacerle a quien te evalúe",
+          "lista": [
+            "¿Quién firma el informe y con qué matrícula profesional?",
+            "¿Qué información necesitan y qué ensayos se harán?",
+            "¿Qué entregan exactamente y cuándo?",
+            "¿Pueden presentar el informe a la asamblea?"
+          ]
         }
       ],
       "faq": [
@@ -347,6 +534,84 @@
         {
           "p": "¿La evaluación dice si el edificio es seguro?",
           "r": "Dice cómo está la estructura y qué se recomienda. Ningún estudio puede garantizar el comportamiento ante un sismo, pero sirve para decidir con información."
+        }
+      ]
+    },
+    {
+      "slug": "ingeniero-estructural-medellin",
+      "unidad": "A",
+      "corto": "Ingeniero estructural",
+      "seo": {
+        "titulo": "Ingeniero estructural en Medellín",
+        "meta": "Qué hace un ingeniero estructural, cuándo lo necesitas y cómo trabajamos en Medellín y el Valle de Aburrá: diseño, revisión, evaluación y reforzamiento.",
+        "descripcion": "Qué hace un ingeniero estructural, cuándo lo necesitas y cómo trabajamos en Medellín y el área metropolitana."
+      },
+      "titulo": "Ingeniero estructural en Medellín",
+      "resumen": "Un ingeniero estructural diseña, revisa y evalúa cómo se sostiene una edificación. Lo necesitas para construir con seguridad, para saber en qué estado está una estructura existente o para decidir si conviene reforzarla. Trabajamos en Medellín, el Valle de Aburrá y cualquier lugar de Antioquia o del país.",
+      "lead": "Una buena estructura no se ve, pero lo sostiene todo. Aquí te explicamos qué hace un ingeniero estructural, cuándo contratarlo y qué esperar de su trabajo.",
+      "secciones": [
+        {
+          "h": "Qué hace un ingeniero estructural",
+          "lista": [
+            "Diseña la estructura de edificaciones nuevas: cimentación, columnas, vigas y placas.",
+            "Revisa diseños hechos por otros, antes de radicar o de construir.",
+            "Evalúa edificaciones existentes: su estado, sus daños y su capacidad.",
+            "Diseña reforzamientos cuando una estructura lo necesita.",
+            "Acompaña la obra para verificar que se construya como se diseñó."
+          ]
+        },
+        {
+          "h": "Cuándo lo necesitas",
+          "lista": [
+            "Vas a construir, ampliar o subir pisos.",
+            "Vas a remodelar y quieres quitar muros o abrir vanos.",
+            "Ves fisuras, humedad o deformaciones.",
+            "Una entidad o curaduría pide diseños o conceptos firmados.",
+            "Vas a comprar un inmueble y quieres conocer su estado."
+          ]
+        },
+        {
+          "h": "Cómo trabajamos",
+          "pasos": [
+            {
+              "t": "Conversamos",
+              "p": "Entendemos el proyecto o el problema, y te decimos qué necesitas y qué no."
+            },
+            {
+              "t": "Propuesta",
+              "p": "Alcance, entregables, plazo y valor, por escrito."
+            },
+            {
+              "t": "Desarrollo",
+              "p": "Trabajamos con la arquitectura y el resto del proyecto, y revisamos contigo."
+            },
+            {
+              "t": "Entrega y seguimiento",
+              "p": "Documentos ordenados y, si lo necesitas, apoyo durante la obra."
+            }
+          ]
+        },
+        {
+          "h": "Quién firma y con qué respaldo",
+          "p": "En Colombia los diseños estructurales los valida y firma un ingeniero civil con matrícula profesional vigente, y esa matrícula se puede verificar en el COPNIA. Nuestros entregables los valida y firma el profesional competente."
+        },
+        {
+          "h": "Dónde trabajamos",
+          "p": "Estamos en Medellín y atendemos el área metropolitana del Valle de Aburrá. También vamos a otros lugares de Antioquia y del país, y varios servicios se prestan de forma remota."
+        }
+      ],
+      "faq": [
+        {
+          "p": "¿Necesito un ingeniero estructural para una remodelación?",
+          "r": "Si vas a tocar muros, columnas, vigas o placas, sí. Aunque parezca una obra pequeña, un muro puede ser parte de la estructura. Primero se evalúa."
+        },
+        {
+          "p": "¿Cuánto cuesta un diseño estructural?",
+          "r": "Depende del tamaño y la complejidad del proyecto. No publicamos precios fijos: cuéntanos tu proyecto y te enviamos una propuesta."
+        },
+        {
+          "p": "¿Pueden revisar un diseño que hizo otro ingeniero?",
+          "r": "Sí. Es un servicio habitual, antes de radicar o antes de construir."
         }
       ]
     }
