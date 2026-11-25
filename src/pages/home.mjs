@@ -1,13 +1,16 @@
 import { esc } from "../lib.mjs";
 import { hero } from "../svg.mjs";
 import { cta, waLink } from "../layout.mjs";
-import { ranura } from "./comun.mjs";
+import { ranura, foto as fotoTag } from "./comun.mjs";
 
 export function home(c, h, servicios, G, pr = null) {
   const reales = pr ? pr.proyectos.filter((x) => !x.ilustrativo && x.imagenes.length && !x.foto_provisional) : [];
+  const heroP = reales.find((x) => x.id === "hotel-medellin-gold") || reales[0];
   const foto = c.imagenes.hero
     ? `<figure class="hero-foto"><img src="${esc(c.imagenes.hero)}" alt="" width="1200" height="900" fetchpriority="high" decoding="async"></figure>`
-    : `<div class="hero-dib">${hero()}</div>`;
+    : heroP && c.mostrarProyectos !== false
+      ? `<figure class="hero-real"><a href="/proyectos/${esc(heroP.id)}/">${fotoTag(heroP.imagenes[0], (heroP.alts || [])[0] || heroP.nombre, { ancho: 1400, alto: 1050, prioridad: true, sizes: "(max-width:900px) 92vw, 560px" })}</a><figcaption class="mono"><strong>${esc(heroP.nombre)}</strong><span>${esc(heroP.ubicacion)} · ${heroP.alcance.map(esc).join(", ")}</span></figcaption></figure>`
+      : `<div class="hero-dib">${hero()}</div>`;
   const wa = waLink(c, "Hola, quiero información sobre sus servicios.");
   return `
 <section class="hero"><div class="wrap hero-in">
@@ -26,6 +29,11 @@ export function home(c, h, servicios, G, pr = null) {
 </div></section>
 
 <section class="aud"><div class="wrap aud-in"><p class="mono aud-t">${esc(h.audiencias_titulo)}</p><ul>${h.audiencias.map((a) => `<li>${esc(a)}</li>`).join("")}</ul></div></section>
+
+<section class="sec"><div class="wrap">
+  <div class="sec-cab"><p class="eyebrow">${esc(h.casos.eyebrow)}</p><h2 class="h2">${esc(h.casos.titulo)}</h2></div>
+  <ul class="casos">${h.casos.items.map((x) => `<li><a href="${esc(x.enlace)}"><span class="casos-t">${esc(x.titulo)}</span><span class="casos-d">${esc(x.texto)}</span><span class="casos-go mono">Ver cómo →</span></a></li>`).join("")}</ul>
+</div></section>
 
 <section class="sec"><div class="wrap">
   <div class="sec-cab"><p class="eyebrow">${esc(h.unidades_titulo)}</p><h2 class="h2">${esc(servicios.intro.titulo)}</h2><p class="lead">${esc(servicios.intro.texto)}</p></div>

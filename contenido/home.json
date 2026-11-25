@@ -52,5 +52,31 @@
   "obras_eyebrow": "Obras reales",
   "obras_titulo": "Edificios y hoteles que ya se construyeron.",
   "obras_texto": "Proyectos en Medellín y Sabaneta en los que hemos participado, del diseño a la obra.",
-  "obras_enlace": "Ver todos los proyectos"
+  "obras_enlace": "Ver todos los proyectos",
+  "casos": {
+    "eyebrow": "Elige tu caso",
+    "titulo": "¿Quién eres? Te mostramos por dónde empezar.",
+    "items": [
+      {
+        "titulo": "Constructoras",
+        "texto": "Revisión de diseños, detalle de refuerzo y cantidades. Entra en la etapa que necesites.",
+        "enlace": "/servicios/bim-documentacion-tecnica/"
+      },
+      {
+        "titulo": "Hoteles y apartahoteles",
+        "texto": "Hemos diseñado hoteles en Laureles–Estadio. Mira Living Montes y Medellín Gold.",
+        "enlace": "/diseno-hoteles-apartahoteles-medellin/"
+      },
+      {
+        "titulo": "Copropiedades",
+        "texto": "¿Dudas sobre la seguridad estructural del edificio? Empieza con una evaluación.",
+        "enlace": "/evaluacion-estructural-propiedad-horizontal/"
+      },
+      {
+        "titulo": "Particulares",
+        "texto": "De la idea al plano y a la obra, con un solo equipo.",
+        "enlace": "/diseno-estructural-medellin/"
+      }
+    ]
+  }
 }

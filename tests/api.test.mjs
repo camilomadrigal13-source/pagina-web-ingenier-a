@@ -152,3 +152,15 @@ test("Turnstile: si el verificador falla, no se envía", async () => {
   assert.equal((await llamar({ ...valido, "cf-turnstile-response": "x" })).code, 400);
   delete process.env.TURNSTILE_SECRET;
 });
+
+test("con teléfono basta: el correo es opcional", async () => {
+  limpiar(); entorno(); simular();
+  const r = await llamar({ ...valido, correo: "", telefono: "300 111 2233" });
+  assert.equal(r.code, 200);
+  assert.ok(!JSON.parse(llamadas[0].o.body).reply_to, "sin correo no se envía reply_to");
+});
+test("sin correo ni teléfono se rechaza", async () => {
+  limpiar(); entorno(); simular();
+  const r = await llamar({ ...valido, correo: "", telefono: "" });
+  assert.equal(r.code, 400); assert.ok(r.json.campos.correo); assert.equal(llamadas.length, 0);
+});

@@ -62,7 +62,17 @@
         "/img/proyectos/living-montes-8-apartaestudio.jpg"
       ],
       "planos": [],
-      "resultados": "Del diseño a la obra entregada: un hotel en funcionamiento desde 2007."
+      "resultados": "Del diseño a la obra entregada: un hotel en funcionamiento desde 2007.",
+      "alts": [
+        "Vista general de la fachada del Aparta Hotel Montes entre árboles",
+        "Fachada frontal del hotel con árboles y toldo azul",
+        "Esquina y acceso del hotel con jardín",
+        "Acceso con letrero y jardinera",
+        "Fachada con banderas vista desde abajo",
+        "Escalera y circulación interior con ladrillo a la vista",
+        "Balcón con mesa y vista a los árboles",
+        "Apartaestudio con cocineta"
+      ]
     },
     {
       "id": "edificio-marat",
@@ -94,7 +104,15 @@
       "planos": [],
       "resultados": "Un mismo equipo responsable desde el inicio hasta el final de la obra.",
       "credito": "Imágenes: Google Street View.",
-      "foto_provisional": true
+      "foto_provisional": true,
+      "alts": [
+        "Acceso del Edificio Marat con letrero y cipreses",
+        "Balcones de la torre vistos desde la calle",
+        "Base del edificio con jardín y palmas",
+        "Torre del Edificio Marat vista desde abajo",
+        "Fachada y acceso con reja",
+        "Fachada de la torre con balcones"
+      ]
     },
     {
       "id": "edificio-marat-plus",
@@ -122,7 +140,13 @@
         "/img/proyectos/marat-plus-4-estructura.jpg"
       ],
       "planos": [],
-      "resultados": "Un mismo equipo responsable desde el inicio hasta el final de la obra."
+      "resultados": "De la gerencia técnica a la entrega de la obra, con el mismo esquema de trabajo.",
+      "alts": [
+        "Acceso del Edificio Marat Plus con escultura roja y fuente",
+        "Vista aérea de la torre con terraza y piscinas",
+        "Torre durante la construcción, con andamio",
+        "Estructura de concreto de la torre en construcción"
+      ]
     },
     {
       "id": "hotel-medellin-gold",
@@ -144,7 +168,12 @@
         "/img/proyectos/medellin-gold-2-torre.jpg"
       ],
       "planos": [],
-      "resultados": "Un hotel en funcionamiento, diseñado por nuestro equipo."
+      "resultados": "Un hotel en funcionamiento, diseñado por nuestro equipo.",
+      "alts": [
+        "Fachada del Hotel Medellín Gold con arcos y letrero",
+        "Fachada de noche con el letrero encendido",
+        "Torre completa del Hotel Medellín Gold"
+      ]
     },
     {
       "id": "edificio-lusitania",
@@ -171,7 +200,11 @@
       "planos": [],
       "resultados": "Un edificio multifamiliar, del diseño a la obra terminada.",
       "credito": "Imágenes: Google Street View.",
-      "foto_provisional": true
+      "foto_provisional": true,
+      "alts": [
+        "Fachada del Edificio Lusitania en esquina, con balcones de vidrio",
+        "Vista completa del Edificio Lusitania desde la esquina"
+      ]
     },
     {
       "id": "caso-1",

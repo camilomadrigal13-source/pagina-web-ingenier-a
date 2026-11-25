@@ -49,10 +49,10 @@ function jsonLd(c, servicios) {
   return org;
 }
 
-export function pagina(c, { ruta, titulo, descripcion, cuerpo, servicios, migas = [], bodyClass = "", home = false, extraLd = [] }) {
+export function pagina(c, { ruta, titulo, descripcion, cuerpo, servicios, migas = [], bodyClass = "", home = false, extraLd = [], imagen = "", waTexto = "Hola, quiero información sobre sus servicios." }) {
   const tituloCompleto = home ? `${titulo} | ${c.nombre}` : `${titulo} | ${c.nombre}`;
   const canon = `${c.url}${ruta}`;
-  const og = `${c.url}${c.imagenes.og}`;
+  const og = `${c.url}${imagen || c.imagenes.og}`;
   const ld = [jsonLd(c, servicios), { "@context": "https://schema.org", "@type": "WebSite", name: c.nombre, url: c.url, inLanguage: "es-CO" }, ...extraLd];
   if (migas.length) {
     ld.push({
@@ -63,7 +63,7 @@ export function pagina(c, { ruta, titulo, descripcion, cuerpo, servicios, migas 
   const nav = NAV.filter((n) => c.mostrarProyectos !== false || n.href !== "/proyectos/").map((n) => `<li><a href="${n.href}"${ruta.startsWith(n.href) ? ' aria-current="page"' : ""}>${n.texto}</a></li>`).join("");
   const banner = c.modo_prototipo
     ? `<div class="proto" role="note">Prototipo en revisión. El nombre, los datos de contacto, los proyectos y las imágenes son provisionales.</div>` : "";
-  const wa = waLink(c, `Hola, quiero información sobre sus servicios.`);
+  const wa = waLink(c, waTexto);
   return `<!doctype html>
 <html lang="es-CO">
 <head>
@@ -81,7 +81,9 @@ ${c.modo_prototipo ? '<meta name="robots" content="noindex,nofollow">' : ""}
 <meta property="og:description" content="${esc(descripcion)}">
 <meta property="og:url" content="${esc(canon)}">
 <meta property="og:image" content="${esc(og)}">
+<meta property="og:image:alt" content="${esc(titulo)}">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="${esc(og)}">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="/assets/fonts/manrope.woff2" as="font" type="font/woff2" crossorigin>
 <script src="/assets/theme.js"></script>
@@ -94,7 +96,7 @@ ${banner}
 <header class="enc">
   <div class="wrap enc-in">
     ${logo(c, true)}
-    <nav id="menu" class="nav" aria-label="Principal"><ul>${nav}</ul></nav>
+    <nav id="menu" class="nav" aria-label="Principal"><ul>${nav}<li class="nav-cta"><a class="btn" href="/cotizador/">Solicitar cotización</a></li></ul></nav>
     <div class="enc-acc">
       <button class="icono" id="tema" type="button" aria-label="Cambiar entre modo claro y oscuro" aria-pressed="false">
         <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.3 5.3l2.1 2.1M16.6 16.6l2.1 2.1M18.7 5.3l-2.1 2.1M7.4 16.6l-2.1 2.1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
@@ -141,8 +143,8 @@ ${c.turnstile ? '<script src="https://challenges.cloudflare.com/turnstile/v0/api
 }
 
 /** Bloque de llamada a la acción reutilizable. */
-export function cta(c, titulo, texto, extra = "") {
-  const wa = waLink(c, "Hola, quiero cotizar un proyecto.");
+export function cta(c, titulo, texto, extra = "", waTexto = "Hola, quiero cotizar un proyecto.") {
+  const wa = waLink(c, waTexto);
   return `<section class="cta-banda"><div class="wrap cta-in">
     <div><h2 class="h2">${esc(titulo)}</h2><p>${esc(texto)}</p></div>
     <div class="cta-btns"><a class="btn btn-claro" href="/cotizador/${extra}">Solicitar cotización</a>${wa ? `<a class="btn btn-borde" href="${esc(wa)}" target="_blank" rel="noopener">Escribir por WhatsApp</a>` : `<a class="btn btn-borde" href="/contacto/">Contacto</a>`}</div>

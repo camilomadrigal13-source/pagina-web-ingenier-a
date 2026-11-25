@@ -72,7 +72,8 @@
           "p": "¿Cuánto cuesta?",
           "r": "Depende del tamaño, el estado y la información disponible. Por eso no publicamos precios fijos: cuéntanos tu caso y te enviamos una propuesta."
         }
-      ]
+      ],
+      "resumen": "El reforzamiento estructural mejora el comportamiento de una edificación existente. Empieza con una evaluación que dice cómo está la estructura y qué necesita; solo si hace falta, se diseña la intervención. En Medellín y el Valle de Aburrá lo hacemos en cuatro pasos: levantamiento, diagnóstico, alternativas y diseño."
     },
     {
       "slug": "vulnerabilidad-sismica-nsr-10",
@@ -122,7 +123,8 @@
           "p": "¿Pueden hacer también el diseño del reforzamiento?",
           "r": "Sí, es parte de nuestros servicios: del diagnóstico al diseño y los planos, o solo la etapa que necesites."
         }
-      ]
+      ],
+      "resumen": "Un estudio de vulnerabilidad sísmica estima cómo se comportaría una edificación existente frente a un sismo y qué se debe hacer para mejorarla. En Colombia la referencia es la NSR-10, cuyo Título A.10 trata la evaluación e intervención de edificaciones existentes."
     },
     {
       "slug": "diseno-estructural-medellin",
@@ -184,7 +186,8 @@
           "p": "¿Puedo contratar solo la estructura?",
           "r": "Sí. Cada servicio se puede contratar por separado."
         }
-      ]
+      ],
+      "resumen": "El diseño estructural define cómo se sostiene un edificio: cimentación, columnas, vigas y placas. Cuando se piensa junto con la arquitectura desde el inicio, se evitan rediseños y sobrecostos. Diseñamos ambas desde Medellín para el área metropolitana y cualquier lugar de Antioquia o del país."
     },
     {
       "slug": "revision-estructural-licencia-construccion",
@@ -229,7 +232,128 @@
           "p": "¿Qué necesito enviar para empezar?",
           "r": "Planos, memorias y estudios disponibles, y una descripción del proyecto. Con eso te decimos qué falta."
         }
+      ],
+      "resumen": "Antes de construir, los diseños deben estar completos, coherentes y presentados como los pide la entidad que los revisa. Revisamos diseños estructurales y organizamos planos, memorias y anexos para la licencia de construcción, y confirmamos los requisitos con la curaduría o la oficina de planeación."
+    },
+    {
+      "slug": "diseno-hoteles-apartahoteles-medellin",
+      "unidad": "A",
+      "corto": "Diseño de hoteles",
+      "seo": {
+        "titulo": "Diseño de hoteles y apartahoteles en Medellín",
+        "meta": "Diseño arquitectónico de hoteles y apartahoteles en Medellín: acceso, habitaciones, apartaestudios y zonas comunes. Hemos diseñado hoteles en Laureles–Estadio.",
+        "descripcion": "Diseño arquitectónico de hoteles y apartahoteles en Medellín. Hemos diseñado hoteles en Laureles–Estadio y acompañado su obra."
+      },
+      "titulo": "Diseño de hoteles y apartahoteles",
+      "resumen": "Un hotel se diseña pensando en el huésped y en la operación: cómo se llega, cómo se circula, cómo se descansa y cómo se atiende. Hemos diseñado hoteles en Laureles–Estadio, en Medellín, como Living Montes y Hotel Medellín Gold, y en el primero acompañamos también la obra.",
+      "lead": "Un hotel tiene que verse bien, funcionar bien y poder operarse sin sobresaltos. Desde Medellín diseñamos hoteles y apartahoteles pensando en esas tres cosas desde el primer trazo.",
+      "secciones": [
+        {
+          "h": "Qué resolvemos en el diseño",
+          "lista": [
+            "El acceso y la recepción: la primera impresión y el control de ingreso.",
+            "Las habitaciones y los apartaestudios: distribución, iluminación y privacidad.",
+            "Las circulaciones y escaleras, claras para el huésped y para el personal.",
+            "Las zonas comunes, de servicio y de operación del hotel.",
+            "La coordinación con la estructura y las instalaciones desde el anteproyecto."
+          ]
+        },
+        {
+          "h": "Hoteles que hemos diseñado",
+          "lista": [
+            "Living Montes (Aparta Hotel Montes), Laureles–Estadio, 2007: diseño arquitectónico, acompañamiento técnico y supervisión de la obra.",
+            "Hotel Medellín Gold, Laureles–Estadio, 2015: diseño arquitectónico."
+          ]
+        },
+        {
+          "h": "Cómo trabajamos",
+          "pasos": [
+            {
+              "t": "Entender el negocio",
+              "p": "Tipo de huésped, número de unidades, servicios y presupuesto."
+            },
+            {
+              "t": "Anteproyecto",
+              "p": "Volumen, distribución y fachada, para decidir antes de detallar."
+            },
+            {
+              "t": "Proyecto y planos",
+              "p": "Planos y detalles coordinados con la estructura."
+            },
+            {
+              "t": "Acompañamiento",
+              "p": "Si lo necesitas, apoyo técnico durante la construcción."
+            }
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "p": "¿Diseñan solo la parte arquitectónica?",
+          "r": "Sí, se puede contratar solo el diseño. Hotel Medellín Gold, por ejemplo, fue solo diseño arquitectónico. También podemos coordinar la estructura y acompañar la obra."
+        },
+        {
+          "p": "¿Pueden remodelar un hotel o un apartahotel que ya funciona?",
+          "r": "Sí. Primero se evalúa el edificio, incluida su estructura, y se define qué se puede intervenir sin detener la operación más de lo necesario."
+        },
+        {
+          "p": "¿Qué trámites exige un hotel?",
+          "r": "Además de la licencia de construcción, un hotel tiene requisitos propios de turismo y de seguridad. Los confirmamos con las entidades antes de definir el alcance."
+        }
+      ]
+    },
+    {
+      "slug": "evaluacion-estructural-propiedad-horizontal",
+      "unidad": "A",
+      "corto": "Copropiedades",
+      "seo": {
+        "titulo": "Evaluación estructural para copropiedades en Medellín",
+        "meta": "Evaluación estructural de edificios en propiedad horizontal en Medellín y el Valle de Aburrá: fisuras, humedad, reforzamiento y conceptos para la administración.",
+        "descripcion": "Evaluación estructural de edificios en propiedad horizontal en Medellín y el área metropolitana: fisuras, humedad, reforzamiento y conceptos técnicos."
+      },
+      "titulo": "Evaluación estructural para copropiedades",
+      "resumen": "La administración de un edificio en propiedad horizontal puede necesitar un concepto técnico sobre su estructura: ante fisuras, humedad, una remodelación de zonas comunes o la duda de los propietarios. Una evaluación estructural da ese concepto con un informe claro y las alternativas, si hacen falta.",
+      "lead": "Si administras un edificio, o vives en uno, y tienes dudas sobre su estado, el primer paso es una evaluación técnica. Te la explicamos de forma que la entienda la asamblea.",
+      "secciones": [
+        {
+          "h": "Cuándo conviene pedirla",
+          "lista": [
+            "Aparecen fisuras, humedades o deformaciones en columnas, vigas, placas o fachada.",
+            "La copropiedad va a remodelar o ampliar zonas comunes.",
+            "Se detectan daños en el concreto, como desprendimientos o acero expuesto.",
+            "Los propietarios piden un concepto técnico antes de decidir una obra.",
+            "Una entidad, aseguradora o el comprador de un apartamento pide un soporte."
+          ]
+        },
+        {
+          "h": "Qué entregamos",
+          "lista": [
+            "Un informe con el estado de la estructura, explicado en lenguaje claro.",
+            "La priorización de lo urgente, lo importante y lo que puede esperar.",
+            "Alternativas de intervención, si hacen falta, con su alcance.",
+            "Un documento que la administración pueda presentar a la asamblea."
+          ]
+        },
+        {
+          "h": "Cómo se decide en una copropiedad",
+          "p": "En propiedad horizontal las obras y los gastos se aprueban según el reglamento de la copropiedad y la Ley 675 de 2001. Por eso el informe se prepara pensando en quien lo va a leer: el consejo, la administración y los propietarios, que no son ingenieros."
+        }
+      ],
+      "faq": [
+        {
+          "p": "¿Quién contrata la evaluación?",
+          "r": "Normalmente la administración, con la autorización del consejo o de la asamblea, según lo que diga el reglamento. Te ayudamos a preparar la propuesta para presentarla."
+        },
+        {
+          "p": "¿Hay que tener los planos del edificio?",
+          "r": "Ayudan, pero no son indispensables. Si no existen, se hace un levantamiento de la estructura y, cuando sea necesario, ensayos en sitio."
+        },
+        {
+          "p": "¿La evaluación dice si el edificio es seguro?",
+          "r": "Dice cómo está la estructura y qué se recomienda. Ningún estudio puede garantizar el comportamiento ante un sismo, pero sirve para decidir con información."
+        }
       ]
     }
-  ]
+  ],
+  "actualizado": "Noviembre de 2026"
 }

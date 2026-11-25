@@ -11,11 +11,13 @@ export const faqLd = (items) => ({
 });
 
 export function guia(c, G, g, servicios) {
+  const wt = `Hola, vi su guía sobre ${g.corto.toLowerCase()} y quiero que revisen mi caso.`;
   const u = servicios.find((s) => s.id === g.unidad);
   const otras = G.guias.filter((x) => x.slug !== g.slug);
   return `${cabecera("Guía", g.titulo, g.lead)}
 <div class="wrap">${migaHtml([{ nombre: "Inicio", ruta: "/" }, { nombre: "Servicios", ruta: "/servicios/" }, { nombre: g.corto }])}</div>
 <section class="sec sec-top"><div class="wrap prosa">
+${g.resumen ? `<aside class="resumen-g"><p class="mono">En resumen</p><p>${esc(g.resumen)}</p></aside>` : ""}
 ${g.secciones.map((s) => `<h2 class="h3">${esc(s.h)}</h2>
 ${s.p ? `<p>${esc(s.p)}</p>` : ""}
 ${s.lista ? `<ul class="lista">${s.lista.map((x) => `<li>${esc(x)}</li>`).join("")}</ul>` : ""}
@@ -23,11 +25,12 @@ ${s.pasos ? `<ol class="pasos-g">${s.pasos.map((x, i) => `<li><span class="mono"
 <h2 class="h3">Preguntas frecuentes</h2>
 ${faqHtml(g.faq)}
 <aside class="aviso" role="note"><p class="mono aviso-t">Importante</p><p>${esc(G.aviso)}</p></aside>
+<p class="nota-sm mono">${G.actualizado ? `Actualizado: ${esc(G.actualizado)}. ` : ""}</p>
 <p class="nota-sm">Esta guía hace parte de nuestro servicio de <a href="/servicios/${esc(u.slug)}/">${esc(u.nombre)}</a>.</p>
 </div></section>
 <section class="sec sec-alt"><div class="wrap"><h2 class="h3">Otros temas</h2>
 <ul class="otras">${otras.map((o) => `<li><a href="/${o.slug}/">${esc(o.corto)}</a></li>`).join("")}<li><a href="/preguntas/">Preguntas frecuentes</a></li></ul></div></section>
-${cta(c, "¿Tienes un caso así?", "Cuéntanos tu situación y te respondemos con una propuesta o con las preguntas que nos faltan.", `?u=${g.unidad}`)}`;
+${cta(c, "¿Tienes un caso así?", "Cuéntanos tu situación y te respondemos con una propuesta o con las preguntas que nos faltan.", `?u=${g.unidad}`, wt)}`;
 }
 
 export function preguntas(c, Q) {

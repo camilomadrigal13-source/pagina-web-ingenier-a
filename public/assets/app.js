@@ -32,15 +32,16 @@
 
   /* Menú móvil */
   var mb = $("#menu-btn"), menu = $("#menu");
-  function cerrarMenu() { if (!menu) return; menu.classList.remove("abierto"); mb.setAttribute("aria-expanded", "false"); mb.setAttribute("aria-label", "Abrir menú"); }
+  function cerrarMenu() { if (!menu) return; body.classList.remove("menu-abierto"); menu.classList.remove("abierto"); mb.setAttribute("aria-expanded", "false"); mb.setAttribute("aria-label", "Abrir menú"); }
   if (mb && menu) {
     mb.addEventListener("click", function () {
-      var abierto = menu.classList.toggle("abierto");
+      var abierto = menu.classList.toggle("abierto"); body.classList.toggle("menu-abierto", abierto);
       mb.setAttribute("aria-expanded", abierto ? "true" : "false");
       mb.setAttribute("aria-label", abierto ? "Cerrar menú" : "Abrir menú");
     });
     document.addEventListener("keydown", function (e) { if (e.key === "Escape" && menu.classList.contains("abierto")) { cerrarMenu(); mb.focus(); } });
     $$("a", menu).forEach(function (a) { a.addEventListener("click", cerrarMenu); });
+    document.addEventListener("click", function (e) { if (menu.classList.contains("abierto") && !menu.contains(e.target) && !mb.contains(e.target)) cerrarMenu(); });
   }
 
   /* Filtros del portafolio */
@@ -116,8 +117,9 @@
     e.textContent = texto || ""; e.hidden = !texto;
     if (el.name !== "servicios") { if (texto) el.setAttribute("aria-invalid", "true"); else el.removeAttribute("aria-invalid"); }
   }
+  var nErr = 0;
   function validar(form) {
-    var primero = null;
+    var primero = null; nErr = 0;
     $$("input[required],select[required],textarea[required]", form).forEach(function (el) {
       var t = "", v = (el.value || "").trim();
       if (el.type === "checkbox") { if (!el.checked) t = "Necesitamos tu autorización para responderte."; }
@@ -125,17 +127,24 @@
       else if (el.type === "email" && !re.correo.test(v)) t = "Escribe un correo válido, por ejemplo nombre@empresa.com.";
       else if (el.name === "mensaje" && v.length < 15) t = "Cuéntanos un poco más (mínimo 15 caracteres).";
       msg(el, t);
+      if (t) nErr++;
       if (t && !primero) primero = el;
     });
-    var tel = $("input[name=telefono]", form);
-    if (tel && tel.value && !/^[0-9 +()\-]{7,30}$/.test(tel.value.trim())) { msg(tel, "Escribe un teléfono válido."); primero = primero || tel; } else if (tel) msg(tel, "");
+    var cor = $("input[name=correo]", form), tel = $("input[name=telefono]", form);
+    if (cor) {
+      var vc = (cor.value || "").trim(), vt = tel ? (tel.value || "").trim() : "";
+      var tc = vc && !re.correo.test(vc) ? "Escribe un correo válido, por ejemplo nombre@empresa.com." : (!vc && !vt ? "Escribe un correo o un teléfono." : "");
+      msg(cor, tc); if (tc) { nErr++; primero = primero || cor; }
+    }
+    if (tel && tel.value && !/^[0-9 +()\-]{7,30}$/.test(tel.value.trim())) { msg(tel, "Escribe un teléfono válido."); nErr++; primero = primero || tel; } else if (tel) msg(tel, "");
     var area = $("input[name=area_m2]", form);
-    if (area && area.value && !(Number(area.value) > 0)) { msg(area, "Escribe un área mayor que cero."); primero = primero || area; } else if (area) msg(area, "");
+    if (area && area.value && !(Number(area.value) > 0)) { msg(area, "Escribe un área mayor que cero."); nErr++; primero = primero || area; } else if (area) msg(area, "");
     var srv = $$("input[name=servicios]", form);
     if (srv.length) {
       var hay = srv.some(function (x) { return x.checked; });
       var e = $("#cot-servicios-error");
       if (e) { e.textContent = hay ? "" : "Selecciona al menos un servicio."; e.hidden = hay; }
+      if (!hay) nErr++;
       if (!hay && !primero) primero = srv[0];
     }
     return primero;
@@ -174,7 +183,7 @@
     form.addEventListener("submit", function (ev) {
       ev.preventDefault();
       var malo = validar(form);
-      if (malo) { malo.focus(); estado(form, "err", "Revisa el formulario", "Hay campos por corregir.", true); return; }
+      if (malo) { malo.focus(); estado(form, "err", "Revisa el formulario", nErr === 1 ? "Hay 1 campo por corregir." : "Hay " + nErr + " campos por corregir.", true); return; }
       var d = datos(form);
       btn.disabled = true; $(".btn-t", btn).hidden = true; $(".btn-c", btn).hidden = false;
       var ctl = new AbortController(), to = setTimeout(function () { ctl.abort(); }, 15000);

@@ -49,7 +49,7 @@ export async function correo(d, { plano, html, asunto }, env = process.env) {
       body: JSON.stringify({
         from: env.CONTACT_FROM || "Sitio web <onboarding@resend.dev>",
         to: env.CONTACT_TO.split(",").map((x) => x.trim()).filter(Boolean),
-        reply_to: d.correo, subject: asunto, text: plano, html
+        ...(d.correo ? { reply_to: d.correo } : {}), subject: asunto, text: plano, html
       })
     });
     if (!r.ok) console.error("Canal correo: Resend respondió", r.status);

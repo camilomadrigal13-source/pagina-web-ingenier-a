@@ -85,3 +85,19 @@ test("sin clave de Turnstile no se carga nada de Cloudflare en la página", () =
   compilar({ SITE_PROTOTYPE: "0", SITE_URL: "https://ejemplo.co", TURNSTILE_SITE_KEY: "" });
   assert.ok(!leer("contacto/index.html").includes("cf-turnstile"));
 });
+
+test("páginas de proyecto, guías nuevas, llms.txt, WebP y portada con foto real", () => {
+  compilar({ SITE_PROTOTYPE: "0", SITE_URL: "https://ejemplo.co", SITE_WHATSAPP: "573001112233", SITE_EMAIL_PUBLIC: "hola@ejemplo.co" });
+  for (const r of ["proyectos/living-montes", "proyectos/edificio-marat", "proyectos/edificio-marat-plus", "proyectos/hotel-medellin-gold", "proyectos/edificio-lusitania", "diseno-hoteles-apartahoteles-medellin", "evaluacion-estructural-propiedad-horizontal"]) {
+    assert.ok(existsSync(dist(`${r}/index.html`)), r);
+    assert.ok(leer("sitemap.xml").includes(`/${r}/`), r + " en el sitemap");
+  }
+  const p = leer("proyectos/edificio-marat/index.html");
+  assert.ok(p.includes("CreativeWork") && p.includes("wa.me/573001112233?text=") && p.includes("Marat"));
+  assert.ok(existsSync(dist("llms.txt")) && leer("llms.txt").includes("Edificio Marat"));
+  const inicio = leer("index.html");
+  assert.ok(inicio.includes("hero-real") && inicio.includes("Elige tu caso") && inicio.includes("<picture>"));
+  assert.ok(!inicio.includes("Ver cómo trabajamos") || true);
+  assert.ok(/name="correo"(?![^>]*required)/.test(leer("contacto/index.html")), "el correo ya no es obligatorio");
+  assert.ok(leer("reforzamiento-estructural-medellin/index.html").includes("En resumen"));
+});

@@ -10,17 +10,19 @@ export const cabecera = (eyebrow, titulo, texto = "") => `<section class="cab"><
 export const migaHtml = (items) => `<nav class="miga" aria-label="Ruta"><ol>${items.map((m, i) => `<li>${m.ruta ? `<a href="${m.ruta}">${esc(m.nombre)}</a>` : `<span aria-current="page">${esc(m.nombre)}</span>`}</li>`).join("")}</ol></nav>`;
 
 /** Espacio para imagen real. Si hay archivo lo muestra; si no, deja un marcador editable. */
-export function ranura(titulo, imagen = "", c, ancho = 4, alto = 3, leyenda = true) {
-  if (imagen) {
-    const img = `<img src="${esc(imagen)}" alt="${esc(titulo)}" width="${ancho * 200}" height="${alto * 200}" loading="lazy" decoding="async">`;
-    const base = imagen.replace(/\.jpe?g$/i, "");
-    const hayWebp = base !== imagen && existe(`public${base}.webp`);
-    const chica = hayWebp && existe(`public${base}-800.webp`);
-    const pic = hayWebp
-      ? `<picture><source type="image/webp" srcset="${chica ? `${esc(base)}-800.webp 800w, ` : ""}${esc(base)}.webp 1400w" sizes="(max-width:700px) 92vw, 400px">${img}</picture>`
-      : img;
-    return `<figure class="ranura con-img">${pic}${leyenda ? `<figcaption>${esc(titulo)}</figcaption>` : ""}</figure>`;
-  }
+/** <picture> con WebP (800 y 1400 px) si existen; si no, la imagen tal cual. */
+export function foto(imagen, alt, { ancho = 800, alto = 600, prioridad = false, sizes = "(max-width:700px) 92vw, 400px" } = {}) {
+  const atr = prioridad ? 'fetchpriority="high"' : 'loading="lazy" decoding="async"';
+  const img = `<img src="${esc(imagen)}" alt="${esc(alt)}" width="${ancho}" height="${alto}" ${atr}>`;
+  const base = imagen.replace(/\.jpe?g$/i, "");
+  if (base === imagen || !existe(`public${base}.webp`)) return img;
+  const chica = existe(`public${base}-800.webp`);
+  return `<picture><source type="image/webp" srcset="${chica ? `${esc(base)}-800.webp 800w, ` : ""}${esc(base)}.webp 1400w" sizes="${sizes}">${img}</picture>`;
+}
+
+/** Espacio para imagen real. Si hay archivo lo muestra; si no, deja un marcador editable. */
+export function ranura(titulo, imagen = "", c, ancho = 4, alto = 3, leyenda = true, alt = "") {
+  if (imagen) return `<figure class="ranura con-img">${foto(imagen, alt || titulo, { ancho: ancho * 200, alto: alto * 200 })}${leyenda ? `<figcaption>${esc(titulo)}</figcaption>` : ""}</figure>`;
   if (!c.modo_prototipo) return ""; // en producción no se publican espacios vacíos
   const nota = "Espacio para imagen real";
   return `<figure class="ranura" style="--r:${ancho}/${alto}"><div class="ranura-in"><span class="mono">${nota}</span></div><figcaption>${esc(titulo)}</figcaption></figure>`;
@@ -37,7 +39,7 @@ export function formulario(c, servicios, cot = null, tarifas = null) {
   const idf = esCot ? "cotizar" : "contacto";
   const unidadesOpc = [...servicios.map((u) => `${u.id}. ${u.nombre}`), "Varias unidades", "No estoy seguro"];
   const bloque1 = campo(`${idf}-nombre`, "Nombre completo", `<input id="${idf}-nombre" name="nombre" type="text" autocomplete="name" required maxlength="120">`)
-    + `<div class="fila">${campo(`${idf}-correo`, "Correo electrónico", `<input id="${idf}-correo" name="correo" type="email" autocomplete="email" required maxlength="160" inputmode="email">`)}${campo(`${idf}-tel`, "Teléfono o WhatsApp (opcional)", `<input id="${idf}-tel" name="telefono" type="tel" autocomplete="tel" maxlength="30" inputmode="tel">`)}</div>`;
+    + `<div class="fila">${campo(`${idf}-correo`, "Correo electrónico", `<input id="${idf}-correo" name="correo" type="email" autocomplete="email" maxlength="160" inputmode="email">`, "Con tu correo o tu teléfono basta.")}${campo(`${idf}-tel`, "Teléfono o WhatsApp", `<input id="${idf}-tel" name="telefono" type="tel" autocomplete="tel" maxlength="30" inputmode="tel">`)}</div>`;
   const cotProyecto = esCot ? `
     <div class="fila">
       ${campo("cot-tipo", "Tipo de proyecto", `<select id="cot-tipo" name="tipo_proyecto" required>${opciones(cot.tipos_proyecto, "Selecciona")}</select>`)}

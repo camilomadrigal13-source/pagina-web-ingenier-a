@@ -2,6 +2,9 @@ import { esc } from "../lib.mjs";
 import { cta, waLink } from "../layout.mjs";
 import { cabecera, ranura, formulario, migaHtml } from "./comun.mjs";
 
+export const waProyecto = (x) => `Hola, vi el proyecto ${x.nombre} en su sitio y tengo uno parecido en ______. Quisiera conversar.`;
+export const anioDe = (x) => ((x.ubicacion || "").match(/\b(19|20)\d{2}\b/) || [""])[0];
+
 export function nosotros(c, n, pr = null) {
   const reales = pr ? pr.proyectos.filter((x) => !x.ilustrativo) : [];
   const mostrarPerfiles = n.perfiles.some((p) => p.nombre);
@@ -54,10 +57,10 @@ ${p.proyectos.map((x) => `<dialog class="modal" id="m-${esc(x.id)}" aria-labelle
   <div class="modal-in"><button class="modal-x" type="button" data-cerrar aria-label="Cerrar">×</button>
   <p class="mono">${x.ilustrativo ? "Caso ilustrativo · no corresponde a una obra real" : esc(x.ubicacion || "Ubicación por definir")}</p>
   <h2 class="h2" id="m-${esc(x.id)}-t">${esc(x.nombre)}</h2><p class="lead">${esc(x.descripcion)}</p>
-  <div class="modal-g">${(x.imagenes.length ? x.imagenes : ["", ""]).map((im, i) => ranura(`${x.nombre}, fotografía ${i + 1}`, im, c, 4, 3, false)).join("")}${x.planos.map((im, i) => ranura(`${x.nombre}, plano ${i + 1}`, im, c, 4, 3, false)).join("")}</div>
+  <div class="modal-g">${(x.imagenes.length ? x.imagenes : ["", ""]).map((im, i) => ranura(`${x.nombre}, fotografía ${i + 1}`, im, c, 4, 3, false, (x.alts || [])[i] || "")).join("")}${x.planos.map((im, i) => ranura(`${x.nombre}, plano ${i + 1}`, im, c, 4, 3, false)).join("")}</div>
   ${x.credito ? `<p class="nota-sm credito">${esc(x.credito)}</p>` : ""}
   <dl class="modal-d"><div><dt>Alcance</dt><dd>${x.alcance.map(esc).join(" · ")}</dd></div><div><dt>Resultados</dt><dd>${esc(x.resultados || "Por documentar")}</dd></div></dl>
-  <a class="btn btn-sm" href="/cotizador/?u=${esc(x.servicios[0] || "")}">Solicitar algo similar</a></div></dialog>`).join("")}
+  <div class="modal-acc"><a class="btn btn-sm" href="/cotizador/?u=${esc(x.servicios[0] || "")}">Solicitar algo similar</a>${waLink(c, waProyecto(x)) ? `<a class="btn btn-sm btn-borde" href="${esc(waLink(c, waProyecto(x)))}" target="_blank" rel="noopener">Escribir por WhatsApp</a>` : ""}${x.ilustrativo ? "" : `<a class="enlace" href="/proyectos/${esc(x.id)}/">Abrir la página del proyecto</a>`}</div></div></dialog>`).join("")}
 ${cta(c, "¿Tu proyecto puede ser el próximo?", "Cuéntanos qué necesitas.")}`;
 }
 
@@ -148,4 +151,21 @@ ${c.modo_prototipo ? `<aside class="aviso" role="note"><p class="mono aviso-t">B
 export function noEncontrada(c) {
   return `${cabecera("Error 404", "No encontramos esa página.", "Puede que el enlace haya cambiado.")}
 <section class="sec sec-top"><div class="wrap"><p><a class="btn" href="/">Volver al inicio</a></p></div></section>`;
+}
+
+export function proyecto(c, x, pr) {
+  const nom = Object.fromEntries(pr.categorias.map((k) => [k.id, k.nombre]));
+  const otros = pr.proyectos.filter((y) => !y.ilustrativo && y.id !== x.id);
+  const wa = waLink(c, waProyecto(x));
+  return `${cabecera(x.categorias.map((k) => nom[k]).join(" · "), x.nombre, x.ubicacion)}
+<div class="wrap">${migaHtml([{ nombre: "Inicio", ruta: "/" }, { nombre: "Proyectos", ruta: "/proyectos/" }, { nombre: x.nombre }])}</div>
+<section class="sec sec-top"><div class="wrap prosa-ancha">
+  <p class="lead">${esc(x.descripcion)}</p>
+  <dl class="modal-d"><div><dt>Alcance</dt><dd>${x.alcance.map(esc).join(" · ")}</dd></div><div><dt>Resultado</dt><dd>${esc(x.resultados || "")}</dd></div></dl>
+  ${x.imagenes.length ? `<div class="modal-g proy-galeria">${x.imagenes.map((im, i) => ranura(`${x.nombre}, fotografía ${i + 1}`, im, c, 4, 3, false, (x.alts || [])[i] || "")).join("")}</div>` : ""}
+  ${x.credito ? `<p class="nota-sm credito">${esc(x.credito)}</p>` : ""}
+  <div class="modal-acc"><a class="btn" href="/cotizador/?u=${esc(x.servicios[0] || "")}">¿Tienes un proyecto parecido? Cuéntanos</a>${wa ? `<a class="btn btn-borde" href="${esc(wa)}" target="_blank" rel="noopener">Escribir por WhatsApp</a>` : ""}</div>
+</div></section>
+${otros.length ? `<section class="sec sec-alt"><div class="wrap"><h2 class="h3">Otros proyectos</h2><ul class="otras">${otros.map((y) => `<li><a href="/proyectos/${esc(y.id)}/">${esc(y.nombre)}</a></li>`).join("")}</ul></div></section>` : ""}
+${cta(c, "¿Tu proyecto puede ser el próximo?", "Cuéntanos qué necesitas y te respondemos con una propuesta.", "", waProyecto(x))}`;
 }

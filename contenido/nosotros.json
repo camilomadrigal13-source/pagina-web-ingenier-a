@@ -3,32 +3,32 @@
     "titulo": "Nosotros: equipo de ingeniería y arquitectura",
     "descripcion": "Equipo técnico multidisciplinario con sede en Medellín. Llevamos proyectos de la idea a la obra: diseño, revisión, construcción y supervisión."
   },
-  "titulo": "Un equipo multidisciplinario con un solo objetivo: que tu proyecto salga bien.",
-  "intro": "Somos un grupo de profesionales y un equipo técnico multidisciplinario con sede en Medellín. Reunimos ingeniería, arquitectura, construcción, gestión de proyectos, modelado y documentación técnica bajo un mismo criterio, para llevar cada proyecto de la idea a la obra terminada de la forma más óptima. Nos mueve el resultado: que se construya bien, con control de tiempo y de costos.",
+  "titulo": "Un equipo técnico que lleva tu proyecto a buen término.",
+  "intro": "Somos una firma de Medellín que reúne ingeniería, arquitectura, construcción y gestión de proyectos. Los profesionales de nuestro equipo han diseñado y acompañado hoteles y edificios en Medellín y Sabaneta desde 2007, y en varios los llevaron del diseño a la obra entregada. Por eso diseñamos pensando en cómo se construye, y construimos entendiendo por qué se diseñó así. Puedes contratarnos para el proceso completo o solo para la etapa que necesites.",
   "principios": [
     {
-      "titulo": "Enfocados en el logro",
-      "texto": "Un proyecto no termina cuando se entrega un plano, sino cuando la obra funciona como se pensó. Medimos nuestro trabajo por el resultado."
+      "titulo": "Un proyecto termina cuando la obra funciona",
+      "texto": "No cuando se entrega el plano. Medimos nuestro trabajo por lo que queda construido."
     },
     {
-      "titulo": "Un solo equipo, de la idea a la obra",
-      "texto": "Diseño, revisión, construcción y supervisión en las mismas manos. Cuando quien diseña conoce la obra y quien construye entiende el diseño, se evitan errores, reprocesos y sobrecostos."
+      "titulo": "Un solo equipo, del diseño a la obra",
+      "texto": "En los proyectos que lo permiten, diseño, revisión, construcción y supervisión están en las mismas manos. Así se evitan errores, reprocesos y sobrecostos entre quien dibuja y quien construye."
     },
     {
-      "titulo": "Experiencia en obra real",
-      "texto": "Hemos participado en edificios y hoteles de Medellín y Sabaneta, desde el diseño arquitectónico hasta la gerencia técnica y la construcción."
+      "titulo": "Obras hechas, no solo proyectadas",
+      "texto": "Hemos diseñado hoteles como Living Montes y Medellín Gold, y llevado de principio a fin edificios como Marat y Marat Plus en Sabaneta, con gerencia técnica, revisión de diseños, construcción y supervisión."
     },
     {
-      "titulo": "Decisiones con criterio técnico",
-      "texto": "Explicamos nuestros supuestos y las alternativas antes de decidir. Las decisiones de ingeniería las valida y firma el profesional competente."
+      "titulo": "Explicamos antes de decidir",
+      "texto": "Te mostramos los supuestos y las alternativas, y cada decisión de ingeniería la valida y firma el profesional competente."
     },
     {
-      "titulo": "Recursos bien usados",
-      "texto": "Evaluamos opciones de costo y de tiempo desde el comienzo. Una buena decisión temprana vale más que un ahorro tardío."
+      "titulo": "Costo y tiempo desde el primer día",
+      "texto": "Comparamos opciones antes de definir, porque una buena decisión temprana vale más que un ahorro tardío."
     },
     {
-      "titulo": "Tecnología con propósito",
-      "texto": "Usamos BIM y automatización solo donde reducen errores y tiempo, y entregamos documentos ordenados que otra persona pueda leer sin tener que llamarnos."
+      "titulo": "Tecnología que se nota en el papel",
+      "texto": "Usamos BIM y herramientas propias solo donde reducen errores y tiempo, y entregamos documentos tan claros que otra persona los lee sin llamarnos."
     }
   ],
   "alcance": {

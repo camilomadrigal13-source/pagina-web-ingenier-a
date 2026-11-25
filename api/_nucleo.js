@@ -39,7 +39,8 @@ export function validar(b) {
     servicios: Array.isArray(b.servicios) ? b.servicios.slice(0, 40).map((s) => linea(s, 140)).filter(Boolean) : []
   };
   if (d.nombre.length < 2) e.nombre = "Falta el nombre.";
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(d.correo)) e.correo = "Correo no válido.";
+  if (d.correo && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(d.correo)) e.correo = "Correo no válido.";
+  else if (!d.correo && !d.telefono) e.correo = "Indica un correo o un teléfono.";
   if (d.telefono && !/^[0-9 +()\-]{7,30}$/.test(d.telefono)) e.telefono = "Teléfono no válido.";
   if (d.mensaje.length < 15) e.mensaje = "El mensaje es muy corto.";
   if (d.area_m2 && !(Number(d.area_m2) > 0)) e.area_m2 = "Área no válida.";

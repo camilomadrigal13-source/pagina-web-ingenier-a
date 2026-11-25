@@ -7,7 +7,8 @@ import { home } from "../src/pages/home.mjs";
 import { indice, unidad } from "../src/pages/servicios.mjs";
 import { tecnologia } from "../src/pages/tecnologia.mjs";
 import { guia, preguntas, faqLd, todasLasPreguntas } from "../src/pages/guias.mjs";
-import { nosotros, proceso, proyectos, cotizador, contacto, privacidad, noEncontrada } from "../src/pages/otras.mjs";
+import { nosotros, proceso, proyectos, proyecto, cotizador, contacto, privacidad, noEncontrada, waProyecto, anioDe } from "../src/pages/otras.mjs";
+import { execSync } from "node:child_process";
 
 const c = cargarConfig();
 const dist = join(RAIZ, "dist");
@@ -47,28 +48,41 @@ emitir("/nosotros/", { titulo: N.seo.titulo, descripcion: N.seo.descripcion, cue
 emitir("/servicios/", { titulo: "Servicios de ingeniería, arquitectura y construcción", descripcion: "Ingeniería y arquitectura, BIM, construcción y gestión de proyectos, y gestión documental. Contrata cada servicio por separado o todos juntos.", cuerpo: indice(c, S, G), migas: [{ nombre: "Servicios", ruta: "/servicios/" }] });
 for (const u of unidades) {
   emitir(`/servicios/${u.slug}/`, {
-    titulo: u.seo.titulo, descripcion: u.seo.descripcion, cuerpo: unidad(c, S, u), bodyClass: `u-pg u-${u.id}`,
+    titulo: u.seo.titulo, descripcion: u.seo.descripcion, cuerpo: unidad(c, S, u), bodyClass: `u-pg u-${u.id}`, waTexto: `Hola, me interesa el servicio de ${u.corto.toLowerCase()}.`,
     extraLd: [{ "@context": "https://schema.org", "@type": "Service", name: u.nombre, description: u.resumen, serviceType: u.corto, provider: { "@id": `${c.url}/#organizacion` }, areaServed: [{ "@type": "AdministrativeArea", name: "Valle de Aburrá" }, { "@type": "AdministrativeArea", name: "Antioquia" }] }],
     migas: [{ nombre: "Servicios", ruta: "/servicios/" }, { nombre: u.corto, ruta: `/servicios/${u.slug}/` }]
   });
 }
 emitir("/tecnologia/", { titulo: T.seo.titulo, descripcion: T.seo.descripcion, cuerpo: tecnologia(c, T), migas: [{ nombre: "Tecnología", ruta: "/tecnologia/" }], bodyClass: "pg-tec" });
 if (c.mostrarProyectos) emitir("/proyectos/", { titulo: PR.seo.titulo, descripcion: PR.seo.descripcion, cuerpo: proyectos(c, PR), migas: [{ nombre: "Proyectos", ruta: "/proyectos/" }] });
+for (const x of PR.proyectos.filter((y) => !y.ilustrativo)) {
+  const anio = anioDe(x);
+  emitir(`/proyectos/${x.id}/`, {
+    titulo: `${x.nombre}: proyecto en ${x.ubicacion.split(" · ")[0]}`, descripcion: x.descripcion.slice(0, 155), cuerpo: proyecto(c, x, PR),
+    migas: [{ nombre: "Proyectos", ruta: "/proyectos/" }, { nombre: x.nombre, ruta: `/proyectos/${x.id}/` }],
+    imagen: x.imagenes[0] || "", waTexto: waProyecto(x),
+    extraLd: [{ "@context": "https://schema.org", "@type": "CreativeWork", name: x.nombre, description: x.descripcion, locationCreated: { "@type": "Place", name: x.ubicacion.split(" · ")[0] }, ...(anio ? { dateCreated: anio } : {}), creator: { "@id": `${c.url}/#organizacion` }, image: x.imagenes.map((im) => `${c.url}${im}`) }]
+  });
+}
 emitir("/proceso/", { titulo: P.seo.titulo, descripcion: P.seo.descripcion, cuerpo: proceso(c, P, S), migas: [{ nombre: "Proceso", ruta: "/proceso/" }] });
 emitir("/cotizador/", { titulo: Q.seo.titulo, descripcion: Q.seo.descripcion, cuerpo: cotizador(c, Q, unidades, TAR), migas: [{ nombre: "Cotización", ruta: "/cotizador/" }] });
 emitir("/contacto/", { titulo: "Contacto: ingeniería y arquitectura en Medellín", descripcion: `Escríbenos desde ${c.ubicacion.municipio}, ${c.ubicacion.departamento}, o por WhatsApp. Atendemos todo Colombia.`, cuerpo: contacto(c, unidades, Q), migas: [{ nombre: "Contacto", ruta: "/contacto/" }] });
 emitir("/privacidad/", { titulo: "Política de privacidad", descripcion: "Cómo tratamos los datos que nos envías por los formularios del sitio.", cuerpo: privacidad(c), migas: [{ nombre: "Privacidad", ruta: "/privacidad/" }] });
 for (const g of G.guias) {
-  emitir(`/${g.slug}/`, { titulo: g.seo.titulo, descripcion: g.seo.meta || g.seo.descripcion, cuerpo: guia(c, G, g, unidades), migas: [{ nombre: "Servicios", ruta: "/servicios/" }, { nombre: g.corto, ruta: `/${g.slug}/` }], extraLd: [faqLd(g.faq)] });
+  emitir(`/${g.slug}/`, { titulo: g.seo.titulo, descripcion: g.seo.meta || g.seo.descripcion, cuerpo: guia(c, G, g, unidades), migas: [{ nombre: "Servicios", ruta: "/servicios/" }, { nombre: g.corto, ruta: `/${g.slug}/` }], extraLd: [faqLd(g.faq)], waTexto: `Hola, vi su guía sobre ${g.corto.toLowerCase()} y quiero que revisen mi caso.` });
 }
 emitir("/preguntas/", { titulo: FAQ.seo.titulo, descripcion: FAQ.seo.descripcion, cuerpo: preguntas(c, FAQ), migas: [{ nombre: "Preguntas frecuentes", ruta: "/preguntas/" }], extraLd: [faqLd(todasLasPreguntas(FAQ))] });
 emitir("/404.html", { titulo: "Página no encontrada", descripcion: "Página no encontrada.", cuerpo: noEncontrada(c) }, "404.html");
 
-const hoy = new Date().toISOString().slice(0, 10);
+let hoy = new Date().toISOString().slice(0, 10);
+try { hoy = execSync("git log -1 --format=%cs", { cwd: RAIZ, stdio: ["ignore", "pipe", "ignore"] }).toString().trim() || hoy; } catch {}
 writeFileSync(join(dist, "sitemap.xml"),
   `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${rutas.map((r) => `  <url><loc>${c.url}${r}</loc><lastmod>${hoy}</lastmod></url>`).join("\n")}\n</urlset>\n`);
 writeFileSync(join(dist, "robots.txt"),
   c.modo_prototipo ? "User-agent: *\nDisallow: /\n" : `User-agent: *\nAllow: /\nDisallow: /api/\n\nSitemap: ${c.url}/sitemap.xml\n`);
+
+// Resumen para buscadores con inteligencia artificial.
+writeFileSync(join(dist, "llms.txt"), `# ${c.nombre}\n\n> ${c.descriptor}. Firma con sede en ${c.ubicacion.municipio}, ${c.ubicacion.departamento}, ${c.ubicacion.pais}. ${c.ubicacion.cobertura}\n\n## Servicios\n${unidades.map((u) => `- [${u.nombre}](${c.url}/servicios/${u.slug}/): ${u.resumen}`).join("\n")}\n\n## Guías\n${G.guias.map((g) => `- [${g.titulo}](${c.url}/${g.slug}/): ${g.seo.meta || g.seo.descripcion}`).join("\n")}\n\n## Proyectos\n${PR.proyectos.filter((y) => !y.ilustrativo).map((y) => `- [${y.nombre}](${c.url}/proyectos/${y.id}/): ${y.ubicacion}`).join("\n")}\n`);
 
 // Cloudflare Pages no lee vercel.json: las cabeceras de seguridad van en un archivo _headers dentro de dist/.
 // Solo se escribe al compilar en Cloudflare (CF_PAGES=1) o con TARGET=cloudflare, para no exponerlo en otros hostings.
@@ -84,7 +98,10 @@ if (process.env.CF_PAGES || process.env.TARGET === "cloudflare") {
   Cache-Control: public, max-age=3600, must-revalidate
 
 /img/*
-  Cache-Control: public, max-age=86400
+  Cache-Control: public, max-age=604800
+
+/assets/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
 `);
 }
 
