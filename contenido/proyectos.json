@@ -87,7 +87,9 @@
         "/img/proyectos/marat-1-acceso.jpg",
         "/img/proyectos/marat-2-balcones.jpg",
         "/img/proyectos/marat-3-base.jpg",
-        "/img/proyectos/marat-4-torre.jpg"
+        "/img/proyectos/marat-4-torre.jpg",
+        "/img/proyectos/marat-5-base.jpg",
+        "/img/proyectos/marat-6-torre.jpg"
       ],
       "planos": [],
       "resultados": "Un mismo equipo responsable desde el inicio hasta el final de la obra.",
@@ -112,13 +114,9 @@
         "A",
         "C"
       ],
-      "imagenes": [
-        "/img/proyectos/marat-plus-1-base.jpg",
-        "/img/proyectos/marat-plus-2-torre.jpg"
-      ],
+      "imagenes": [],
       "planos": [],
-      "resultados": "Un mismo equipo responsable desde el inicio hasta el final de la obra.",
-      "credito": "Imágenes: Google Street View."
+      "resultados": "Un mismo equipo responsable desde el inicio hasta el final de la obra."
     },
     {
       "id": "caso-1",
