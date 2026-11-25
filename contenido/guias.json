@@ -12,7 +12,7 @@
         "meta": "Evaluamos y reforzamos edificaciones existentes en Medellín y el Valle de Aburrá: diagnóstico, alternativas, diseño y planos."
       },
       "titulo": "Reforzamiento estructural de edificaciones existentes",
-      "lead": "Si tienes una casa, un edificio o una bodega que va a cambiar de uso, crecer, o que simplemente te genera dudas, el primer paso es entender cómo está y qué necesita. Estamos en Medellín, atendemos toda el área metropolitana y vamos a cualquier lugar de Antioquia y del país.",
+      "lead": "Si tienes una casa, un edificio o una bodega que va a cambiar de uso, crecer, o que simplemente te genera dudas, el primer paso es entender cómo está y qué necesita.",
       "secciones": [
         {
           "h": "Cuándo conviene evaluar una estructura",
@@ -136,7 +136,7 @@
         "meta": "Diseño estructural, cimentaciones y arquitectura para casas, edificios y obras comerciales en Medellín y el área metropolitana."
       },
       "titulo": "Diseño estructural y arquitectónico para edificaciones nuevas",
-      "lead": "Diseñamos la estructura y, si lo necesitas, la arquitectura de tu proyecto, desde Medellín, para el área metropolitana y cualquier lugar de Antioquia o del país, con el mismo criterio y la misma información.",
+      "lead": "Diseñamos la estructura y, si lo necesitas, la arquitectura de tu proyecto, con el mismo criterio y la misma información.",
       "secciones": [
         {
           "h": "Qué diseñamos",
@@ -174,10 +174,6 @@
         }
       ],
       "faq": [
-        {
-          "p": "¿Dónde atienden?",
-          "r": "Estamos ubicados en Medellín y atendemos toda el área metropolitana. También vamos a cualquier lugar de Antioquia y del país, y varios servicios se prestan de forma remota."
-        },
         {
           "p": "¿Necesito estudio de suelos?",
           "r": "Para diseñar la cimentación de una edificación nueva normalmente sí. Te orientamos sobre qué estudio hace falta según tu proyecto."
