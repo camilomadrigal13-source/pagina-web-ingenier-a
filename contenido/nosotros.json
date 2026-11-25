@@ -64,5 +64,36 @@
     "titulo": "Obras reales, de principio a fin.",
     "texto": "Algunos de los proyectos en los que hemos participado, desde 2007, en Medellín y Sabaneta.",
     "enlace": "Ver todos los proyectos"
+  },
+  "equipo": {
+    "eyebrow": "El equipo",
+    "titulo": "Un equipo técnico que cubre todo el proyecto.",
+    "texto": "Cada disciplina tiene sus profesionales, y todas trabajan con la misma información y el mismo criterio.",
+    "disciplinas": [
+      {
+        "titulo": "Ingeniería civil y estructural",
+        "texto": "Diseño, revisión, evaluación y reforzamiento de estructuras."
+      },
+      {
+        "titulo": "Arquitectura",
+        "texto": "Diseño arquitectónico desde el concepto hasta los planos de construcción."
+      },
+      {
+        "titulo": "Construcción y supervisión",
+        "texto": "Ejecución de la obra, gerencia técnica y control en obra."
+      },
+      {
+        "titulo": "BIM y documentación técnica",
+        "texto": "Modelos, planos, despieces y cuantificaciones, con criterio constructivo."
+      },
+      {
+        "titulo": "Gestión de proyectos",
+        "texto": "Presupuestos, programación, control de costos y consultoría."
+      },
+      {
+        "titulo": "Gestión documental",
+        "texto": "Organización, digitalización y administración de la información."
+      }
+    ]
   }
 }
