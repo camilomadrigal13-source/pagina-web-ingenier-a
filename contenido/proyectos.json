@@ -83,9 +83,15 @@
         "A",
         "C"
       ],
-      "imagenes": [],
+      "imagenes": [
+        "/img/proyectos/marat-1-acceso.jpg",
+        "/img/proyectos/marat-2-balcones.jpg",
+        "/img/proyectos/marat-3-base.jpg",
+        "/img/proyectos/marat-4-torre.jpg"
+      ],
       "planos": [],
-      "resultados": "Un mismo equipo responsable desde el inicio hasta el final de la obra."
+      "resultados": "Un mismo equipo responsable desde el inicio hasta el final de la obra.",
+      "credito": "Imágenes: Google Street View."
     },
     {
       "id": "edificio-marat-plus",
@@ -106,9 +112,13 @@
         "A",
         "C"
       ],
-      "imagenes": [],
+      "imagenes": [
+        "/img/proyectos/marat-plus-1-base.jpg",
+        "/img/proyectos/marat-plus-2-torre.jpg"
+      ],
       "planos": [],
-      "resultados": "Un mismo equipo responsable desde el inicio hasta el final de la obra."
+      "resultados": "Un mismo equipo responsable desde el inicio hasta el final de la obra.",
+      "credito": "Imágenes: Google Street View."
     },
     {
       "id": "caso-1",

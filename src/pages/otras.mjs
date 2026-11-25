@@ -45,6 +45,7 @@ ${p.proyectos.map((x) => `<dialog class="modal" id="m-${esc(x.id)}" aria-labelle
   <p class="mono">${x.ilustrativo ? "Caso ilustrativo · no corresponde a una obra real" : esc(x.ubicacion || "Ubicación por definir")}</p>
   <h2 class="h2" id="m-${esc(x.id)}-t">${esc(x.nombre)}</h2><p class="lead">${esc(x.descripcion)}</p>
   <div class="modal-g">${(x.imagenes.length ? x.imagenes : ["", ""]).map((im, i) => ranura(`${x.nombre}, fotografía ${i + 1}`, im, c, 4, 3, false)).join("")}${x.planos.map((im, i) => ranura(`${x.nombre}, plano ${i + 1}`, im, c, 4, 3, false)).join("")}</div>
+  ${x.credito ? `<p class="nota-sm credito">${esc(x.credito)}</p>` : ""}
   <dl class="modal-d"><div><dt>Alcance</dt><dd>${x.alcance.map(esc).join(" · ")}</dd></div><div><dt>Resultados</dt><dd>${esc(x.resultados || "Por documentar")}</dd></div></dl>
   <a class="btn btn-sm" href="/cotizador/?u=${esc(x.servicios[0] || "")}">Solicitar algo similar</a></div></dialog>`).join("")}
 ${cta(c, "¿Tu proyecto puede ser el próximo?", "Cuéntanos qué necesitas.")}`;
