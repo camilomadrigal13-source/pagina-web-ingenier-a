@@ -141,7 +141,10 @@
         "A",
         "C"
       ],
-      "imagenes": [],
+      "imagenes": [
+        "/img/proyectos/medellin-gold-1-fachada.jpg",
+        "/img/proyectos/medellin-gold-2-torre.jpg"
+      ],
       "planos": [],
       "resultados": "Un solo equipo, del diseño a la obra terminada."
     },
