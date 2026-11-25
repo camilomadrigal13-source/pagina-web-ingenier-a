@@ -124,6 +124,28 @@
       "resultados": "Un mismo equipo responsable desde el inicio hasta el final de la obra."
     },
     {
+      "id": "hotel-medellin-gold",
+      "nombre": "Hotel Medellín Gold",
+      "ubicacion": "Laureles–Estadio, Medellín",
+      "categorias": [
+        "arquitectura",
+        "construccion"
+      ],
+      "descripcion": "Un hotel en el corazón de Laureles–Estadio, que llevamos del papel a la obra. Estuvimos en el diseño arquitectónico, en la supervisión técnica y en la construcción, para que lo proyectado se hiciera realidad tal como se pensó.",
+      "alcance": [
+        "Diseño arquitectónico",
+        "Supervisión técnica",
+        "Construcción"
+      ],
+      "servicios": [
+        "A",
+        "C"
+      ],
+      "imagenes": [],
+      "planos": [],
+      "resultados": "Un solo equipo, del diseño a la obra terminada."
+    },
+    {
       "id": "caso-1",
       "ilustrativo": true,
       "nombre": "Edificio de vivienda de mediana altura",
