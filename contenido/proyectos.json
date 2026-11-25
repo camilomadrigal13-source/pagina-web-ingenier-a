@@ -36,7 +36,7 @@
     {
       "id": "living-montes",
       "nombre": "Living Montes (Aparta Hotel Montes)",
-      "ubicacion": "Laureles–Estadio, Medellín",
+      "ubicacion": "Laureles–Estadio, Medellín · 2007",
       "categorias": [
         "arquitectura",
         "construccion"
@@ -67,7 +67,7 @@
     {
       "id": "edificio-marat",
       "nombre": "Edificio Marat",
-      "ubicacion": "Sabaneta, Antioquia",
+      "ubicacion": "Sabaneta, Antioquia · 2010",
       "categorias": [
         "construccion",
         "gestion",
@@ -98,7 +98,7 @@
     {
       "id": "edificio-marat-plus",
       "nombre": "Edificio Marat Plus",
-      "ubicacion": "Sabaneta, Antioquia",
+      "ubicacion": "Sabaneta, Antioquia · 2015",
       "categorias": [
         "construccion",
         "gestion",
