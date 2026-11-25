@@ -86,7 +86,10 @@
       "imagenes": [
         "/img/proyectos/marat-1-acceso.jpg",
         "/img/proyectos/marat-2-balcones.jpg",
-        "/img/proyectos/marat-4-torre.jpg"
+        "/img/proyectos/marat-3-base.jpg",
+        "/img/proyectos/marat-4-torre.jpg",
+        "/img/proyectos/marat-5-base.jpg",
+        "/img/proyectos/marat-6-torre.jpg"
       ],
       "planos": [],
       "resultados": "Un mismo equipo responsable desde el inicio hasta el final de la obra.",
@@ -162,7 +165,8 @@
         "C"
       ],
       "imagenes": [
-        "/img/proyectos/lusitania-1-fachada.jpg"
+        "/img/proyectos/lusitania-1-fachada.jpg",
+        "/img/proyectos/lusitania-2-completa.jpg"
       ],
       "planos": [],
       "resultados": "Un edificio multifamiliar, del diseño a la obra terminada.",
