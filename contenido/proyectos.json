@@ -128,18 +128,14 @@
       "nombre": "Hotel Medellín Gold",
       "ubicacion": "Laureles–Estadio, Medellín · 2015",
       "categorias": [
-        "arquitectura",
-        "construccion"
+        "arquitectura"
       ],
-      "descripcion": "Un hotel en el corazón de Laureles–Estadio, que llevamos del papel a la obra. Estuvimos en el diseño arquitectónico, en la supervisión técnica y en la construcción, para que lo proyectado se hiciera realidad tal como se pensó.",
+      "descripcion": "Diseñamos la arquitectura de este hotel en Laureles–Estadio, Medellín: un edificio pensado desde el inicio para recibir huéspedes.",
       "alcance": [
-        "Diseño arquitectónico",
-        "Supervisión técnica",
-        "Construcción"
+        "Diseño arquitectónico"
       ],
       "servicios": [
-        "A",
-        "C"
+        "A"
       ],
       "imagenes": [
         "/img/proyectos/medellin-gold-1-fachada.jpg",
@@ -147,7 +143,7 @@
         "/img/proyectos/medellin-gold-2-torre.jpg"
       ],
       "planos": [],
-      "resultados": "Un solo equipo, del diseño a la obra terminada."
+      "resultados": "Un hotel en funcionamiento, diseñado por nuestro equipo."
     },
     {
       "id": "caso-1",
