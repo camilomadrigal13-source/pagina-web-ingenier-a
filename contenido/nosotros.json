@@ -1,27 +1,68 @@
 {
-  "seo": { "titulo": "Nosotros", "descripcion": "Firma multidisciplinaria de ingeniería, arquitectura y servicios profesionales con sede en Medellín, Antioquia. Atendemos toda el área metropolitana del Valle de Aburrá y vamos a cualquier lugar de Antioquia y del país." },
-  "titulo": "Una firma que junta disciplinas que casi siempre se contratan por separado.",
-  "intro": "Somos un estudio de servicios profesionales con sede en Medellín, Antioquia. Reunimos ingeniería civil y estructural, arquitectura, modelado y documentación técnica, construcción y gestión de proyectos, y gestión documental. Cada servicio puede contratarse de forma independiente. Cuando se combinan, trabajan con la misma información y el mismo criterio.",
+  "seo": {
+    "titulo": "Nosotros: un equipo multidisciplinario de ingeniería, arquitectura y construcción",
+    "descripcion": "Grupo de profesionales y equipo técnico multidisciplinario con sede en Medellín. Llevamos cada proyecto de la idea a la obra terminada: diseño, revisión, construcción y supervisión."
+  },
+  "titulo": "Un equipo multidisciplinario con un solo objetivo: que tu proyecto salga bien.",
+  "intro": "Somos un grupo de profesionales y un equipo técnico multidisciplinario con sede en Medellín. Reunimos ingeniería, arquitectura, construcción, gestión de proyectos, modelado y documentación técnica bajo un mismo criterio, para llevar cada proyecto de la idea a la obra terminada de la forma más óptima. Nos mueve el resultado: que se construya bien, con control de tiempo y de costos.",
   "principios": [
-    { "titulo": "Filosofía de trabajo", "texto": "Un proyecto bien resuelto es el que se entiende, se puede construir y se puede mantener. Preferimos preguntar y definir alcance antes que corregir después." },
-    { "titulo": "Enfoque multidisciplinario", "texto": "Las decisiones de arquitectura, estructura, costos y obra se afectan entre sí. Las miramos juntas desde el comienzo, o las coordinamos con tu equipo si ya tienes uno." },
-    { "titulo": "Compromiso técnico", "texto": "Trabajamos con referencias técnicas reconocidas y explicamos nuestros supuestos. Las decisiones de ingeniería las valida y firma el profesional competente." },
-    { "titulo": "Innovación aplicada", "texto": "Incorporamos BIM, modelado y automatización cuando reducen errores, tiempo o costo. No como adorno: solo donde mejoran el resultado para el cliente." },
-    { "titulo": "Optimización de recursos", "texto": "Revisamos alternativas y su costo antes de definir. Una buena decisión temprana vale más que un ahorro tardío." },
-    { "titulo": "Entregables claros", "texto": "Documentos ordenados, con nomenclatura y versiones, que otra persona pueda leer y usar sin tener que llamarnos." }
+    {
+      "titulo": "Enfocados en el logro",
+      "texto": "Un proyecto no termina cuando se entrega un plano, sino cuando la obra funciona como se pensó. Medimos nuestro trabajo por el resultado."
+    },
+    {
+      "titulo": "Un solo equipo, de la idea a la obra",
+      "texto": "Diseño, revisión, construcción y supervisión en las mismas manos. Cuando quien diseña conoce la obra y quien construye entiende el diseño, se evitan errores, reprocesos y sobrecostos."
+    },
+    {
+      "titulo": "Experiencia en obra real",
+      "texto": "Hemos participado en edificios y hoteles de Medellín y Sabaneta, desde el diseño arquitectónico hasta la gerencia técnica y la construcción."
+    },
+    {
+      "titulo": "Decisiones con criterio técnico",
+      "texto": "Explicamos nuestros supuestos y las alternativas antes de decidir. Las decisiones de ingeniería las valida y firma el profesional competente."
+    },
+    {
+      "titulo": "Recursos bien usados",
+      "texto": "Evaluamos opciones de costo y de tiempo desde el comienzo. Una buena decisión temprana vale más que un ahorro tardío."
+    },
+    {
+      "titulo": "Tecnología con propósito",
+      "texto": "Usamos BIM y automatización solo donde reducen errores y tiempo, y entregamos documentos ordenados que otra persona pueda leer sin tener que llamarnos."
+    }
   ],
   "alcance": {
     "titulo": "Dónde trabajamos",
-    "texto": "Estamos ubicados en Medellín y atendemos toda el área metropolitana del Valle de Aburrá. Vamos a cualquier lugar de Antioquia y del país cuando el servicio lo requiere. Los servicios de modelado, documentación, presupuestos, consultoría y gestión documental pueden prestarse de manera remota."
+    "texto": "Estamos en Medellín y atendemos toda el área metropolitana del Valle de Aburrá. Vamos a cualquier lugar de Antioquia y del país cuando el proyecto lo requiere. El modelado, la documentación, los presupuestos, la consultoría y la gestión documental también se prestan de forma remota."
   },
   "clientes": {
     "titulo": "Con quién trabajamos",
-    "texto": "Empresas, constructoras, profesionales independientes, particulares y entidades públicas. Podemos asumir un proyecto completo o apoyar a tu equipo con un servicio específico."
+    "texto": "Empresas, constructoras, hoteles, copropiedades, arquitectos e ingenieros, particulares y entidades públicas. Podemos asumir el proyecto completo o apoyar a tu equipo en la etapa que necesite."
   },
-  "perfiles_titulo": "Equipo profesional",
-  "perfiles_nota": "Aquí se presentarán los profesionales responsables, con su formación y matrícula profesional.",
+  "perfiles_titulo": "Las personas detrás de cada proyecto",
+  "perfiles_nota": "Los profesionales responsables, con su formación y matrícula profesional.",
   "perfiles": [
-    { "nombre": "", "cargo": "", "formacion": "", "matricula": "", "bio": "", "foto": "" },
-    { "nombre": "", "cargo": "", "formacion": "", "matricula": "", "bio": "", "foto": "" }
-  ]
+    {
+      "nombre": "",
+      "cargo": "",
+      "formacion": "",
+      "matricula": "",
+      "bio": "",
+      "foto": ""
+    },
+    {
+      "nombre": "",
+      "cargo": "",
+      "formacion": "",
+      "matricula": "",
+      "bio": "",
+      "foto": ""
+    }
+  ],
+  "trayectoria": {
+    "eyebrow": "Trayectoria",
+    "titulo": "Obras reales, de principio a fin.",
+    "texto": "Algunos de los proyectos en los que hemos participado, desde 2007, en Medellín y Sabaneta.",
+    "enlace": "Ver todos los proyectos"
+  }
 }

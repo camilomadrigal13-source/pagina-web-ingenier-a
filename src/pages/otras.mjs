@@ -2,7 +2,8 @@ import { esc } from "../lib.mjs";
 import { cta, waLink } from "../layout.mjs";
 import { cabecera, ranura, formulario, migaHtml } from "./comun.mjs";
 
-export function nosotros(c, n) {
+export function nosotros(c, n, pr = null) {
+  const reales = pr ? pr.proyectos.filter((x) => !x.ilustrativo) : [];
   const mostrarPerfiles = n.perfiles.some((p) => p.nombre) || c.modo_prototipo;
   return `${cabecera("Nosotros", n.titulo, n.intro)}
 <section class="sec sec-top"><div class="wrap"><dl class="principios">${n.principios.map((p) => `<div><dt>${esc(p.titulo)}</dt><dd>${esc(p.texto)}</dd></div>`).join("")}</dl></div></section>
@@ -10,7 +11,12 @@ export function nosotros(c, n) {
   <div><h2 class="h2">${esc(n.alcance.titulo)}</h2><p class="lead">${esc(n.alcance.texto)}</p></div>
   <div><h2 class="h2">${esc(n.clientes.titulo)}</h2><p class="lead">${esc(n.clientes.texto)}</p></div>
 </div></section>
-${mostrarPerfiles ? `<section class="sec"><div class="wrap"><div class="sec-cab"><h2 class="h2">${esc(n.perfiles_titulo)}</h2><p class="lead">${esc(n.perfiles_nota)}</p></div>
+${reales.length && c.mostrarProyectos !== false ? `<section class="sec"><div class="wrap">
+  <div class="sec-cab"><p class="eyebrow">${esc(n.trayectoria.eyebrow)}</p><h2 class="h2">${esc(n.trayectoria.titulo)}</h2><p class="lead">${esc(n.trayectoria.texto)}</p></div>
+  <ul class="temas">${reales.map((x) => `<li><a href="/proyectos/"><span class="temas-t">${esc(x.nombre)}</span><span class="temas-d">${esc(x.ubicacion)} · ${x.alcance.map(esc).join(", ")}</span><span aria-hidden="true">→</span></a></li>`).join("")}</ul>
+  <p class="nota-pie"><a class="enlace" href="/proyectos/">${esc(n.trayectoria.enlace)}</a></p>
+</div></section>` : ""}
+${mostrarPerfiles ? `<section class="sec sec-alt"><div class="wrap"><div class="sec-cab"><h2 class="h2">${esc(n.perfiles_titulo)}</h2><p class="lead">${esc(n.perfiles_nota)}</p></div>
 <ul class="perfiles">${n.perfiles.map((p) => p.nombre
     ? `<li class="perfil">${p.foto ? `<img src="${esc(p.foto)}" alt="${esc(p.nombre)}" width="400" height="500" loading="lazy" decoding="async">` : ""}<h3 class="h3">${esc(p.nombre)}</h3><p class="mono">${esc(p.cargo)}</p><p>${esc(p.formacion)}</p>${p.matricula ? `<p class="mono">Matrícula profesional ${esc(p.matricula)}</p>` : ""}<p>${esc(p.bio)}</p></li>`
     : `<li class="perfil perfil-vacio">${ranura("Foto del profesional", "", c, 4, 5)}<p class="mono">Nombre · cargo</p><p>Formación, experiencia y matrícula profesional, por completar.</p></li>`).join("")}</ul></div></section>` : ""}

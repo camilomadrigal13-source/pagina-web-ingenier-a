@@ -42,7 +42,7 @@ function emitir(ruta, opts, archivo) {
 }
 
 emitir("/", { titulo: H.seo.titulo, descripcion: H.seo.descripcion, cuerpo: home(c, H, S, G), home: true, bodyClass: "pg-home" });
-emitir("/nosotros/", { titulo: N.seo.titulo, descripcion: N.seo.descripcion, cuerpo: nosotros(c, N), migas: [{ nombre: "Nosotros", ruta: "/nosotros/" }] });
+emitir("/nosotros/", { titulo: N.seo.titulo, descripcion: N.seo.descripcion, cuerpo: nosotros(c, N, PR), migas: [{ nombre: "Nosotros", ruta: "/nosotros/" }] });
 emitir("/servicios/", { titulo: "Servicios de ingeniería, arquitectura, BIM, construcción y gestión documental", descripcion: S.intro.texto, cuerpo: indice(c, S, G), migas: [{ nombre: "Servicios", ruta: "/servicios/" }] });
 for (const u of unidades) {
   emitir(`/servicios/${u.slug}/`, {
