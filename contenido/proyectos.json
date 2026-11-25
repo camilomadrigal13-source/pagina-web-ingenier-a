@@ -146,6 +146,32 @@
       "resultados": "Un hotel en funcionamiento, diseñado por nuestro equipo."
     },
     {
+      "id": "edificio-lusitania",
+      "nombre": "Edificio Lusitania",
+      "ubicacion": "2016",
+      "categorias": [
+        "arquitectura",
+        "ingenieria",
+        "construccion"
+      ],
+      "descripcion": "Un edificio multifamiliar que llevamos del diseño a la obra. Nos encargamos del diseño y de la construcción, con un solo equipo responsable de que lo proyectado se hiciera realidad.",
+      "alcance": [
+        "Diseño",
+        "Construcción"
+      ],
+      "servicios": [
+        "A",
+        "C"
+      ],
+      "imagenes": [
+        "/img/proyectos/lusitania-1-fachada.jpg",
+        "/img/proyectos/lusitania-2-completa.jpg"
+      ],
+      "planos": [],
+      "resultados": "Un edificio multifamiliar, del diseño a la obra terminada.",
+      "credito": "Imágenes: Google Street View."
+    },
+    {
       "id": "caso-1",
       "ilustrativo": true,
       "nombre": "Edificio de vivienda de mediana altura",
