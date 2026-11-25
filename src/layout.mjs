@@ -86,8 +86,8 @@ ${c.modo_prototipo ? '<meta name="robots" content="noindex,nofollow">' : ""}
 <meta name="twitter:image" content="${esc(og)}">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="/assets/fonts/manrope.woff2" as="font" type="font/woff2" crossorigin>
-<script src="/assets/theme.js"></script>
-<link rel="stylesheet" href="/assets/styles.css">
+<script src="/assets/theme.js?v=${c.ver}"></script>
+<link rel="stylesheet" href="/assets/styles.css?v=${c.ver}">
 <script type="application/ld+json">${JSON.stringify(ld)}</script>
 </head>
 <body class="${bodyClass}" data-wa="${esc(c.waNumero)}" data-endpoint="${esc(c.formulario.endpoint)}">
@@ -136,7 +136,7 @@ ${cuerpo}
   <div class="wrap pie-base mono"><span>© ${new Date().getFullYear()} ${esc(c.nombre)}</span><span>Las decisiones de ingeniería las valida y firma el profesional competente.</span></div>
 </footer>
 ${wa ? `<a class="wa-flot" href="${esc(wa)}" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.7 13.6L3 21l4.5-1.2A9 9 0 1 0 12 3Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M8.8 8.6c.2-.5.5-.5.8-.5s.4.4.6.9c.1.3-.1.5-.3.8-.2.2-.3.4-.1.7.5.9 1.4 1.7 2.4 2.1.3.1.5 0 .7-.2.2-.3.4-.5.7-.4l1.1.5c.3.2.4.3.3.6-.2.9-1.1 1.4-2 1.3-2.7-.4-5.2-2.7-5.8-5.2-.1-.4 0-.8.2-1.1Z" fill="currentColor"/></svg><span>WhatsApp</span></a>` : ""}
-<script src="/assets/app.js" defer></script>
+<script src="/assets/app.js?v=${c.ver}" defer></script>
 ${c.turnstile ? '<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>' : ""}
 </body>
 </html>`;

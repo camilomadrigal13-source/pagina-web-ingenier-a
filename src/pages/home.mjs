@@ -8,7 +8,7 @@ export function home(c, h, servicios, G, pr = null) {
   const heroP = reales.find((x) => x.id === "hotel-medellin-gold") || reales[0];
   const foto = c.imagenes.hero
     ? `<figure class="hero-foto"><img src="${esc(c.imagenes.hero)}" alt="" width="1200" height="900" fetchpriority="high" decoding="async"></figure>`
-    : heroP && c.mostrarProyectos !== false
+    : h.hero_foto === true && heroP && c.mostrarProyectos !== false
       ? `<figure class="hero-real"><a href="/proyectos/${esc(heroP.id)}/">${fotoTag(heroP.imagenes[0], (heroP.alts || [])[0] || heroP.nombre, { ancho: 1400, alto: 1050, prioridad: true, sizes: "(max-width:900px) 92vw, 560px" })}</a><figcaption class="mono"><strong>${esc(heroP.nombre)}</strong><span>${esc(heroP.ubicacion)} · ${heroP.alcance.map(esc).join(", ")}</span></figcaption></figure>`
       : `<div class="hero-dib">${hero()}</div>`;
   const wa = waLink(c, "Hola, quiero información sobre sus servicios.");

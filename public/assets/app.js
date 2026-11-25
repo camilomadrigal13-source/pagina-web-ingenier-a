@@ -106,6 +106,15 @@
     $$("[data-cerrar]", d).forEach(function (x) { x.addEventListener("click", function () { d.close(); }); });
   });
 
+  /* El mismo visor en la página propia de cada proyecto */
+  $$(".proy-galeria").forEach(function (g) {
+    $$("img", g).forEach(function (im) {
+      im.setAttribute("tabindex", "0"); im.setAttribute("role", "button"); im.style.cursor = "zoom-in";
+      im.addEventListener("click", function () { lbAbrir(g, im); });
+      im.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); lbAbrir(g, im); } });
+    });
+  });
+
   /* Formularios */
   var endpoint = body.getAttribute("data-endpoint") || "/api/contacto";
   var wa = body.getAttribute("data-wa") || "";

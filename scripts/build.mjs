@@ -9,9 +9,13 @@ import { tecnologia } from "../src/pages/tecnologia.mjs";
 import { guia, preguntas, faqLd, todasLasPreguntas } from "../src/pages/guias.mjs";
 import { nosotros, proceso, proyectos, proyecto, cotizador, contacto, privacidad, noEncontrada, waProyecto, anioDe } from "../src/pages/otras.mjs";
 import { execSync } from "node:child_process";
+import { createHash } from "node:crypto";
+import { readFileSync } from "node:fs";
 
 const c = cargarConfig();
 const dist = join(RAIZ, "dist");
+// Versión de los archivos de estilo y de script: cambia cuando cambia su contenido, así el navegador nunca usa una copia vieja.
+c.ver = createHash("md5").update(["styles.css", "app.js", "theme.js"].map((f) => readFileSync(join(RAIZ, "public/assets", f), "utf8")).join("|")).digest("hex").slice(0, 8);
 rmSync(dist, { recursive: true, force: true });
 mkdirSync(dist, { recursive: true });
 cpSync(join(RAIZ, "public"), dist, { recursive: true });

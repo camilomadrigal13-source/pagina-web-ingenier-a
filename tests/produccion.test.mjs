@@ -96,7 +96,8 @@ test("páginas de proyecto, guías nuevas, llms.txt, WebP y portada con foto rea
   assert.ok(p.includes("CreativeWork") && p.includes("wa.me/573001112233?text=") && p.includes("Marat"));
   assert.ok(existsSync(dist("llms.txt")) && leer("llms.txt").includes("Edificio Marat"));
   const inicio = leer("index.html");
-  assert.ok(inicio.includes("hero-real") && inicio.includes("Elige tu caso") && inicio.includes("<picture>"));
+  assert.ok(inicio.includes("hero-dib") && !inicio.includes("hero-real") && inicio.includes("Elige tu caso") && inicio.includes("<picture>"));
+  assert.ok(/styles\.css\?v=[0-9a-f]{8}/.test(inicio) && /app\.js\?v=[0-9a-f]{8}/.test(inicio), "CSS y JS con versión");
   assert.ok(!inicio.includes("Ver cómo trabajamos") || true);
   assert.ok(/name="correo"(?![^>]*required)/.test(leer("contacto/index.html")), "el correo ya no es obligatorio");
   assert.ok(leer("reforzamiento-estructural-medellin/index.html").includes("En resumen"));
