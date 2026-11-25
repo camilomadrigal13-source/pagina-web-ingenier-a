@@ -1,5 +1,8 @@
 {
-  "seo": { "titulo": "Proceso de trabajo", "descripcion": "Cómo trabajamos: diagnóstico, alcance y propuesta, desarrollo técnico y entrega con seguimiento. Entregables según el tipo de servicio." },
+  "seo": {
+    "titulo": "Cómo trabajamos: del diagnóstico a la entrega",
+    "descripcion": "Cómo trabajamos: diagnóstico, alcance y propuesta, desarrollo técnico y entrega con seguimiento. Entregables según el tipo de servicio."
+  },
   "titulo": "Cuatro etapas, con entregables definidos en cada una.",
   "intro": "El proceso es el mismo para un plano de taller que para un proyecto completo. Cambia la profundidad de cada etapa y lo que recibes al final.",
   "etapas": [
@@ -26,9 +29,21 @@
   ],
   "por_servicio_titulo": "Qué entregamos según el servicio",
   "por_servicio": [
-    { "unidad": "A", "texto": "Memorias, planos, informes de diagnóstico y diseños de intervención." },
-    { "unidad": "B", "texto": "Modelos, planos, despieces, cartillas y cantidades, organizados por versión." },
-    { "unidad": "C", "texto": "Presupuestos, APU, cronogramas, informes de avance, de interventoría y conceptos técnicos." },
-    { "unidad": "D", "texto": "Diagnóstico, inventarios, archivos clasificados e indexados, y repositorios con sus reglas de uso." }
+    {
+      "unidad": "A",
+      "texto": "Memorias, planos, informes de diagnóstico y diseños de intervención."
+    },
+    {
+      "unidad": "B",
+      "texto": "Modelos, planos, despieces, cartillas y cantidades, organizados por versión."
+    },
+    {
+      "unidad": "C",
+      "texto": "Presupuestos, APU, cronogramas, informes de avance, de interventoría y conceptos técnicos."
+    },
+    {
+      "unidad": "D",
+      "texto": "Diagnóstico, inventarios, archivos clasificados e indexados, y repositorios con sus reglas de uso."
+    }
   ]
 }

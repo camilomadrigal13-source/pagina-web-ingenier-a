@@ -26,6 +26,7 @@ const TAR = leer("contenido/tarifas.json");
 const G = leer("contenido/guias.json");
 const FAQ = leer("contenido/preguntas.json");
 const unidades = S.unidades;
+c.guias = G.guias.map((g) => ({ slug: g.slug, corto: g.corto }));
 
 // En producción no se publican los casos ilustrativos. Si no hay proyectos reales, la sección Proyectos se omite.
 const hayReales = PR.proyectos.some((x) => !x.ilustrativo);
@@ -41,12 +42,13 @@ function emitir(ruta, opts, archivo) {
   if (!archivo) rutas.push(ruta);
 }
 
-emitir("/", { titulo: H.seo.titulo, descripcion: H.seo.descripcion, cuerpo: home(c, H, S, G), home: true, bodyClass: "pg-home" });
+emitir("/", { titulo: H.seo.titulo, descripcion: H.seo.descripcion, cuerpo: home(c, H, S, G, PR), home: true, bodyClass: "pg-home" });
 emitir("/nosotros/", { titulo: N.seo.titulo, descripcion: N.seo.descripcion, cuerpo: nosotros(c, N, PR), migas: [{ nombre: "Nosotros", ruta: "/nosotros/" }] });
-emitir("/servicios/", { titulo: "Servicios de ingeniería, arquitectura, BIM, construcción y gestión documental", descripcion: S.intro.texto, cuerpo: indice(c, S, G), migas: [{ nombre: "Servicios", ruta: "/servicios/" }] });
+emitir("/servicios/", { titulo: "Servicios de ingeniería, arquitectura y construcción", descripcion: "Ingeniería y arquitectura, BIM, construcción y gestión de proyectos, y gestión documental. Contrata cada servicio por separado o todos juntos.", cuerpo: indice(c, S, G), migas: [{ nombre: "Servicios", ruta: "/servicios/" }] });
 for (const u of unidades) {
   emitir(`/servicios/${u.slug}/`, {
     titulo: u.seo.titulo, descripcion: u.seo.descripcion, cuerpo: unidad(c, S, u), bodyClass: `u-pg u-${u.id}`,
+    extraLd: [{ "@context": "https://schema.org", "@type": "Service", name: u.nombre, description: u.resumen, serviceType: u.corto, provider: { "@id": `${c.url}/#organizacion` }, areaServed: [{ "@type": "AdministrativeArea", name: "Valle de Aburrá" }, { "@type": "AdministrativeArea", name: "Antioquia" }] }],
     migas: [{ nombre: "Servicios", ruta: "/servicios/" }, { nombre: u.corto, ruta: `/servicios/${u.slug}/` }]
   });
 }
@@ -54,10 +56,10 @@ emitir("/tecnologia/", { titulo: T.seo.titulo, descripcion: T.seo.descripcion, c
 if (c.mostrarProyectos) emitir("/proyectos/", { titulo: PR.seo.titulo, descripcion: PR.seo.descripcion, cuerpo: proyectos(c, PR), migas: [{ nombre: "Proyectos", ruta: "/proyectos/" }] });
 emitir("/proceso/", { titulo: P.seo.titulo, descripcion: P.seo.descripcion, cuerpo: proceso(c, P, S), migas: [{ nombre: "Proceso", ruta: "/proceso/" }] });
 emitir("/cotizador/", { titulo: Q.seo.titulo, descripcion: Q.seo.descripcion, cuerpo: cotizador(c, Q, unidades, TAR), migas: [{ nombre: "Cotización", ruta: "/cotizador/" }] });
-emitir("/contacto/", { titulo: "Contacto", descripcion: `Escríbenos desde ${c.ubicacion.municipio}, ${c.ubicacion.departamento}, o por WhatsApp. Atendemos todo Colombia.`, cuerpo: contacto(c, unidades, Q), migas: [{ nombre: "Contacto", ruta: "/contacto/" }] });
+emitir("/contacto/", { titulo: "Contacto: ingeniería y arquitectura en Medellín", descripcion: `Escríbenos desde ${c.ubicacion.municipio}, ${c.ubicacion.departamento}, o por WhatsApp. Atendemos todo Colombia.`, cuerpo: contacto(c, unidades, Q), migas: [{ nombre: "Contacto", ruta: "/contacto/" }] });
 emitir("/privacidad/", { titulo: "Política de privacidad", descripcion: "Cómo tratamos los datos que nos envías por los formularios del sitio.", cuerpo: privacidad(c), migas: [{ nombre: "Privacidad", ruta: "/privacidad/" }] });
 for (const g of G.guias) {
-  emitir(`/${g.slug}/`, { titulo: g.seo.titulo, descripcion: g.seo.descripcion, cuerpo: guia(c, G, g, unidades), migas: [{ nombre: "Servicios", ruta: "/servicios/" }, { nombre: g.corto, ruta: `/${g.slug}/` }], extraLd: [faqLd(g.faq)] });
+  emitir(`/${g.slug}/`, { titulo: g.seo.titulo, descripcion: g.seo.meta || g.seo.descripcion, cuerpo: guia(c, G, g, unidades), migas: [{ nombre: "Servicios", ruta: "/servicios/" }, { nombre: g.corto, ruta: `/${g.slug}/` }], extraLd: [faqLd(g.faq)] });
 }
 emitir("/preguntas/", { titulo: FAQ.seo.titulo, descripcion: FAQ.seo.descripcion, cuerpo: preguntas(c, FAQ), migas: [{ nombre: "Preguntas frecuentes", ruta: "/preguntas/" }], extraLd: [faqLd(todasLasPreguntas(FAQ))] });
 emitir("/404.html", { titulo: "Página no encontrada", descripcion: "Página no encontrada.", cuerpo: noEncontrada(c) }, "404.html");

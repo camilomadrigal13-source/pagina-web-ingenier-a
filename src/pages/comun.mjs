@@ -1,5 +1,5 @@
 // Fragmentos que usan varias páginas: encabezado interno, bloque de captura y formulario.
-import { esc } from "../lib.mjs";
+import { esc, existe } from "../lib.mjs";
 import { trama } from "../svg.mjs";
 
 export const cabecera = (eyebrow, titulo, texto = "") => `<section class="cab"><div class="wrap cab-in">
@@ -11,7 +11,16 @@ export const migaHtml = (items) => `<nav class="miga" aria-label="Ruta"><ol>${it
 
 /** Espacio para imagen real. Si hay archivo lo muestra; si no, deja un marcador editable. */
 export function ranura(titulo, imagen = "", c, ancho = 4, alto = 3, leyenda = true) {
-  if (imagen) return `<figure class="ranura con-img"><img src="${esc(imagen)}" alt="${esc(titulo)}" width="${ancho * 200}" height="${alto * 200}" loading="lazy" decoding="async">${leyenda ? `<figcaption>${esc(titulo)}</figcaption>` : ""}</figure>`;
+  if (imagen) {
+    const img = `<img src="${esc(imagen)}" alt="${esc(titulo)}" width="${ancho * 200}" height="${alto * 200}" loading="lazy" decoding="async">`;
+    const base = imagen.replace(/\.jpe?g$/i, "");
+    const hayWebp = base !== imagen && existe(`public${base}.webp`);
+    const chica = hayWebp && existe(`public${base}-800.webp`);
+    const pic = hayWebp
+      ? `<picture><source type="image/webp" srcset="${chica ? `${esc(base)}-800.webp 800w, ` : ""}${esc(base)}.webp 1400w" sizes="(max-width:700px) 92vw, 400px">${img}</picture>`
+      : img;
+    return `<figure class="ranura con-img">${pic}${leyenda ? `<figcaption>${esc(titulo)}</figcaption>` : ""}</figure>`;
+  }
   if (!c.modo_prototipo) return ""; // en producción no se publican espacios vacíos
   const nota = "Espacio para imagen real";
   return `<figure class="ranura" style="--r:${ancho}/${alto}"><div class="ranura-in"><span class="mono">${nota}</span></div><figcaption>${esc(titulo)}</figcaption></figure>`;

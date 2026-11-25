@@ -5,6 +5,13 @@
   var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
   var body = document.body;
 
+  /* Botón de WhatsApp: aparece al bajar un poco, para no tapar el primer contenido */
+  var waF = $(".wa-flot");
+  if (waF) {
+    var mostrarWA = function () { waF.classList.toggle("visible", (window.scrollY || document.documentElement.scrollTop) > 260); };
+    window.addEventListener("scroll", mostrarWA, { passive: true }); mostrarWA();
+  }
+
   /* Tema claro/oscuro */
   var btnTema = $("#tema");
   function temaActual() {
@@ -60,8 +67,41 @@
       if (d && d.showModal) d.showModal();
     });
   });
+  /* Visor de fotos a pantalla completa (flechas, deslizar con el dedo, Esc) */
+  var lb = null, lbImgs = [], lbI = 0, lbX = null;
+  function lbMostrar() {
+    var im = lbImgs[lbI];
+    $("img", lb).src = im.getAttribute("src"); $("img", lb).alt = im.alt;
+    $(".lb-n", lb).textContent = (lbI + 1) + " / " + lbImgs.length;
+    $$(".lb-prev,.lb-next", lb).forEach(function (b) { b.hidden = lbImgs.length < 2; });
+  }
+  function lbIr(d) { lbI = (lbI + d + lbImgs.length) % lbImgs.length; lbMostrar(); }
+  function lbAbrir(modal, im) {
+    if (!lb) {
+      lb = document.createElement("dialog"); lb.className = "lb"; lb.setAttribute("aria-label", "Foto ampliada");
+      lb.innerHTML = '<button class="lb-x" type="button" aria-label="Cerrar">\u00d7</button><button class="lb-prev" type="button" aria-label="Foto anterior">\u2039</button><img alt=""><button class="lb-next" type="button" aria-label="Foto siguiente">\u203a</button><p class="lb-n mono"></p>';
+      document.body.appendChild(lb);
+      $(".lb-x", lb).addEventListener("click", function () { lb.close(); });
+      $(".lb-prev", lb).addEventListener("click", function () { lbIr(-1); });
+      $(".lb-next", lb).addEventListener("click", function () { lbIr(1); });
+      lb.addEventListener("click", function (e) { if (e.target === lb) lb.close(); });
+      lb.addEventListener("keydown", function (e) { if (e.key === "ArrowLeft") lbIr(-1); if (e.key === "ArrowRight") lbIr(1); });
+      lb.addEventListener("touchstart", function (e) { lbX = e.touches[0].clientX; }, { passive: true });
+      lb.addEventListener("touchend", function (e) { if (lbX === null) return; var dx = e.changedTouches[0].clientX - lbX; lbX = null; if (Math.abs(dx) > 40) lbIr(dx < 0 ? 1 : -1); });
+    }
+    lbImgs = $$(".modal-g img", modal); lbI = Math.max(0, lbImgs.indexOf(im));
+    lbMostrar(); lb.showModal();
+  }
   $$("dialog.modal").forEach(function (d) {
-    d.addEventListener("click", function (e) { if (e.target === d) d.close(); });
+    d.addEventListener("click", function (e) {
+      if (e.target === d) { d.close(); return; }
+      var im = e.target.closest ? e.target.closest(".modal-g img") : null;
+      if (im) lbAbrir(d, im);
+    });
+    $$(".modal-g img", d).forEach(function (im) {
+      im.setAttribute("tabindex", "0"); im.setAttribute("role", "button"); im.style.cursor = "zoom-in";
+      im.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); lbAbrir(d, im); } });
+    });
     $$("[data-cerrar]", d).forEach(function (x) { x.addEventListener("click", function () { d.close(); }); });
   });
 

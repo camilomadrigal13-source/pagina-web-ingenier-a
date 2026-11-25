@@ -47,7 +47,7 @@ export function proyectos(c, p) {
 <ul class="proy" id="proy">${p.proyectos.map((x) => `<li class="proy-i" data-cat="${x.categorias.join(" ")}">
   <button type="button" class="proy-b" data-abrir="${esc(x.id)}" aria-haspopup="dialog">
     ${ranura(x.nombre, x.imagenes[0] || "", c, 4, 3, false)}
-    <span class="proy-m"><span class="mono proy-c">${x.categorias.map((k) => esc(nom[k])).join(" · ")}</span><span class="proy-n">${esc(x.nombre)}</span>${x.ilustrativo ? `<span class="etq-ilus mono">Caso ilustrativo</span>` : ""}</span>
+    <span class="proy-m"><span class="mono proy-c">${x.categorias.map((k) => esc(nom[k])).join(" · ")}</span><span class="proy-n">${esc(x.nombre)}</span>${x.ilustrativo ? "" : `<span class="mono proy-l">${esc(x.ubicacion)}</span>`}<span class="proy-ver mono" aria-hidden="true">Ver proyecto →</span>${x.ilustrativo ? `<span class="etq-ilus mono">Caso ilustrativo</span>` : ""}</span>
   </button></li>`).join("")}</ul>
 </div></section>
 ${p.proyectos.map((x) => `<dialog class="modal" id="m-${esc(x.id)}" aria-labelledby="m-${esc(x.id)}-t">

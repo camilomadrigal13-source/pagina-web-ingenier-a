@@ -1,8 +1,10 @@
 import { esc } from "../lib.mjs";
 import { hero } from "../svg.mjs";
 import { cta, waLink } from "../layout.mjs";
+import { ranura } from "./comun.mjs";
 
-export function home(c, h, servicios, G) {
+export function home(c, h, servicios, G, pr = null) {
+  const reales = pr ? pr.proyectos.filter((x) => !x.ilustrativo && x.imagenes.length) : [];
   const foto = c.imagenes.hero
     ? `<figure class="hero-foto"><img src="${esc(c.imagenes.hero)}" alt="" width="1200" height="900" fetchpriority="high" decoding="async"></figure>`
     : `<div class="hero-dib">${hero()}</div>`;
@@ -37,6 +39,12 @@ export function home(c, h, servicios, G) {
       </a></li>`).join("")}
   </ol>
 </div></section>
+
+${reales.length && c.mostrarProyectos !== false ? `<section class="sec"><div class="wrap">
+  <div class="sec-cab"><p class="eyebrow">${esc(h.obras_eyebrow)}</p><h2 class="h2">${esc(h.obras_titulo)}</h2><p class="lead">${esc(h.obras_texto)}</p></div>
+  <ul class="obras">${reales.slice(0, 4).map((x) => `<li><a href="/proyectos/">${ranura(x.nombre, x.imagenes[0], c, 4, 3, false)}<span class="obras-t"><strong>${esc(x.nombre)}</strong><span class="mono">${esc(x.ubicacion)}</span></span></a></li>`).join("")}</ul>
+  <p class="nota-pie"><a class="enlace" href="/proyectos/">${esc(h.obras_enlace)}</a></p>
+</div></section>` : ""}
 
 <section class="sec"><div class="wrap">
   <div class="sec-cab"><p class="eyebrow">${esc(G.indice_titulo)}</p><h2 class="h2">Temas que resolvemos a diario.</h2></div>

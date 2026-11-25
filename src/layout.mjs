@@ -32,8 +32,7 @@ function jsonLd(c, servicios) {
     address: dir,
     areaServed: [
       { "@type": "AdministrativeArea", name: "Valle de Aburrá" },
-      { "@type": "AdministrativeArea", name: "Antioquia" },
-      { "@type": "Country", name: "Colombia" }
+      { "@type": "AdministrativeArea", name: "Antioquia" }
     ],
     knowsAbout: servicios.map((u) => u.nombre),
     hasOfferCatalog: {
@@ -42,6 +41,7 @@ function jsonLd(c, servicios) {
       itemListElement: servicios.map((u) => ({ "@type": "Offer", itemOffered: { "@type": "Service", name: u.nombre, description: u.resumen } }))
     }
   };
+  if (c.waNumero) org.contactPoint = [{ "@type": "ContactPoint", contactType: "customer service", telephone: `+${c.waNumero}`, availableLanguage: "es", areaServed: "CO" }];
   if (c.contacto.correo) org.email = c.contacto.correo;
   if (c.contacto.telefono) org.telephone = c.contacto.telefono;
   const redes = Object.values(c.redes).filter(Boolean);
@@ -119,6 +119,7 @@ ${cuerpo}
     <nav aria-label="Servicios"><h2 class="pie-t">Servicios</h2><ul>
       ${servicios.map((u) => `<li><a href="/servicios/${u.slug}/">${esc(u.corto)}</a></li>`).join("")}
     </ul></nav>
+    ${(c.guias || []).length ? `<nav aria-label="Guías"><h2 class="pie-t">Guías</h2><ul>${c.guias.map((g) => `<li><a href="/${g.slug}/">${esc(g.corto)}</a></li>`).join("")}</ul></nav>` : ""}
     <nav aria-label="Firma"><h2 class="pie-t">Firma</h2><ul>
       <li><a href="/nosotros/">Nosotros</a></li><li><a href="/tecnologia/">Tecnología</a></li>${c.mostrarProyectos === false ? "" : '<li><a href="/proyectos/">Proyectos</a></li>'}<li><a href="/proceso/">Proceso</a></li><li><a href="/preguntas/">Preguntas frecuentes</a></li><li><a href="/privacidad/">Privacidad</a></li>
     </ul></nav>
