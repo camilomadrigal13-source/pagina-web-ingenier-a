@@ -7,7 +7,7 @@ import { home } from "../src/pages/home.mjs";
 import { indice, unidad } from "../src/pages/servicios.mjs";
 import { tecnologia } from "../src/pages/tecnologia.mjs";
 import { guia, preguntas, faqLd, todasLasPreguntas } from "../src/pages/guias.mjs";
-import { nosotros, proceso, proyectos, proyecto, cotizador, contacto, privacidad, noEncontrada, waProyecto, anioDe } from "../src/pages/otras.mjs";
+import { nosotros, proceso, proyectos, proyecto, cotizador, contacto, privacidad, terminos, noEncontrada, waProyecto, anioDe } from "../src/pages/otras.mjs";
 import { execSync } from "node:child_process";
 import { createHash } from "node:crypto";
 import { readFileSync } from "node:fs";
@@ -76,6 +76,7 @@ for (const g of G.guias) {
   emitir(`/${g.slug}/`, { titulo: g.seo.titulo, descripcion: g.seo.meta || g.seo.descripcion, cuerpo: guia(c, G, g, unidades), migas: [{ nombre: "Servicios", ruta: "/servicios/" }, { nombre: g.corto, ruta: `/${g.slug}/` }], extraLd: [faqLd(g.faq)], waTexto: `Hola, vi su guía sobre ${g.corto.toLowerCase()} y quiero que revisen mi caso.` });
 }
 emitir("/preguntas/", { titulo: FAQ.seo.titulo, descripcion: FAQ.seo.descripcion, cuerpo: preguntas(c, FAQ), migas: [{ nombre: "Preguntas frecuentes", ruta: "/preguntas/" }], extraLd: [faqLd(todasLasPreguntas(FAQ))] });
+emitir("/terminos/", { titulo: "Términos de uso", descripcion: "Reglas básicas para usar este sitio: alcance de la información, cotizaciones orientativas y propiedad intelectual.", cuerpo: terminos(c), migas: [{ nombre: "Términos de uso", ruta: "/terminos/" }] });
 emitir("/404.html", { titulo: "Página no encontrada", descripcion: "Página no encontrada.", cuerpo: noEncontrada(c) }, "404.html");
 
 let hoy = new Date().toISOString().slice(0, 10);

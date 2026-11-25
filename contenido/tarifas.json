@@ -3,13 +3,16 @@
   "verificadas": false,
   "moneda": "COP",
   "redondeo": 10000,
-  "rango": { "bajo": 0.85, "alto": 1.25 },
+  "rango": {
+    "bajo": 0.85,
+    "alto": 1.25
+  },
   "aviso_ejemplo": "Prototipo: valores de ejemplo, no son tarifas de la firma.",
   "etiqueta": "Cotización preliminar",
   "intro_preliminar": "Una primera referencia para que te hagas una idea del valor de tu proyecto.",
   "nota": "No incluye IVA, derechos de curaduría, estudios de suelos ni costos de obra. El valor final depende del alcance, la complejidad y el plazo.",
   "final_titulo": "¿Quieres una cotización más ajustada?",
-  "mensaje_final": "Esta es una cotización preliminar. Si quieres un valor ajustado a tu proyecto, o conocer las promociones de temporada, no dudes en contactarnos: revisamos tu caso, te asesoramos sobre la mejor forma de contratar y te respondemos con alcance, entregables y plazo.",
+  "mensaje_final": "Esta es una cotización preliminar. Si quieres un valor ajustado a tu proyecto, no dudes en contactarnos: revisamos tu caso, te asesoramos sobre la mejor forma de contratar y te respondemos con alcance, entregables y plazo.",
   "boton_final": "Quiero mi cotización ajustada",
   "factor_tipo": {
     "Vivienda unifamiliar": 1,
@@ -23,22 +26,63 @@
     "Otro": 1
   },
   "servicios": {
-    "A: Diseño estructural y cimentaciones": { "modo": "m2", "valor": 18000 },
-    "A: Revisión de diseños estructurales": { "modo": "cotizar" },
-    "A: Evaluación, patología y reforzamiento": { "modo": "cotizar" },
-    "A: Diseño arquitectónico": { "modo": "m2", "valor": 25000 },
-    "A: Coordinación y acompañamiento técnico": { "modo": "cotizar" },
-    "B: Modelado BIM y tridimensional": { "modo": "m2", "valor": 10000 },
-    "B: Dibujo técnico y planos": { "modo": "m2", "valor": 9000 },
-    "B: Detallamiento estructural y despieces": { "modo": "m2", "valor": 12000 },
-    "B: Automatización y organización de documentación técnica": { "modo": "cotizar" },
-    "C: Construcción, adecuaciones y remodelaciones": { "modo": "cotizar" },
-    "C: Presupuestos, APU y cantidades de obra": { "modo": "m2", "valor": 8000 },
-    "C: Programación, control de costos y seguimiento": { "modo": "m2", "valor": 6000 },
-    "C: Consultoría y evaluación técnica de proyectos": { "modo": "cotizar" },
-    "D: Diagnóstico y estrategia documental": { "modo": "cotizar" },
-    "D: Organización, clasificación e inventarios": { "modo": "cotizar" },
-    "D: Digitalización e indexación": { "modo": "cotizar" },
-    "D: Repositorios y administración documental": { "modo": "cotizar" }
+    "A: Diseño estructural y cimentaciones": {
+      "modo": "m2",
+      "valor": 18000
+    },
+    "A: Revisión de diseños estructurales": {
+      "modo": "cotizar"
+    },
+    "A: Evaluación, patología y reforzamiento": {
+      "modo": "cotizar"
+    },
+    "A: Diseño arquitectónico": {
+      "modo": "m2",
+      "valor": 25000
+    },
+    "A: Coordinación y acompañamiento técnico": {
+      "modo": "cotizar"
+    },
+    "B: Modelado BIM y tridimensional": {
+      "modo": "m2",
+      "valor": 10000
+    },
+    "B: Dibujo técnico y planos": {
+      "modo": "m2",
+      "valor": 9000
+    },
+    "B: Detallamiento estructural y despieces": {
+      "modo": "m2",
+      "valor": 12000
+    },
+    "B: Automatización y organización de documentación técnica": {
+      "modo": "cotizar"
+    },
+    "C: Construcción, adecuaciones y remodelaciones": {
+      "modo": "cotizar"
+    },
+    "C: Presupuestos, APU y cantidades de obra": {
+      "modo": "m2",
+      "valor": 8000
+    },
+    "C: Programación, control de costos y seguimiento": {
+      "modo": "m2",
+      "valor": 6000
+    },
+    "C: Consultoría y evaluación técnica de proyectos": {
+      "modo": "cotizar"
+    },
+    "D: Diagnóstico y estrategia documental": {
+      "modo": "cotizar"
+    },
+    "D: Organización, clasificación e inventarios": {
+      "modo": "cotizar"
+    },
+    "D: Digitalización e indexación": {
+      "modo": "cotizar"
+    },
+    "D: Repositorios y administración documental": {
+      "modo": "cotizar"
+    }
   }
 }

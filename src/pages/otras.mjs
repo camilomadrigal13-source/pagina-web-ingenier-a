@@ -138,11 +138,11 @@ ${c.modo_prototipo ? `<aside class="aviso" role="note"><p class="mono aviso-t">B
 <h2 class="h3">6. Cómo ejercer tus derechos</h2>
 <p>Escríbenos por ${canal} indicando tu nombre y qué quieres hacer (consultar, corregir o eliminar tus datos). Respondemos las consultas en un máximo de diez (10) días hábiles y los reclamos en un máximo de quince (15) días hábiles, contados desde su recibo. Si necesitamos más tiempo, te avisamos el motivo y la nueva fecha.</p>
 <h2 class="h3">7. Proveedores que intervienen y transferencia a otros países</h2>
-<p>Para recibir y guardar tu solicitud usamos servicios de terceros que pueden procesar datos en servidores fuera de Colombia: Cloudflare (alojamiento del sitio y recepción del formulario, y, cuando está activa, su verificación antibots Turnstile), Google (hoja de cálculo donde se registra tu solicitud) y, si están activos, un proveedor de correo electrónico y un servicio de mensajería (Telegram o WhatsApp) para avisarnos de tu solicitud. Estos proveedores actúan como encargados del tratamiento y aplican sus propias medidas de seguridad. Las tipografías del sitio se alojan en el propio sitio: no se solicitan a Google.</p>
+<p>Para recibir y guardar tu solicitud usamos servicios de terceros que pueden procesar datos en servidores fuera de Colombia: Cloudflare (alojamiento del sitio, recepción del formulario y verificación antibots), Google (hoja de cálculo donde se registra tu solicitud y correo de aviso a la firma) y Telegram (mensaje interno de aviso a la firma). Estos proveedores actúan como encargados del tratamiento y aplican sus propias medidas de seguridad. Si nos escribes por WhatsApp, esa conversación se rige además por las condiciones de Meta. Las tipografías del sitio se alojan en el propio sitio: no se solicitan a Google.</p>
 <h2 class="h3">8. Seguridad y conservación</h2>
 <p>El formulario se envía por conexión cifrada y el acceso a los registros está restringido a quienes los necesitan. Conservamos tus datos mientras sea necesario para atender tu solicitud y la relación que de ella surja, y luego los eliminamos o anonimizamos, salvo obligación legal de conservarlos.</p>
 <h2 class="h3">9. Cookies y analítica</h2>
-<p>Este sitio no usa cookies de seguimiento ni de publicidad. Guarda en tu navegador, sin enviarla a ningún servidor, solo tu preferencia de tema claro u oscuro.${c.turnstile ? " El control antibots de Cloudflare puede usar tecnologías propias para verificar que eres una persona." : ""}</p>
+<p>Este sitio no usa cookies de seguimiento ni de publicidad, y no tiene analítica. Guarda en tu navegador, sin enviarla a ningún servidor, solo tu preferencia de tema claro u oscuro.${c.turnstile ? " En las páginas con formulario se carga el control antibots Turnstile de Cloudflare, que puede usar tecnologías propias (como identificadores del navegador y la dirección IP) para verificar que eres una persona." : ""}</p>
 <h2 class="h3">10. Vigencia y cambios</h2>
 <p>Esta política rige desde su publicación. Si la modificamos de manera sustancial, lo informaremos en este sitio. Última actualización: ${new Date().toISOString().slice(0, 10)}.</p>
 </div></section>`;
@@ -168,4 +168,34 @@ export function proyecto(c, x, pr) {
 </div></section>
 ${otros.length ? `<section class="sec sec-alt"><div class="wrap"><h2 class="h3">Otros proyectos</h2><ul class="otras">${otros.map((y) => `<li><a href="/proyectos/${esc(y.id)}/">${esc(y.nombre)}</a></li>`).join("")}</ul></div></section>` : ""}
 ${cta(c, "¿Tu proyecto puede ser el próximo?", "Cuéntanos qué necesitas y te respondemos con una propuesta.", "", waProyecto(x))}`;
+}
+
+export function terminos(c) {
+  const l = c.legal || {};
+  const ident = [l.razon_social || c.nombre, l.documento ? `identificación ${esc(l.documento)}` : "", l.direccion ? esc(l.direccion) : `${esc(c.ubicacion.municipio)}, ${esc(c.ubicacion.departamento)}, ${esc(c.ubicacion.pais)}`].filter(Boolean).join(", ");
+  const pend = c.modo_prototipo ? ` <span class="pend">[razón social e identificación por completar]</span>` : "";
+  return `${cabecera("Términos de uso", "Términos de uso del sitio.", "Reglas básicas para usar este sitio y su información.")}
+<section class="sec sec-top"><div class="wrap prosa">
+${c.modo_prototipo ? `<aside class="aviso" role="note"><p class="mono aviso-t">Borrador</p><p>Este texto es una base. Debe ser revisado por un profesional del derecho antes de publicar el sitio.</p></aside>` : ""}
+<h2 class="h3">1. Responsable del sitio</h2>
+<p>${ident}.${pend}</p>
+<h2 class="h3">2. Qué es este sitio</h2>
+<p>Es un sitio informativo sobre nuestros servicios. Nada de lo que aparece aquí es una oferta ni un contrato. Los servicios se contratan mediante una propuesta escrita, con alcance, entregables, plazo y valor, aceptada por ambas partes.</p>
+<h2 class="h3">3. Cotizaciones y estimaciones</h2>
+<p>Cualquier valor o referencia que muestre el sitio es orientativo y no vinculante: no constituye una oferta. El valor definitivo se fija en la propuesta formal, cuando conocemos el alcance real. No hay promociones vigentes, salvo que te las comuniquemos por escrito con sus condiciones y su vigencia.</p>
+<h2 class="h3">4. Información técnica</h2>
+<p>Las guías y los textos técnicos son informativos y generales. No reemplazan la evaluación ni el concepto de un profesional competente sobre un caso concreto, y no deben usarse para decidir sobre la seguridad de una edificación. Las decisiones de ingeniería las valida y firma el profesional competente.</p>
+<h2 class="h3">5. Propiedad intelectual</h2>
+<p>Los textos, diseños, dibujos y demás contenidos del sitio pertenecen a sus titulares y no pueden reproducirse sin autorización. Los nombres de proyectos, edificios, hoteles y marcas de terceros que aparecen se mencionan solo para identificar obras en las que participamos, y pertenecen a sus propietarios. Las imágenes llevan su crédito cuando proceden de terceros.</p>
+<h2 class="h3">6. Enlaces y servicios de terceros</h2>
+<p>El sitio puede enlazar a servicios de terceros, como WhatsApp. Su uso se rige por las condiciones de cada proveedor, y no respondemos por ellas.</p>
+<h2 class="h3">7. Límite de responsabilidad</h2>
+<p>Hacemos lo razonable para que la información sea correcta y esté actualizada, pero no garantizamos que no tenga errores. En la medida permitida por la ley, no respondemos por decisiones tomadas solo con base en este sitio. Esto no afecta los derechos que la ley reconoce a los consumidores.</p>
+<h2 class="h3">8. Datos personales</h2>
+<p>El tratamiento de los datos que nos envías se explica en la <a href="/privacidad/">política de tratamiento de datos personales</a>.</p>
+<h2 class="h3">9. Ley aplicable</h2>
+<p>Estos términos se rigen por las leyes de Colombia, y cualquier diferencia se resolverá ante las autoridades competentes del país.</p>
+<h2 class="h3">10. Cambios</h2>
+<p>Podemos actualizar estos términos. La versión vigente es la publicada en esta página. Última actualización: ${new Date().toISOString().slice(0, 10)}.</p>
+</div></section>`;
 }

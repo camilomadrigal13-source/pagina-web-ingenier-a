@@ -109,3 +109,14 @@ test("en Cloudflare la dirección por despliegue (hash.proyecto.pages.dev) se re
   assert.ok(leer("sitemap.xml").includes("<loc>https://sitio.pages.dev/</loc>") && !leer("sitemap.xml").includes("2874dca9"));
   assert.ok(!leer("llms.txt").includes("2874dca9"));
 });
+
+test("términos de uso y Turnstile solo donde hay formulario", () => {
+  compilar({ SITE_PROTOTYPE: "0", SITE_URL: "https://ejemplo.co", SITE_WHATSAPP: "573001112233", TURNSTILE_SITE_KEY: "0xTEST" });
+  const t = leer("terminos/index.html");
+  assert.ok(t.includes("Términos de uso") && t.includes("no vinculante") && !t.includes("Borrador"));
+  assert.ok(leer("sitemap.xml").includes("/terminos/") && leer("index.html").includes('href="/terminos/"'));
+  assert.ok(!leer("privacidad/index.html").includes("challenges.cloudflare.com"), "sin Turnstile en privacidad");
+  assert.ok(leer("cotizador/index.html").includes("challenges.cloudflare.com"));
+  assert.ok(!leer("cotizador/index.html").includes("promociones de temporada"));
+  assert.ok(leer("privacidad/index.html").includes("Telegram"));
+});
